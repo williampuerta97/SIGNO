@@ -1,10 +1,10 @@
  /* LOGUE A SISTEMA DE CONTROL DE NOTAS  */
-package Modulos;
+package Interfaces;
 
-import com.mysql.jdbc.log.Log;
+
 import extras.DisenoPlac;
 import extras.MensajesLoguin;
-import extras.Connection;
+import Resources.Connection;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
@@ -16,11 +16,11 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /* @author JH0N4T4N  */
-public class Loge extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
     MensajesLoguin mensaje;
     DisenoPlac diseno;
  
-    public Loge() throws MalformedURLException {
+    public Login() throws MalformedURLException {
         initComponents();
         this.setLocationRelativeTo(null);
         mensaje = new MensajesLoguin();
@@ -62,7 +62,6 @@ public class Loge extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\JH0N4T4N\\Desktop\\l_.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -244,18 +243,18 @@ public class Loge extends javax.swing.JFrame {
             ResultSet rs = con.consultDB("SELECT usu.*, rol.* FROM usuario as usu INNER JOIN rol as rol ON usu.Rol_id=rol.idRol "
                     + "WHERE usu.usuario='"+user+"' AND usu.contrasena='"+password+"'");
             if (rs.next()) {
-                Principal.id=rs.getInt("usu.nuip");
-                Principal.user = rs.getString("usu.usuario");
-                Principal.rol = rs.getInt("usu.Rol_id");
+                Main.id=rs.getInt("usu.nuip");
+                Main.user = rs.getString("usu.usuario");
+                Main.rol = rs.getInt("usu.Rol_id");
                 
-                Principal mainWindow = new Principal();
+                Main mainWindow = new Main();
                 mainWindow.setVisible(true);
                 this.dispose();
             }else{
                 JOptionPane.showMessageDialog(rootPane, "Error en los datos");
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Loge.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }      
     }//GEN-LAST:event_BtInicioActionPerformed
 
@@ -284,9 +283,9 @@ public class Loge extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new Loge().setVisible(true);
+                    new Login().setVisible(true);
                 } catch (MalformedURLException ex) {
-                    Logger.getLogger(Log.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println(ex.getMessage());
                 }
             }
         });

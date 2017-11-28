@@ -300,7 +300,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         // SALIR DEL PRINCIPAL:
-        Loge conecLog = new Loge();
+        Login conecLog = new Login();
         conecLog.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonSalirActionPerformed
