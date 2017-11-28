@@ -1,5 +1,5 @@
 /* MODULO INTERNO DE REPORTES */
-package Modulos;
+package Interfaces;
 
 /* @author JH0N4T4N */
 public class Reportes extends javax.swing.JInternalFrame {
