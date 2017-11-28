@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package achievements;
+package Interfaces;
 
 
 import java.sql.ResultSet;
@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+import Resources.Connection;
 /**
  *
  * @author unicuces
@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 public class Achievements extends javax.swing.JInternalFrame {
 
     DefaultTableModel model;
-    connection.Connection cone;
+    Connection cone;
     DefaultListModel buscar;
     String idT;
 
@@ -30,7 +30,7 @@ public class Achievements extends javax.swing.JInternalFrame {
      */
     public Achievements() {
         initComponents();
-        cone = new connection.Connection();
+        cone = new Connection();
         id();
         tbAchievements("");
         mostrarPeriodo();
@@ -80,7 +80,7 @@ public class Achievements extends javax.swing.JInternalFrame {
     public void mostrarPeriodo() {
         try {
             String sql = "SELECT idperiodo FROM periodo";
-            connection.Connection cone2 = new connection.Connection();
+            Connection cone2 = new Connection();
             ResultSet rs = cone2.consultDB(sql);
             cboPeriod.addItem("seleccione");
             while (rs.next()) {
@@ -96,7 +96,7 @@ public class Achievements extends javax.swing.JInternalFrame {
     public void mostrarMateria() {
         try {
             String mysql = "SELECT * FROM materia";
-            connection.Connection cone2 = new connection.Connection();
+            Connection cone2 = new Connection();
             ResultSet rs = cone2.consultDB(mysql);
             cdoSubjects.addItem("seleccione");
             while (rs.next()) {
@@ -115,7 +115,7 @@ public class Achievements extends javax.swing.JInternalFrame {
     public void cargarListas() {
         try {
             String sql = "select * from logro";
-            connection.Connection cone2 = new connection.Connection();
+            Connection cone2 = new Connection();
             ResultSet rs = cone2.consultDB(sql);
             while (rs.next()) {
                 int state;
@@ -130,7 +130,7 @@ public class Achievements extends javax.swing.JInternalFrame {
     }
 
     public void selectUpdate() {
-        connection.Connection cone2 = new connection.Connection();
+        Connection cone2 = new Connection();
         int selectRow;
 
         selectRow = tbAchievements.getSelectedRow();
