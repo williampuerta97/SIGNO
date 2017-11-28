@@ -300,7 +300,12 @@ public class Main extends javax.swing.JFrame {
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         // SALIR DEL PRINCIPAL:
-        Login conecLog = new Login();
+        Login conecLog = null;
+        try {
+            conecLog = new Login();
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         conecLog.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonSalirActionPerformed
