@@ -1,5 +1,5 @@
 /* ACCESO AL PANEL PRINCIPAL DE SIGNO  */
-package Modulos;
+package Interfaces;
 
 import extras.FondoPrincipal;
 import java.awt.image.BufferedImage;
@@ -23,7 +23,7 @@ public class Principal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.rSButtonRoles.setSelected(true);
        /*ESTABLECER EL FONDO DE LA HOJA*/
-        imagen1 = new File ("src/imagenes/fond.jpg");
+        imagen1 = new File ("src/Img/fond.jpg");
          try{                
            
             BufferedImage image = ImageIO.read(imagen1);      

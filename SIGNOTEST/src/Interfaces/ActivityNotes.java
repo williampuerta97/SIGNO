@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package signo;
+package Interfaces;
 
 import java.awt.event.ItemEvent;
 import java.sql.ResultSet;
@@ -11,7 +11,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
-
+import Resources.Connection;
 /**
  *
  * @author Grupo diseño
