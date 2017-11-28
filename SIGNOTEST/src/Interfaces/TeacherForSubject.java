@@ -1,3 +1,4 @@
+package Interfaces;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -5,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+import Resources.Connection;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -25,13 +26,13 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
  * @version 1.0 22-11-2017
  */
     
-    ConexionDB con;
+     Connection con;
      DefaultTableModel modelo;
      
     public TeacherForSubject() {
         initComponents();
         
-         con=new ConexionDB();
+         con=new Connection();
    Consult();
    chargerSubject();
    chargerGroup();
@@ -338,7 +339,7 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cboSubjectActionPerformed
 
     private void cboSubjectItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboSubjectItemStateChanged
-          ConexionDB conex2= new ConexionDB();
+          Connection conex2= new Connection();
         try{
           
             ResultSet rs2= conex2.consultDB("SELECT Nombre FROM Materia where idMateria="+cboSubject.getSelectedItem());
@@ -352,7 +353,7 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cboSubjectItemStateChanged
 
     private void cboGroupIdItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboGroupIdItemStateChanged
-             ConexionDB conex3= new ConexionDB();
+             Connection conex3= new Connection();
         try{
           
             ResultSet rs2= conex3.consultDB("SELECT Nombre FROM Grupo where idGrupo="+cboGroupId.getSelectedItem());
@@ -366,7 +367,7 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cboGroupIdItemStateChanged
 
     private void cboTeacherIdItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboTeacherIdItemStateChanged
-         ConexionDB conex4= new ConexionDB();
+         Connection conex4= new Connection();
         try{
           
             ResultSet rs2= conex4.consultDB("SELECT PrimerNombre from usuario u INNER JOIN rol r ON r.idRol=u.Rol_id INNER JOIN docente d ON r.idrol=d.Rol_Id where d.Codigo="+cboTeacherId.getSelectedItem());
