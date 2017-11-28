@@ -241,11 +241,11 @@ public class Login extends javax.swing.JFrame {
             String user=txtUser.getText();
             String password=jpassw.getText();
             
-            ResultSet rs = con.consultDB("SELECT usu.*, rol.* FROM usuario as usu INNER JOIN rol as rol ON usu.Rol_id=rol.idRol "
+            ResultSet rs = con.consultDB("SELECT usu.nuip, usu.Rol_id, CONCAT(usu.PrimerNombre,' ',usu.SegundoNombre,' ',usu.PrimerApellido,' ',usu.SegundoApellido ) Nombre, rol.* FROM usuario as usu INNER JOIN rol as rol ON usu.Rol_id=rol.idRol "
                     + "WHERE usu.usuario='"+user+"' AND usu.contrasena='"+password+"'");
             if (rs.next()) {
                 Main.id=rs.getInt("usu.nuip");
-                Main.user = rs.getString("usu.usuario");
+                Main.user = rs.getString("Nombre");
                 Main.rol = rs.getInt("usu.Rol_id");
                 
                 Main mainWindow = new Main();
