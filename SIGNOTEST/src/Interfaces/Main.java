@@ -1,6 +1,7 @@
 /* ACCESO AL PANEL PRINCIPAL DE SIGNO  */
 package Interfaces;
 
+
 import extras.FondoPrincipal;
 import java.awt.image.BufferedImage;
 import java.beans.PropertyVetoException;
@@ -11,14 +12,14 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 /* @author JH0N4T4N */
-public class Principal extends javax.swing.JFrame {
+public class Main extends javax.swing.JFrame {
 /*LLAMADO PARA EL FONDO DE LA HOJA*/
     public File imagen1;
     public static int rol;
     public static int id;
     public static String user;
     
-    public Principal() {
+    public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.rSButtonRoles.setSelected(true);
@@ -298,14 +299,10 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-    try {
         // SALIR DEL PRINCIPAL:
         Loge conecLog = new Loge();
         conecLog.setVisible(true);
         this.dispose();
-    } catch (MalformedURLException ex) {
-        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-    }
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void rSButtonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMenuActionPerformed
@@ -333,16 +330,12 @@ public class Principal extends javax.swing.JFrame {
 
     private void rSButtonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonReportesActionPerformed
 
-        try {
-            // CONEXION A LA INTERFAZ REPORTES:
-            Reportes rep = new Reportes();
-            this.setLocationRelativeTo(null);
-            rep.setVisible(true);
-            jDesktopPaneFondo.add(rep);
-            rep.setSelected(true);
-        } catch (PropertyVetoException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        // CONEXION A LA INTERFAZ REPORTES:
+        Reportes rep = new Reportes();
+        this.setLocationRelativeTo(null);
+        rep.setVisible(true);
+        jDesktopPaneFondo.add(rep);
+        rep.setSelected(true);
     }//GEN-LAST:event_rSButtonReportesActionPerformed
 
     private void rSButtonInactivosLogrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonInactivosLogrosActionPerformed
