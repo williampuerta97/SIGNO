@@ -3,29 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package subjects;
+package Interfaces;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import Connection.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import Resources.Connection;
 /**
  *
  * @author usuario
  */
-public class subjects extends javax.swing.JInternalFrame {
+public class Subjects extends javax.swing.JInternalFrame {
 
-    connection.Connection cone;
+    Connection cone;
     DefaultTableModel modelo;
     String idT;
 
-    public subjects() {
+    public Subjects() {
         initComponents();
-        cone = new connection.Connection();
+        cone = new Connection();
         btnUpdate.setEnabled(false);
         selectSubjects();
         id();
@@ -68,7 +67,7 @@ public class subjects extends javax.swing.JInternalFrame {
     }
 
     private void selectSubjects() {
-        connection.Connection cone2 = new connection.Connection();
+        Connection cone2 = new Connection();
 
         try {
             ResultSet rs = cone2.consultDB("select * from asignatura");
@@ -93,7 +92,7 @@ public class subjects extends javax.swing.JInternalFrame {
             String fila[] = new String[3];
 
             modelo = new DefaultTableModel(null, titulos);
-            connection.Connection cone2 = new connection.Connection();
+            Connection cone2 = new Connection();
             
             ResultSet rs = cone2.consultDB("select * from materia as mat "
                     + "INNER JOIN asignatura as asi on mat.Asignatura_id = asi.idAsignatura "
@@ -115,7 +114,7 @@ public class subjects extends javax.swing.JInternalFrame {
 
             tbSubjects.setModel(modelo);
         } catch (SQLException ex) {
-            Logger.getLogger(subjects.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Subjects.class.getName()).log(Level.SEVERE, null, ex);
         }
       
     }
@@ -413,7 +412,7 @@ public class subjects extends javax.swing.JInternalFrame {
 
     private void cboSubjectsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboSubjectsItemStateChanged
         // TODO add your handling code here:
-         connection.Connection cone2 = new connection.Connection();
+         Connection cone2 = new Connection();
  
        
         try {
