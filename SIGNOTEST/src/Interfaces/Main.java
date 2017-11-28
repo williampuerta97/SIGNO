@@ -49,7 +49,8 @@ public class Main extends javax.swing.JFrame {
             }else if (rol==4) {
                 
             }
-            
+        /*OCULTACION DE MENU ACORDION
+        Animacion.Animacion.subir(0, -80, 0, 80, jPanelAdmin);*/
     }
 
     @SuppressWarnings("unchecked")
@@ -273,6 +274,8 @@ public class Main extends javax.swing.JFrame {
 
         rSButtonMetroGAdmin.setBackground(new java.awt.Color(0, 0, 255));
         rSButtonMetroGAdmin.setText("G. ADMINISTRATIVA");
+        rSButtonMetroGAdmin.setColorHover(new java.awt.Color(0, 0, 255));
+        rSButtonMetroGAdmin.setColorNormal(new java.awt.Color(0, 0, 255));
         rSButtonMetroGAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonMetroGAdminActionPerformed(evt);
@@ -282,6 +285,8 @@ public class Main extends javax.swing.JFrame {
 
         rSButtonMetroGAcadem.setBackground(new java.awt.Color(0, 0, 255));
         rSButtonMetroGAcadem.setText("G. ACADEMICA");
+        rSButtonMetroGAcadem.setColorHover(new java.awt.Color(0, 0, 255));
+        rSButtonMetroGAcadem.setColorNormal(new java.awt.Color(0, 0, 255));
         jPanelDespMenu.add(rSButtonMetroGAcadem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 180, 50));
 
         jDesktopPaneFondo.add(jPanelDespMenu);
@@ -373,9 +378,10 @@ public class Main extends javax.swing.JFrame {
         
         int posicion = this.jPanelAdmin.getY();
         if (posicion > -1) {
-            
+            Animacion.Animacion.subir(0, -80, 2, 2, jPanelAdmin);
+        }else{
+            Animacion.Animacion.bajar(0, 20, 2, 2, jPanelAdmin);
         }
-        
     }//GEN-LAST:event_rSButtonMetroGAdminActionPerformed
 
 //   public static void main(String args[]) {
