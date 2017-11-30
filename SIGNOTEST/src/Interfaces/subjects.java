@@ -74,7 +74,12 @@ public class subjects extends javax.swing.JInternalFrame {
             ResultSet rs = cone2.consultDB("select * from asignatura");
             while (rs.next()) {
                 
+               int state;
+                state = Integer.parseInt(rs.getString("Activo"));
+                if (state == 1) {
+                
                 cboSubjects.addItem(rs.getString("idAsignatura"));
+                }
             }
 
         } catch (Exception e) {
