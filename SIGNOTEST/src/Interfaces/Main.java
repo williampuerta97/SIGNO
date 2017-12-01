@@ -2,9 +2,8 @@
 package Interfaces;
 
 
-import extras.FondoPrincipal;
+import Resources.FondoPrincipal;
 import java.awt.image.BufferedImage;
-import java.beans.PropertyVetoException;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.logging.Level;
@@ -55,22 +54,22 @@ public class Main extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jDesktopPaneFondo = new javax.swing.JDesktopPane();
         jPanelMenu = new javax.swing.JPanel();
-        rSButtonMenu = new rsbuttom.RSButtonMetro();
+        rSButtonMenu = new Resources.RSButtonMetro();
         jPanelDespMenu = new javax.swing.JPanel();
-        rSButtonRoles = new rsbuttom.RSButtonMetro();
+        rSButtonRoles = new Resources.RSButtonMetro();
         jPanelIdentificador = new javax.swing.JPanel();
         jLabelNombrecategoria = new javax.swing.JLabel();
-        rSButtonReportes = new rsbuttom.RSButtonMetro();
-        rSButtonInactivos = new rsbuttom.RSButtonMetro();
+        rSButtonReportes = new Resources.RSButtonMetro();
+        rSButtonInactivos = new Resources.RSButtonMetro();
         jPanelIdentificador2 = new javax.swing.JPanel();
         jLabelNombrecategoria2 = new javax.swing.JLabel();
-        rSButtonInactivosAsignatura = new rsbuttom.RSButtonMetro();
-        rSButtonInactivosGrados = new rsbuttom.RSButtonMetro();
-        rSButtonInactivosLogros = new rsbuttom.RSButtonMetro();
-        rSButtonInactivosMaterias = new rsbuttom.RSButtonMetro();
-        rSButtonInactivosNota = new rsbuttom.RSButtonMetro();
-        rSButtonInactivosPeriodo = new rsbuttom.RSButtonMetro();
-        rSButtonInactivosEvento = new rsbuttom.RSButtonMetro();
+        rSButtonInactivosAsignatura = new Resources.RSButtonMetro();
+        rSButtonInactivosGrados = new Resources.RSButtonMetro();
+        rSButtonInactivosLogros = new Resources.RSButtonMetro();
+        rSButtonInactivosMaterias = new Resources.RSButtonMetro();
+        rSButtonInactivosNota = new Resources.RSButtonMetro();
+        rSButtonInactivosPeriodo = new Resources.RSButtonMetro();
+        rSButtonInactivosEvento = new Resources.RSButtonMetro();
         jButtonSalir = new javax.swing.JButton();
 
         jMenu2.setText("jMenu2");
@@ -406,16 +405,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelIdentificador;
     private javax.swing.JPanel jPanelIdentificador2;
     private javax.swing.JPanel jPanelMenu;
-    private rsbuttom.RSButtonMetro rSButtonInactivos;
-    private rsbuttom.RSButtonMetro rSButtonInactivosAsignatura;
-    private rsbuttom.RSButtonMetro rSButtonInactivosEvento;
-    private rsbuttom.RSButtonMetro rSButtonInactivosGrados;
-    private rsbuttom.RSButtonMetro rSButtonInactivosLogros;
-    private rsbuttom.RSButtonMetro rSButtonInactivosMaterias;
-    private rsbuttom.RSButtonMetro rSButtonInactivosNota;
-    private rsbuttom.RSButtonMetro rSButtonInactivosPeriodo;
-    private rsbuttom.RSButtonMetro rSButtonMenu;
-    private rsbuttom.RSButtonMetro rSButtonReportes;
-    private rsbuttom.RSButtonMetro rSButtonRoles;
+    private Resources.RSButtonMetro rSButtonInactivos;
+    private Resources.RSButtonMetro rSButtonInactivosAsignatura;
+    private Resources.RSButtonMetro rSButtonInactivosEvento;
+    private Resources.RSButtonMetro rSButtonInactivosGrados;
+    private Resources.RSButtonMetro rSButtonInactivosLogros;
+    private Resources.RSButtonMetro rSButtonInactivosMaterias;
+    private Resources.RSButtonMetro rSButtonInactivosNota;
+    private Resources.RSButtonMetro rSButtonInactivosPeriodo;
+    private Resources.RSButtonMetro rSButtonMenu;
+    private Resources.RSButtonMetro rSButtonReportes;
+    private Resources.RSButtonMetro rSButtonRoles;
     // End of variables declaration//GEN-END:variables
 }

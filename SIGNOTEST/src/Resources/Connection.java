@@ -13,7 +13,7 @@ import java.sql.*;
  * Clase principal para realizar la conexión con la base de datos utilizando
  * mysql como gestor de base de datos.
  * <pre>Connection con = new Connection();</pre>
- * @author Grupo de base de datos
+ * @author SIGNO 
  * @version 1.0 10-11-2017 
  */
 public class Connection {

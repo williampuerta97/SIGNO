@@ -82,7 +82,7 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonMenu">
+            <Component class="Resources.RSButtonMetro" name="rSButtonMenu">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -128,7 +128,7 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonRoles">
+            <Component class="Resources.RSButtonMetro" name="rSButtonRoles">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -203,7 +203,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonReportes">
+            <Component class="Resources.RSButtonMetro" name="rSButtonReportes">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -239,7 +239,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonInactivos">
+            <Component class="Resources.RSButtonMetro" name="rSButtonInactivos">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -307,7 +307,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonInactivosAsignatura">
+            <Component class="Resources.RSButtonMetro" name="rSButtonInactivosAsignatura">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -343,7 +343,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonInactivosGrados">
+            <Component class="Resources.RSButtonMetro" name="rSButtonInactivosGrados">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -379,7 +379,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonInactivosLogros">
+            <Component class="Resources.RSButtonMetro" name="rSButtonInactivosLogros">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -415,7 +415,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonInactivosMaterias">
+            <Component class="Resources.RSButtonMetro" name="rSButtonInactivosMaterias">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -448,7 +448,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonInactivosNota">
+            <Component class="Resources.RSButtonMetro" name="rSButtonInactivosNota">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -481,7 +481,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonInactivosPeriodo">
+            <Component class="Resources.RSButtonMetro" name="rSButtonInactivosPeriodo">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -514,7 +514,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonInactivosEvento">
+            <Component class="Resources.RSButtonMetro" name="rSButtonInactivosEvento">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>

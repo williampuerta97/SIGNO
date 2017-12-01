@@ -2,9 +2,9 @@
 package Interfaces;
 
 import com.mysql.jdbc.log.Log;
-import extras.DisenoPlac;
-import extras.MensajesLoguin;
-import extras.Connection;
+import Resources.DisenoPlac;
+import Resources.MensajesLoguin;
+import Resources.Connection;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/* @author JH0N4T4N  */
+/*@author SIGNO */
 public class Login extends javax.swing.JFrame {
     MensajesLoguin mensaje;
     DisenoPlac diseno;
@@ -244,11 +244,11 @@ public class Login extends javax.swing.JFrame {
             ResultSet rs = con.consultDB("SELECT usu.*, rol.* FROM usuario as usu INNER JOIN rol as rol ON usu.Rol_id=rol.idRol "
                     + "WHERE usu.usuario='"+user+"' AND usu.contrasena='"+password+"'");
             if (rs.next()) {
-                Principal.id=rs.getInt("usu.nuip");
-                Principal.user = rs.getString("usu.usuario");
-                Principal.rol = rs.getInt("usu.Rol_id");
+                Main.id=rs.getInt("usu.nuip");
+                Main.user = rs.getString("usu.usuario");
+                Main.rol = rs.getInt("usu.Rol_id");
                 
-                Principal mainWindow = new Principal();
+                Main mainWindow = new Main();
                 mainWindow.setVisible(true);
                 this.dispose();
             }else{

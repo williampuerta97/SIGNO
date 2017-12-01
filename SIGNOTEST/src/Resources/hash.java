@@ -1,7 +1,6 @@
-package extras;
-
+package Resources;
 /* ENCRIP PASSWORD */
-
+/*@author SIGNO */
 public class hash {
 
     // RETORNO DE UN HASH A PARTIR DE UN TIPO Y UN TEXTO

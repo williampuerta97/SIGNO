@@ -1,6 +1,6 @@
 /* FONDO PRINCIPAL */
-package extras;
-/* @author JH0N4T4N */
+package Resources;
+/*@author SIGNO */
 
 import java.awt.Component;
 import java.awt.Graphics;
