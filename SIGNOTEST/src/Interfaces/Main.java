@@ -37,14 +37,16 @@ public class Main extends javax.swing.JFrame {
          
         /*OCULTACION DE MENU LATERAL*/
             Animacion.Animacion.mover_izquierda(0, -188, 0, 188 , jPanelDespMenu);
-        
+        /* VALIDACION DE INGRESO DEL ROL*/
             if (rol==1) {
             
             }else if (rol==2) {
-                jPanelDespMenu.setVisible(false);
+                jLabelUser.setText(user);
+            }else if (rol==3) {
+                jLabelUser.setText(user);
+            }else if (rol==4) {
+                jLabelUser.setText(user);
             }
- 
-            
             
     }
 
@@ -56,6 +58,7 @@ public class Main extends javax.swing.JFrame {
         jDesktopPaneFondo = new javax.swing.JDesktopPane();
         jPanelMenu = new javax.swing.JPanel();
         rSButtonMenu = new Resources.RSButtonMetro();
+        jLabelUser = new javax.swing.JLabel();
         jPanelDespMenu = new javax.swing.JPanel();
         jPanelIdentificador = new javax.swing.JPanel();
         jLabelNombrecategoria = new javax.swing.JLabel();
@@ -100,6 +103,10 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelMenu.add(rSButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
+
+        jLabelUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelUser.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelMenu.add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, 160, 20));
 
         jDesktopPaneFondo.add(jPanelMenu);
         jPanelMenu.setBounds(-3, -1, 1270, 40);
@@ -417,6 +424,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPaneFondo;
     private javax.swing.JLabel jLabelNombrecategoria;
     private javax.swing.JLabel jLabelNombrecategoria2;
+    private javax.swing.JLabel jLabelUser;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JPanel jPanelAcademic;
     private javax.swing.JPanel jPanelAdmin;
