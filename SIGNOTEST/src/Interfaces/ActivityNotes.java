@@ -25,7 +25,7 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
      */
     Connection con;
     DefaultTableModel model;
-    DefaultComboBoxModel model1, model2;
+    DefaultComboBoxModel model1, model2, model3;
     String idGroup [], idSubject[], idAchivement[], idActivity[];
     String title[] = {"Nuip", "Nombres y apellidos", "Nota"};
     TableColumnModel columnModel;
@@ -40,9 +40,8 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
     public ActivityNotes() {
         initComponents();
         con = new Connection();
-        loadGroup(Main.id);
         disableCombo();
-        loadTeacher(Main.id);
+        loadUser(Main.id);
         columnModel = tbData.getColumnModel();
         model = new DefaultTableModel(null, title);
         
@@ -69,30 +68,37 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
         cboAchievements = new javax.swing.JComboBox();
         cboActivity = new javax.swing.JComboBox();
         btnRegister = new javax.swing.JButton();
-        lbTeachers = new javax.swing.JLabel();
         cboSubjects = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
+        lbTeachers = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Notas por actividad");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel1.setText("Docente");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 30, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel2.setText("Grupo");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 83, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel3.setText("Materia");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 136, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 243, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel5.setText("Logro");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 189, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel6.setText("Actividades");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 246, -1, -1));
 
         tbData.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbData.setModel(new javax.swing.table.DefaultTableModel(
@@ -108,6 +114,8 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tbData);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 293, 397, 110));
+
         cboGroup.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cboGroupItemStateChanged(evt);
@@ -118,6 +126,7 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
                 cboGroupActionPerformed(evt);
             }
         });
+        getContentPane().add(cboGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 172, -1));
 
         cboAchievements.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         cboAchievements.addItemListener(new java.awt.event.ItemListener() {
@@ -125,6 +134,7 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
                 cboAchievementsItemStateChanged(evt);
             }
         });
+        getContentPane().add(cboAchievements, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 183, 172, -1));
 
         cboActivity.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         cboActivity.addItemListener(new java.awt.event.ItemListener() {
@@ -132,6 +142,7 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
                 cboActivityItemStateChanged(evt);
             }
         });
+        getContentPane().add(cboActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 172, -1));
 
         btnRegister.setText("REGISTRAR");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -139,96 +150,20 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
-
-        lbTeachers.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 436, -1, -1));
 
         cboSubjects.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cboSubjectsItemStateChanged(evt);
             }
         });
+        getContentPane().add(cboSubjects, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 132, 172, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnRegister)
-                .addGap(172, 172, 172))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jLabel3)
-                        .addGap(69, 69, 69)
-                        .addComponent(cboSubjects, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jLabel5)
-                        .addGap(80, 80, 80)
-                        .addComponent(cboAchievements, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel4)
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel6)
-                        .addGap(48, 48, 48)
-                        .addComponent(cboActivity, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(66, 66, 66)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(cboGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel8))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(jLabel2))
-                                    .addComponent(cboGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(36, 36, 36)
-                                .addComponent(jLabel3))
-                            .addComponent(cboSubjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel5))
-                    .addComponent(cboAchievements, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel6))
-                    .addComponent(cboActivity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(btnRegister)
-                .addGap(19, 19, 19))
-        );
+        lbTeachers.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        getContentPane().add(lbTeachers, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -327,6 +262,7 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
             jLabel6.setVisible(false);
             cboActivity.setVisible(false);
             int pos = cboGroup.getSelectedIndex();
+            System.out.println(idGroup[pos]);
             loadSubjects(idGroup[pos]);        
         }else if(cboGroup.getSelectedIndex() == 0){
             disableCombo();    
@@ -385,6 +321,52 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
         }    
     }//GEN-LAST:event_cboActivityItemStateChanged
 /**
+ * @author Grupo diseño
+ * @version 1.0
+ * Este método lo que hace es cargar el jComboBox de grados dependiendo del usuario
+ * que ingrese al sistema, si es docente, cargará sus grupos, si es administrador cargará
+ * todos los grados
+ * @param code Recibe como parámetro en un int, el código de la persona que inicia sesión
+ * 
+ */
+void loadUser(int code){
+    try {
+        ResultSet rs = con.consultDB("SELECT CONCAT(usu.PrimerNombre, ' ', "
+                + "usu.PrimerApellido) Name FROM usuario usu, administrador a " +
+                  "WHERE usu.NUIP = a.Codigo AND a.Codigo = "+ code);
+        if(rs.next()){
+            cboGroup.removeAllItems();
+            jLabel1.setText("Admin");
+            lbTeachers.setText(rs.getString("Name"));
+            try {
+                ResultSet res = con.consultDB("SELECT count(*) conteo FROM grupo");
+            if(res.next()){
+            int num = res.getInt("conteo");
+            idGroup = new String[num+1];            
+            }
+            } catch (Exception e) {
+            }
+            Connection cone = new Connection();
+            int i = 1;
+            ResultSet resul = cone.consultDB("SELECT idGrupo, Nombre FROM grupo");
+            model3 = new DefaultComboBoxModel();
+            cboGroup.setModel(model3);
+            model3.addElement("Seleccione un grado");
+            while(resul.next()){                
+                idGroup[i] = resul.getString("idGrupo");                
+                model3.addElement(resul.getString("Nombre"));
+                System.out.println(idGroup[i]);
+                i++;        
+            }
+        }else{
+            loadGroup(code);
+            loadTeacher(code);
+            jLabel1.setText("Docente");
+        }
+    } catch (Exception e) {
+    }
+}    
+ /**
  * @author Grupo diseño
  * @version 1.0
  * Lo que hace este método es cargar el jComboBox de grupos dependiendo del docente 
@@ -664,8 +646,8 @@ void disableCombo(){
  */
 void loadTeacher(int id){
     try {
-        ResultSet rs = con.consultDB("SELECT CONCAT(PrimerNombre, ' ',"
-                + " SegundoNombre, ' ', PrimerApellido, ' ', SegundoApellido ) Nombre "
+        ResultSet rs = con.consultDB("SELECT CONCAT(PrimerNombre, ' '"
+                + " , PrimerApellido ) Nombre "
                 + "FROM Usuario WHERE NUIP = "+id);
         if(rs.next()){
             jLabel8.setText(rs.getString("Nombre"));
