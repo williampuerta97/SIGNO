@@ -56,9 +56,10 @@ public class Main extends javax.swing.JFrame {
         jPanelMenu = new javax.swing.JPanel();
         rSButtonMenu = new Resources.RSButtonMetro();
         jPanelDespMenu = new javax.swing.JPanel();
-        rSButtonRoles = new Resources.RSButtonMetro();
         jPanelIdentificador = new javax.swing.JPanel();
         jLabelNombrecategoria = new javax.swing.JLabel();
+        jPanelAdmin = new javax.swing.JPanel();
+        rSButtonRoles = new Resources.RSButtonMetro();
         rSButtonReportes = new Resources.RSButtonMetro();
         rSButtonInactivos = new Resources.RSButtonMetro();
         jPanelIdentificador2 = new javax.swing.JPanel();
@@ -104,6 +105,21 @@ public class Main extends javax.swing.JFrame {
         jPanelDespMenu.setBackground(new java.awt.Color(255, 255, 255));
         jPanelDespMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanelIdentificador.setBackground(new java.awt.Color(0, 0, 255));
+        jPanelIdentificador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelNombrecategoria.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabelNombrecategoria.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelNombrecategoria.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNombrecategoria.setText("G. ADMINISTRATIVA");
+        jLabelNombrecategoria.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanelIdentificador.add(jLabelNombrecategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, 30));
+
+        jPanelDespMenu.add(jPanelIdentificador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
+
+        jPanelAdmin.setOpaque(false);
+        jPanelAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         rSButtonRoles.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonRoles.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonRoles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/roles.png"))); // NOI18N
@@ -120,19 +136,7 @@ public class Main extends javax.swing.JFrame {
                 rSButtonRolesActionPerformed(evt);
             }
         });
-        jPanelDespMenu.add(rSButtonRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 50));
-
-        jPanelIdentificador.setBackground(new java.awt.Color(0, 0, 255));
-        jPanelIdentificador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabelNombrecategoria.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabelNombrecategoria.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNombrecategoria.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelNombrecategoria.setText("G. ADMINISTRATIVA");
-        jLabelNombrecategoria.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelIdentificador.add(jLabelNombrecategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, 30));
-
-        jPanelDespMenu.add(jPanelIdentificador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
+        jPanelAdmin.add(rSButtonRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
 
         rSButtonReportes.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reportes.png"))); // NOI18N
@@ -149,7 +153,7 @@ public class Main extends javax.swing.JFrame {
                 rSButtonReportesActionPerformed(evt);
             }
         });
-        jPanelDespMenu.add(rSButtonReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 180, 40));
+        jPanelAdmin.add(rSButtonReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 40));
 
         rSButtonInactivos.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inactivo.png"))); // NOI18N
@@ -161,7 +165,9 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivos.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivos.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivos.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelDespMenu.add(rSButtonInactivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 171, 180, 40));
+        jPanelAdmin.add(rSButtonInactivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 180, 40));
+
+        jPanelDespMenu.add(jPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 160));
 
         jPanelIdentificador2.setBackground(new java.awt.Color(0, 0, 255));
         jPanelIdentificador2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -401,6 +407,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNombrecategoria;
     private javax.swing.JLabel jLabelNombrecategoria2;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JPanel jPanelAdmin;
     private javax.swing.JPanel jPanelDespMenu;
     private javax.swing.JPanel jPanelIdentificador;
     private javax.swing.JPanel jPanelIdentificador2;
