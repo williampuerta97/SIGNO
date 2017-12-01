@@ -64,6 +64,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivos = new Resources.RSButtonMetro();
         jPanelIdentificador2 = new javax.swing.JPanel();
         jLabelNombrecategoria2 = new javax.swing.JLabel();
+        jPanelAcademic = new javax.swing.JPanel();
         rSButtonInactivosAsignatura = new Resources.RSButtonMetro();
         rSButtonInactivosGrados = new Resources.RSButtonMetro();
         rSButtonInactivosLogros = new Resources.RSButtonMetro();
@@ -180,6 +181,9 @@ public class Main extends javax.swing.JFrame {
 
         jPanelDespMenu.add(jPanelIdentificador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 212, 180, 50));
 
+        jPanelAcademic.setOpaque(false);
+        jPanelAcademic.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         rSButtonInactivosAsignatura.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/asignaturas.png"))); // NOI18N
         rSButtonInactivosAsignatura.setText("   ASIGNATURAS  ");
@@ -195,7 +199,7 @@ public class Main extends javax.swing.JFrame {
                 rSButtonInactivosAsignaturaActionPerformed(evt);
             }
         });
-        jPanelDespMenu.add(rSButtonInactivosAsignatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 180, 50));
+        jPanelAcademic.add(rSButtonInactivosAsignatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
 
         rSButtonInactivosGrados.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosGrados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/grados.png"))); // NOI18N
@@ -212,7 +216,7 @@ public class Main extends javax.swing.JFrame {
                 rSButtonInactivosGradosActionPerformed(evt);
             }
         });
-        jPanelDespMenu.add(rSButtonInactivosGrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 321, 180, 50));
+        jPanelAcademic.add(rSButtonInactivosGrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 50));
 
         rSButtonInactivosLogros.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosLogros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logros.png"))); // NOI18N
@@ -229,7 +233,7 @@ public class Main extends javax.swing.JFrame {
                 rSButtonInactivosLogrosActionPerformed(evt);
             }
         });
-        jPanelDespMenu.add(rSButtonInactivosLogros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 387, 180, 40));
+        jPanelAcademic.add(rSButtonInactivosLogros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 180, 40));
 
         rSButtonInactivosMaterias.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosMaterias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/materias.png"))); // NOI18N
@@ -241,7 +245,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosMaterias.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivosMaterias.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosMaterias.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelDespMenu.add(rSButtonInactivosMaterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 180, 40));
+        jPanelAcademic.add(rSButtonInactivosMaterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 180, 40));
 
         rSButtonInactivosNota.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosNota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/notas.png"))); // NOI18N
@@ -253,7 +257,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosNota.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivosNota.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosNota.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelDespMenu.add(rSButtonInactivosNota, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 180, 40));
+        jPanelAcademic.add(rSButtonInactivosNota, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 180, 40));
 
         rSButtonInactivosPeriodo.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosPeriodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Periodo.png"))); // NOI18N
@@ -265,7 +269,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosPeriodo.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivosPeriodo.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosPeriodo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelDespMenu.add(rSButtonInactivosPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 180, 40));
+        jPanelAcademic.add(rSButtonInactivosPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 180, 40));
 
         rSButtonInactivosEvento.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inactivo.png"))); // NOI18N
@@ -277,10 +281,12 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosEvento.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivosEvento.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosEvento.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelDespMenu.add(rSButtonInactivosEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 180, 40));
+        jPanelAcademic.add(rSButtonInactivosEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 180, 40));
+
+        jPanelDespMenu.add(jPanelAcademic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 180, 370));
 
         jDesktopPaneFondo.add(jPanelDespMenu);
-        jPanelDespMenu.setBounds(0, 40, 180, 640);
+        jPanelDespMenu.setBounds(0, 40, 180, 630);
 
         jButtonSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jButtonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
@@ -407,6 +413,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNombrecategoria;
     private javax.swing.JLabel jLabelNombrecategoria2;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JPanel jPanelAcademic;
     private javax.swing.JPanel jPanelAdmin;
     private javax.swing.JPanel jPanelDespMenu;
     private javax.swing.JPanel jPanelIdentificador;
