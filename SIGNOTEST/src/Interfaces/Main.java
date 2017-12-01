@@ -4,6 +4,7 @@ package Interfaces;
 
 import Resources.FondoPrincipal;
 import java.awt.image.BufferedImage;
+import java.beans.PropertyVetoException;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.logging.Level;
@@ -346,12 +347,16 @@ public class Main extends javax.swing.JFrame {
 
     private void rSButtonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonReportesActionPerformed
 
-        // CONEXION A LA INTERFAZ REPORTES:
-        Reportes rep = new Reportes();
-        this.setLocationRelativeTo(null);
-        rep.setVisible(true);
-        jDesktopPaneFondo.add(rep);
-        rep.setSelected(true);
+        try {
+            // CONEXION A LA INTERFAZ REPORTES:
+            Reportes rep = new Reportes();
+            this.setLocationRelativeTo(null);
+            rep.setVisible(true);
+            jDesktopPaneFondo.add(rep);
+            rep.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_rSButtonReportesActionPerformed
 
     private void rSButtonInactivosLogrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonInactivosLogrosActionPerformed
