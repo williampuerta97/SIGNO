@@ -1,10 +1,10 @@
  /* LOGUE A SISTEMA DE CONTROL DE NOTAS  */
 package Interfaces;
 
-
+import com.mysql.jdbc.log.Log;
 import extras.DisenoPlac;
 import extras.MensajesLoguin;
-import Resources.Connection;
+import extras.Connection;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
@@ -62,6 +62,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\JH0N4T4N\\Desktop\\l_.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -243,11 +244,11 @@ public class Login extends javax.swing.JFrame {
             ResultSet rs = con.consultDB("SELECT usu.*, rol.* FROM usuario as usu INNER JOIN rol as rol ON usu.Rol_id=rol.idRol "
                     + "WHERE usu.usuario='"+user+"' AND usu.contrasena='"+password+"'");
             if (rs.next()) {
-                Main.id=rs.getInt("usu.nuip");
-                Main.user = rs.getString("usu.usuario");
-                Main.rol = rs.getInt("usu.Rol_id");
+                Principal.id=rs.getInt("usu.nuip");
+                Principal.user = rs.getString("usu.usuario");
+                Principal.rol = rs.getInt("usu.Rol_id");
                 
-                Main mainWindow = new Main();
+                Principal mainWindow = new Principal();
                 mainWindow.setVisible(true);
                 this.dispose();
             }else{
@@ -285,7 +286,7 @@ public class Login extends javax.swing.JFrame {
                 try {
                     new Login().setVisible(true);
                 } catch (MalformedURLException ex) {
-                    System.out.println(ex.getMessage());
+                    Logger.getLogger(Log.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
