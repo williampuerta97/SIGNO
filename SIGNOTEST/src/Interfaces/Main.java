@@ -72,8 +72,8 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosNota = new Resources.RSButtonMetro();
         rSButtonInactivosPeriodo = new Resources.RSButtonMetro();
         rSButtonInactivosEvento = new Resources.RSButtonMetro();
-        rSButtonMetro1 = new Resources.RSButtonMetro();
-        rSButtonMetro2 = new Resources.RSButtonMetro();
+        rSButtonMetroGAdmin = new Resources.RSButtonMetro();
+        rSButtonMetroGAcadem = new Resources.RSButtonMetro();
         jButtonSalir = new javax.swing.JButton();
 
         jMenu2.setText("jMenu2");
@@ -269,18 +269,18 @@ public class Main extends javax.swing.JFrame {
 
         jPanelDespMenu.add(jPanelAcademic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 180, 380));
 
-        rSButtonMetro1.setBackground(new java.awt.Color(0, 0, 255));
-        rSButtonMetro1.setText("G. ADMINISTRATIVA");
-        rSButtonMetro1.addActionListener(new java.awt.event.ActionListener() {
+        rSButtonMetroGAdmin.setBackground(new java.awt.Color(0, 0, 255));
+        rSButtonMetroGAdmin.setText("G. ADMINISTRATIVA");
+        rSButtonMetroGAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonMetro1ActionPerformed(evt);
+                rSButtonMetroGAdminActionPerformed(evt);
             }
         });
-        jPanelDespMenu.add(rSButtonMetro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
+        jPanelDespMenu.add(rSButtonMetroGAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
 
-        rSButtonMetro2.setBackground(new java.awt.Color(0, 0, 255));
-        rSButtonMetro2.setText("G. ACADEMICA");
-        jPanelDespMenu.add(rSButtonMetro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 180, 50));
+        rSButtonMetroGAcadem.setBackground(new java.awt.Color(0, 0, 255));
+        rSButtonMetroGAcadem.setText("G. ACADEMICA");
+        jPanelDespMenu.add(rSButtonMetroGAcadem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 180, 50));
 
         jDesktopPaneFondo.add(jPanelDespMenu);
         jPanelDespMenu.setBounds(0, 40, 180, 630);
@@ -366,9 +366,15 @@ public class Main extends javax.swing.JFrame {
         jDesktopPaneFondo.add(entDeg);
     }//GEN-LAST:event_rSButtonInactivosGradosActionPerformed
 
-    private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButtonMetro1ActionPerformed
+    private void rSButtonMetroGAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetroGAdminActionPerformed
+        // DESPLIGUE MODO ACORDION MUNU ADMIN:
+        
+        int posicion = this.jPanelAdmin.getY();
+        if (posicion > -1) {
+            
+        }
+        
+    }//GEN-LAST:event_rSButtonMetroGAdminActionPerformed
 
 //   public static void main(String args[]) {
 //      
@@ -421,8 +427,8 @@ public class Main extends javax.swing.JFrame {
     private Resources.RSButtonMetro rSButtonInactivosNota;
     private Resources.RSButtonMetro rSButtonInactivosPeriodo;
     private Resources.RSButtonMetro rSButtonMenu;
-    private Resources.RSButtonMetro rSButtonMetro1;
-    private Resources.RSButtonMetro rSButtonMetro2;
+    private Resources.RSButtonMetro rSButtonMetroGAcadem;
+    private Resources.RSButtonMetro rSButtonMetroGAdmin;
     private Resources.RSButtonMetro rSButtonReportes;
     private Resources.RSButtonMetro rSButtonRoles;
     // End of variables declaration//GEN-END:variables
