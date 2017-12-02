@@ -60,14 +60,10 @@ public class Main extends javax.swing.JFrame {
         rSButtonMenu = new Resources.RSButtonMetro();
         jLabelUser = new javax.swing.JLabel();
         jPanelDespMenu = new javax.swing.JPanel();
-        jPanelIdentificador = new javax.swing.JPanel();
-        jLabelNombrecategoria = new javax.swing.JLabel();
         jPanelAdmin = new javax.swing.JPanel();
         rSButtonRoles = new Resources.RSButtonMetro();
         rSButtonReportes = new Resources.RSButtonMetro();
         rSButtonInactivos = new Resources.RSButtonMetro();
-        jPanelIdentificador2 = new javax.swing.JPanel();
-        jLabelNombrecategoria2 = new javax.swing.JLabel();
         jPanelAcademic = new javax.swing.JPanel();
         rSButtonInactivosAsignatura = new Resources.RSButtonMetro();
         rSButtonInactivosGrados = new Resources.RSButtonMetro();
@@ -76,6 +72,8 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosNota = new Resources.RSButtonMetro();
         rSButtonInactivosPeriodo = new Resources.RSButtonMetro();
         rSButtonInactivosEvento = new Resources.RSButtonMetro();
+        rSButtonMetro1 = new Resources.RSButtonMetro();
+        rSButtonMetro2 = new Resources.RSButtonMetro();
         jButtonSalir = new javax.swing.JButton();
 
         jMenu2.setText("jMenu2");
@@ -114,18 +112,7 @@ public class Main extends javax.swing.JFrame {
         jPanelDespMenu.setBackground(new java.awt.Color(255, 255, 255));
         jPanelDespMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanelIdentificador.setBackground(new java.awt.Color(0, 0, 255));
-        jPanelIdentificador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabelNombrecategoria.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabelNombrecategoria.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNombrecategoria.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelNombrecategoria.setText("G. ADMINISTRATIVA");
-        jLabelNombrecategoria.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanelIdentificador.add(jLabelNombrecategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, 30));
-
-        jPanelDespMenu.add(jPanelIdentificador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
-
+        jPanelAdmin.setBackground(new java.awt.Color(255, 255, 255));
         jPanelAdmin.setOpaque(false);
         jPanelAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -145,7 +132,7 @@ public class Main extends javax.swing.JFrame {
                 rSButtonRolesActionPerformed(evt);
             }
         });
-        jPanelAdmin.add(rSButtonRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
+        jPanelAdmin.add(rSButtonRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, 40));
 
         rSButtonReportes.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reportes.png"))); // NOI18N
@@ -174,20 +161,9 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivos.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivos.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivos.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelAdmin.add(rSButtonInactivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 180, 40));
+        jPanelAdmin.add(rSButtonInactivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 180, 40));
 
-        jPanelDespMenu.add(jPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 160));
-
-        jPanelIdentificador2.setBackground(new java.awt.Color(0, 0, 255));
-        jPanelIdentificador2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabelNombrecategoria2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabelNombrecategoria2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNombrecategoria2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelNombrecategoria2.setText("  G. ACADEMICA");
-        jPanelIdentificador2.add(jLabelNombrecategoria2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, 30));
-
-        jPanelDespMenu.add(jPanelIdentificador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 212, 180, 50));
+        jPanelDespMenu.add(jPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 150));
 
         jPanelAcademic.setOpaque(false);
         jPanelAcademic.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -224,7 +200,7 @@ public class Main extends javax.swing.JFrame {
                 rSButtonInactivosGradosActionPerformed(evt);
             }
         });
-        jPanelAcademic.add(rSButtonInactivosGrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 50));
+        jPanelAcademic.add(rSButtonInactivosGrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 50));
 
         rSButtonInactivosLogros.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosLogros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logros.png"))); // NOI18N
@@ -241,7 +217,7 @@ public class Main extends javax.swing.JFrame {
                 rSButtonInactivosLogrosActionPerformed(evt);
             }
         });
-        jPanelAcademic.add(rSButtonInactivosLogros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 180, 40));
+        jPanelAcademic.add(rSButtonInactivosLogros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 180, 40));
 
         rSButtonInactivosMaterias.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosMaterias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/materias.png"))); // NOI18N
@@ -253,7 +229,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosMaterias.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivosMaterias.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosMaterias.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelAcademic.add(rSButtonInactivosMaterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 180, 40));
+        jPanelAcademic.add(rSButtonInactivosMaterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 180, 40));
 
         rSButtonInactivosNota.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosNota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/notas.png"))); // NOI18N
@@ -265,7 +241,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosNota.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivosNota.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosNota.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelAcademic.add(rSButtonInactivosNota, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 180, 40));
+        jPanelAcademic.add(rSButtonInactivosNota, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 180, 40));
 
         rSButtonInactivosPeriodo.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosPeriodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Periodo.png"))); // NOI18N
@@ -277,7 +253,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosPeriodo.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivosPeriodo.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosPeriodo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelAcademic.add(rSButtonInactivosPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 180, 40));
+        jPanelAcademic.add(rSButtonInactivosPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 180, 40));
 
         rSButtonInactivosEvento.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inactivo.png"))); // NOI18N
@@ -289,9 +265,22 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosEvento.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivosEvento.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosEvento.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelAcademic.add(rSButtonInactivosEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 180, 40));
+        jPanelAcademic.add(rSButtonInactivosEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 180, 40));
 
-        jPanelDespMenu.add(jPanelAcademic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 180, 370));
+        jPanelDespMenu.add(jPanelAcademic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 180, 380));
+
+        rSButtonMetro1.setBackground(new java.awt.Color(0, 0, 255));
+        rSButtonMetro1.setText("G. ADMINISTRATIVA");
+        rSButtonMetro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMetro1ActionPerformed(evt);
+            }
+        });
+        jPanelDespMenu.add(rSButtonMetro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
+
+        rSButtonMetro2.setBackground(new java.awt.Color(0, 0, 255));
+        rSButtonMetro2.setText("G. ACADEMICA");
+        jPanelDespMenu.add(rSButtonMetro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 180, 50));
 
         jDesktopPaneFondo.add(jPanelDespMenu);
         jPanelDespMenu.setBounds(0, 40, 180, 630);
@@ -340,16 +329,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonMenuActionPerformed
 
     private void rSButtonRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRolesActionPerformed
-    /*    try {
-            // CONEXION A LA INTERFAZ PERFILES:
-            Roles prf = new Roles();
-            this.setLocationRelativeTo(null);
-            prf.setVisible(true);
-            jDesktopPaneFondo.add(prf);
-            prf.setSelected(true);
-        } catch (PropertyVetoException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+
     }//GEN-LAST:event_rSButtonRolesActionPerformed
 
     private void rSButtonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonReportesActionPerformed
@@ -385,6 +365,10 @@ public class Main extends javax.swing.JFrame {
         entDeg.setLocation(100, 300);
         jDesktopPaneFondo.add(entDeg);
     }//GEN-LAST:event_rSButtonInactivosGradosActionPerformed
+
+    private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonMetro1ActionPerformed
 
 //   public static void main(String args[]) {
 //      
@@ -422,15 +406,11 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JDesktopPane jDesktopPaneFondo;
-    private javax.swing.JLabel jLabelNombrecategoria;
-    private javax.swing.JLabel jLabelNombrecategoria2;
     private javax.swing.JLabel jLabelUser;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JPanel jPanelAcademic;
     private javax.swing.JPanel jPanelAdmin;
     private javax.swing.JPanel jPanelDespMenu;
-    private javax.swing.JPanel jPanelIdentificador;
-    private javax.swing.JPanel jPanelIdentificador2;
     private javax.swing.JPanel jPanelMenu;
     private Resources.RSButtonMetro rSButtonInactivos;
     private Resources.RSButtonMetro rSButtonInactivosAsignatura;
@@ -441,6 +421,8 @@ public class Main extends javax.swing.JFrame {
     private Resources.RSButtonMetro rSButtonInactivosNota;
     private Resources.RSButtonMetro rSButtonInactivosPeriodo;
     private Resources.RSButtonMetro rSButtonMenu;
+    private Resources.RSButtonMetro rSButtonMetro1;
+    private Resources.RSButtonMetro rSButtonMetro2;
     private Resources.RSButtonMetro rSButtonReportes;
     private Resources.RSButtonMetro rSButtonRoles;
     // End of variables declaration//GEN-END:variables
