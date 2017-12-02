@@ -94,7 +94,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabelUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelUser.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelMenu.add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, 160, 20));
+        jPanelMenu.add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 250, 20));
 
         rSButtonMenu.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menu.png"))); // NOI18N
@@ -110,7 +110,7 @@ public class Main extends javax.swing.JFrame {
         jPanelMenu.add(rSButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
         jDesktopPaneFondo.add(jPanelMenu);
-        jPanelMenu.setBounds(-3, -1, 1270, 40);
+        jPanelMenu.setBounds(-3, -1, 1260, 40);
 
         jPanelDespMenu.setBackground(new java.awt.Color(255, 255, 255));
         jPanelDespMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
