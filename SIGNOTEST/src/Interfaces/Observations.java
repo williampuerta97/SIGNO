@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package signo;
+package Interfaces;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +22,7 @@ public class Observations extends javax.swing.JInternalFrame {
     /**
      * Creates new form proyecto
      */
-    Connection con;
+    Resources.Connection con;
     DefaultComboBoxModel model1, model2, model3;
     DefaultTableModel tbModel1, tbModel2;
     /**
@@ -34,7 +34,7 @@ public class Observations extends javax.swing.JInternalFrame {
 
     public Observations() {
         initComponents();
-        con = new Connection();
+        con = new Resources.Connection();
         loadTables("", null, null);
         loadGroup(Main.id);
         disableCombo();
