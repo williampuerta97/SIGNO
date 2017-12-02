@@ -21,6 +21,8 @@ public class Main extends javax.swing.JFrame {
     
     public Main() {
         initComponents();
+        jPanelAdmin.setLayout(null);
+        jPanelAcademic.setLayout(null);
         //System.out.println(rol+"-"+id+"-"+user);
         this.setLocationRelativeTo(null);
         this.rSButtonRoles.setSelected(true);
@@ -115,8 +117,7 @@ public class Main extends javax.swing.JFrame {
         jPanelDespMenu.setBackground(new java.awt.Color(255, 255, 255));
         jPanelDespMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanelAdmin.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelAdmin.setOpaque(false);
+        jPanelAdmin.setBackground(new java.awt.Color(204, 0, 0));
         jPanelAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rSButtonRoles.setBackground(new java.awt.Color(255, 255, 255));
@@ -164,7 +165,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivos.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivos.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivos.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelAdmin.add(rSButtonInactivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 180, 40));
+        jPanelAdmin.add(rSButtonInactivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 180, 40));
 
         jPanelDespMenu.add(jPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 150));
 
@@ -343,7 +344,7 @@ public class Main extends javax.swing.JFrame {
 
         try {
             // CONEXION A LA INTERFAZ REPORTES:
-            Reportes rep = new Reportes();
+            Reports rep = new Reports();
             this.setLocationRelativeTo(null);
             rep.setVisible(true);
             jDesktopPaneFondo.add(rep);
@@ -378,9 +379,16 @@ public class Main extends javax.swing.JFrame {
         
         int posicion = this.jPanelAdmin.getY();
         if (posicion > -1) {
-            Animacion.Animacion.subir(0, -80, 2, 2, jPanelAdmin);
+            Animacion.Animacion.subir(0, -160, 2, 2, jPanelAdmin);
+            rSButtonRoles.setVisible(false);
+            rSButtonReportes.setVisible(false);
+            rSButtonInactivos.setVisible(false);
+            Animacion.Animacion.subir(0, -2, 2, 2, rSButtonMetroGAcadem);
         }else{
-            Animacion.Animacion.bajar(0, 20, 2, 2, jPanelAdmin);
+            Animacion.Animacion.bajar(0, 50, 2, 2, jPanelAdmin);
+            rSButtonRoles.setVisible(true);
+            rSButtonReportes.setVisible(true);
+            rSButtonInactivos.setVisible(true);   
         }
     }//GEN-LAST:event_rSButtonMetroGAdminActionPerformed
 

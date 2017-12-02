@@ -2,10 +2,10 @@
 package Interfaces;
 
 /* @author JH0N4T4N */
-public class Reportes extends javax.swing.JInternalFrame {
+public class Reports extends javax.swing.JInternalFrame {
 
 
-    public Reportes() {
+    public Reports() {
         initComponents();
         setSize(1248,663);
         setLocation(0,36);

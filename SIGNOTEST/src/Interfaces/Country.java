@@ -15,12 +15,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Valentina
  */
-public class Pais extends javax.swing.JInternalFrame {
+public class Country extends javax.swing.JInternalFrame {
 
    DefaultTableModel modelo;
    Connection cone;
    
-    public Pais() {
+    public Country() {
         initComponents();
         cone = new Connection();
         actualizar();

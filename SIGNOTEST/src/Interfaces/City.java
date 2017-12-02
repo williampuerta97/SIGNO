@@ -16,29 +16,29 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Valentina
  */
-public class Departamento extends javax.swing.JInternalFrame {
-    
+public class City extends javax.swing.JInternalFrame {
+
     DefaultTableModel modelo;
     Connection cone;
-    String idPais[];
-    
-    public Departamento() {
+
+    String idDep[ ] ;
+    public City() {
         initComponents();
         cone = new Connection();
         actualizar();
-        cargarComboPais();
+        cargarCombodepart();
         
         btnUpdate.setVisible(false);
     }
-    
+
     public void cargarId(){
  
         try{
             
             
-            ResultSet rs = cone.consultDB("SELECT max(idDepartamento) FROM departamento");
+            ResultSet rs = cone.consultDB("SELECT max(idCiudad) FROM ciudad");
             if(rs.next()){
-             lblId.setText((rs.getInt("max(idDepartamento)")+1)+"");
+             lblId.setText((rs.getInt("max(idCiudad)")+1)+"");
              
             }
             
@@ -52,17 +52,17 @@ public class Departamento extends javax.swing.JInternalFrame {
         
         try {
       String[] registros = new String[4];
-      String[] titulos = {"IdDepartamento","Nombre","Prefijo Telefonico", "Pais_id"};
+      String[] titulos = {"IdCiudad","Nombre","Indicativo", "Departamento_id"};
       
       modelo = new DefaultTableModel(null, titulos);
       
-       ResultSet rs = cone.consultDB("SELECT * FROM Departamento" );
+       ResultSet rs = cone.consultDB("SELECT * FROM ciudad" );
        
             while(rs.next()){
-                registros[0] = rs.getString("idDepartamento");
+                registros[0] = rs.getString("idCiudad");
                 registros[1] = rs.getString("Nombre");
-                registros[2] = rs.getString("PrefijoTelefonico");
-                registros[3] = rs.getString("Pais_id");
+                registros[2] = rs.getString("Indicativo");
+                registros[3] = rs.getString("Departamento_id");
                 
                 modelo.addRow(registros);
             } 
@@ -77,14 +77,14 @@ public class Departamento extends javax.swing.JInternalFrame {
     
         try{
       String[] registros = new String[2];
-      String[] titulos = {"IdDepartamento","Nombre"};
+      String[] titulos = {"IdCiudad","Nombre"};
       
       modelo = new DefaultTableModel(null, titulos);
       
-       ResultSet rs = cone.consultDB("SELECT * FROM Departamento WHERE CONCAT (idDepartamento,'',Nombre) LIKE ' %"+valor+"%'" );
+       ResultSet rs = cone.consultDB("SELECT * FROM ciudad WHERE CONCAT (idCiudad,'',Nombre) LIKE ' %"+valor+"%'" );
        
             while(rs.next( )){
-                registros[0] = rs.getString("IdDepartamento");
+                registros[0] = rs.getString("idCiudad");
                 registros[1] = rs.getString("Nombre");
      
                 modelo.addRow(registros);
@@ -99,55 +99,29 @@ public class Departamento extends javax.swing.JInternalFrame {
             cargarId();
         }
 
-    public void cargarComboPais() {
-        
+    
+    public void cargarCombodepart() {
         try {
-            ResultSet resul = cone.consultDB("SELECT COUNT(*) cuenta FROM pais");
+            ResultSet resul =cone.consultDB("SELECT COUNT(*) cuenta FROM departamento");
             if(resul.next()){
-                idPais = new String[resul.getInt("cuenta")];
+                idDep = new String[resul.getInt("cuenta")];
             }
-         } catch (SQLException ex) {
-            System.out.println("Error" + ex);
+        } catch (Exception e) {
+            System.out.println("Error"+e);
         }
         try {
             int i = 0;
-            ResultSet rs=cone.consultDB("SELECT idPais,Nombre FROM pais");
-            
-            while (rs.next()) {
-             idPais[i] = rs.getString("idPais");
-            System.out.println(idPais[i]);
-            jcPais.addItem(rs.getString("Nombre"));
+            ResultSet rs=cone.consultDB("SELECT idDepartamento,Nombre FROM Departamento");
+            while  (rs.next()) {
+            idDep[i] = rs.getString("idDepartamento");
+            jcDepart.addItem(rs.getString("Nombre"));
             i++;
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             System.out.println("Error" + ex);
         }
+    }
     
-    }
-    public void id (String valor){
-        try{
-      String[] registros = new String[2];
-      String[] titulos = {"IdPais","Nombre"};
-      
-      modelo = new DefaultTableModel(null, titulos);
-      
-      ResultSet rs = cone.consultDB("SELECT * FROM pais P INNER JOIN departamento D ON D.idDepartamento = P.idPais WHERE departamento.idDepartamento= "+valor);
-      
-      while(rs.next( )){
-                registros[0] = rs.getString("IdPais");
-                registros[1] = rs.getString("Nombre");
-     
-                modelo.addRow(registros);
-     
-            }
-            
-            jTable1.setModel(modelo);
-            
-    }catch(Exception e){
-            System.out.println("Error"+e);
-    }
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -161,17 +135,17 @@ public class Departamento extends javax.swing.JInternalFrame {
         eliminar = new javax.swing.JMenuItem();
         modificar = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
         lblId = new javax.swing.JLabel();
-        jcPais = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtIndi = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jcDepart = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnAdd = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        txtPrefijoTel = new javax.swing.JTextField();
 
         eliminar.setText("Eliminar");
         eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -194,11 +168,13 @@ public class Departamento extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
 
-        jLabel1.setText("Nombre");
+        jLabel1.setText("Id");
 
-        jLabel2.setText("Id");
+        jLabel2.setText("Nombre");
 
-        jLabel4.setText("Pais");
+        jLabel3.setText("Indicativo");
+
+        jLabel5.setText("Departamento");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -228,8 +204,6 @@ public class Departamento extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel3.setText("Prefijo");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -237,54 +211,58 @@ public class Departamento extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addGap(49, 49, 49)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtName)
-                            .addComponent(lblId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jcPais, 0, 194, Short.MAX_VALUE)
-                            .addComponent(txtPrefijoTel)))
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
+                        .addGap(77, 77, 77)
                         .addComponent(btnAdd)
-                        .addGap(18, 18, 18)
+                        .addGap(26, 26, 26)
                         .addComponent(btnUpdate))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jcDepart, 0, 187, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtIndi)
+                                    .addComponent(txtName)
+                                    .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                    .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtPrefijoTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                    .addComponent(txtIndi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jcPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                    .addComponent(jLabel5)
+                    .addComponent(jcDepart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
                     .addComponent(btnUpdate))
-                .addGap(38, 38, 38))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         pack();
@@ -292,10 +270,11 @@ public class Departamento extends javax.swing.JInternalFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        int pos = (int) jcPais.getSelectedIndex();
-        String pais = (String) jcPais.getSelectedItem();
+        int pos = (int) jcDepart.getSelectedIndex();
+        String pais = (String) jcDepart.getSelectedItem();
         System.out.println(pos);
-        cone.modifyDB("INSERT INTO Departamento VALUES (NULL, '" +txtName.getText()+ "', '" +txtPrefijoTel.getText()+ "' , '" +idPais[pos]+"')");
+        
+        cone.modifyDB("INSERT INTO Ciudad VALUES (NULL, '" +txtName.getText()+ "', '" +txtIndi.getText()+ "', '" +idDep[pos]+ "')");
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
@@ -303,9 +282,10 @@ public class Departamento extends javax.swing.JInternalFrame {
         int row = jTable1.getSelectedRow();  
         
         try {
-            cone.modifyDB("DELETE FROM departamento WHERE idDepartamento="+jTable1.getValueAt(row, 0));
+            cone.modifyDB("DELETE FROM ciudad WHERE idCiudad="+jTable1.getValueAt(row, 0));
             actualizar();
             JOptionPane.showMessageDialog(rootPane, "el estudiantes a sido eliminado");
+            
             
         } catch (Exception e) {
             System.out.println("Error"+ e);
@@ -314,44 +294,31 @@ public class Departamento extends javax.swing.JInternalFrame {
 
     private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
         // TODO add your handling code here:
-      btnUpdate.setVisible(true);
-       
-       int row = jTable1.getSelectedRow();
-       
+         
+        btnUpdate.setVisible(true);
+        int row = jTable1.getSelectedRow();
+        
         try {
-            ResultSet rs = cone.consultDB("SELECT * FROM departamento WHERE idDepartamento="+jTable1.getValueAt(row, 0));
+            ResultSet rs = cone.consultDB("SELECT * FROM ciudad WHERE idCiudad="+jTable1.getValueAt(row, 0));
             
             rs.next();
-            lblId.setText(rs.getString("idDepartamento"));
+            lblId.setText(rs.getString("idCiudad"));
             txtName.setText(rs.getString("Nombre"));
-            txtPrefijoTel.setText(rs.getString("PrefijoTelefonico"));
-            jcPais.addItem(rs.getString("Pais_id"));
-            jcPais.setSelectedItem(rs.getString("Pais_id"));
-            
-            
+            txtIndi.setText(rs.getString("Indicativo"));
+            jcDepart.addItem(rs.getString("Pais_id"));
+            jcDepart.setSelectedItem(rs.getString("Pais_id"));
             
         } catch (Exception e) {
             System.out.println("Error"+e);
-        }  
-      
+        }
+       
     }//GEN-LAST:event_modificarActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
         String nombre = txtName.getText();
-        String Prefijo = txtPrefijoTel.getText();
-        int Id = Integer.parseInt( lblId.getText());
-        int Pais = Integer.parseInt((String) jcPais.getSelectedItem());
-        
-        try {
-            cone.modifyDB("UPDATE Departamento SET Nombre=' "+nombre+" ',PrefijoTelefonico=' "+Prefijo+" ',Pais_id= "+Pais+" WHERE idDepartamento="+Id);
-        } catch (Exception e) {
-            System.out.println("Error"+ e);
-        }
         
         
-        cargar("");
-        actualizar();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
 
@@ -362,14 +329,14 @@ public class Departamento extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JComboBox<String> jcPais;
+    private javax.swing.JComboBox<String> jcDepart;
     private javax.swing.JLabel lblId;
     private javax.swing.JMenuItem modificar;
+    private javax.swing.JTextField txtIndi;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPrefijoTel;
     // End of variables declaration//GEN-END:variables
 }
