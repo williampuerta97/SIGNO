@@ -4,7 +4,7 @@ package Resources;
 
 /* @author JH0N4T4N */
 
-public class MensajesLoguin {
+public class Loguin_Message {
     String usuario="USUARIO";
     String contrasena="CONTRASEÑA";
 

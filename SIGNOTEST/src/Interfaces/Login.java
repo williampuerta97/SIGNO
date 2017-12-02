@@ -2,8 +2,8 @@
 package Interfaces;
 
 import com.mysql.jdbc.log.Log;
-import Resources.DisenoPlac;
-import Resources.MensajesLoguin;
+import Resources.Desing_Placeholder;
+import Resources.Loguin_Message;
 import Resources.Connection;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -17,14 +17,14 @@ import javax.swing.JOptionPane;
 
 /*@author SIGNO */
 public class Login extends javax.swing.JFrame {
-    MensajesLoguin mensaje;
-    DisenoPlac diseno;
+    Loguin_Message mensaje;
+    Desing_Placeholder diseno;
  
     public Login() throws MalformedURLException {
         initComponents();
         this.setLocationRelativeTo(null);
-        mensaje = new MensajesLoguin();
-        diseno = new DisenoPlac();
+        mensaje = new Loguin_Message();
+        diseno = new Desing_Placeholder();
         Iniciar();
     }
     

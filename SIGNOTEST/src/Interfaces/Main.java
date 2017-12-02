@@ -2,7 +2,7 @@
 package Interfaces;
 
 
-import Resources.FondoPrincipal;
+import Resources.Main_Background;
 import java.awt.image.BufferedImage;
 import java.beans.PropertyVetoException;
 import java.io.File;
@@ -32,7 +32,7 @@ public class Main extends javax.swing.JFrame {
            
             BufferedImage image = ImageIO.read(imagen1);      
             
-              jDesktopPaneFondo.setBorder(new FondoPrincipal(image)); }
+              jDesktopPaneFondo.setBorder(new Main_Background(image)); }
         catch (Exception e){   
             System.out.println("Noo imagen, sorry"+ e);   
         }

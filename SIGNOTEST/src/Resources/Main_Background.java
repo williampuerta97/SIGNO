@@ -8,11 +8,11 @@ import java.awt.Insets;
 import java.awt.image.BufferedImage;
 import javax.swing.border.Border;
 
-public class FondoPrincipal implements Border{
+public class Main_Background implements Border{
         
     private final   BufferedImage image ;
 
-    public FondoPrincipal(BufferedImage image ) {
+    public Main_Background(BufferedImage image ) {
         this.image=image;}
 
     @Override

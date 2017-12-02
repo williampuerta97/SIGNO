@@ -6,7 +6,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /* @author JH0N4T4N  */
-public class DisenoPlac {
+public class Desing_Placeholder {
 
     String plomo = "#818181";
     String blanco = "#FDFEFE"; 
