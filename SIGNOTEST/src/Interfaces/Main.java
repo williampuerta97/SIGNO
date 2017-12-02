@@ -21,6 +21,7 @@ public class Main extends javax.swing.JFrame {
     
     public Main() {
         initComponents();
+        //System.out.println(rol+"-"+id+"-"+user);
         this.setLocationRelativeTo(null);
         this.rSButtonRoles.setSelected(true);
        /*ESTABLECER EL FONDO DE LA HOJA*/
@@ -34,18 +35,19 @@ public class Main extends javax.swing.JFrame {
             System.out.println("Noo imagen, sorry"+ e);   
         }
         /*FIN DEL PROCESO DE ESTABLECER FONDO */
-         
+        /*NOMBRE DEL USUARIO EN EL PANEL*/
+        jLabelUser.setText(user);
         /*OCULTACION DE MENU LATERAL*/
             Animacion.Animacion.mover_izquierda(0, -188, 0, 188 , jPanelDespMenu);
         /* VALIDACION DE INGRESO DEL ROL*/
             if (rol==1) {
             
             }else if (rol==2) {
-                jLabelUser.setText(user);
+                
             }else if (rol==3) {
-                jLabelUser.setText(user);
+                
             }else if (rol==4) {
-                jLabelUser.setText(user);
+                
             }
         /*OCULTACION DE MENU ACORDION
         Animacion.Animacion.subir(0, -80, 0, 80, jPanelAdmin);*/
@@ -58,8 +60,8 @@ public class Main extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jDesktopPaneFondo = new javax.swing.JDesktopPane();
         jPanelMenu = new javax.swing.JPanel();
-        rSButtonMenu = new Resources.RSButtonMetro();
         jLabelUser = new javax.swing.JLabel();
+        rSButtonMenu = new Resources.RSButtonMetro();
         jPanelDespMenu = new javax.swing.JPanel();
         jPanelAdmin = new javax.swing.JPanel();
         rSButtonRoles = new Resources.RSButtonMetro();
@@ -90,6 +92,10 @@ public class Main extends javax.swing.JFrame {
         jPanelMenu.setBackground(new java.awt.Color(0, 0, 255));
         jPanelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabelUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelUser.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelMenu.add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, 160, 20));
+
         rSButtonMenu.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menu.png"))); // NOI18N
         rSButtonMenu.setColorHover(new java.awt.Color(255, 255, 255));
@@ -102,10 +108,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelMenu.add(rSButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
-
-        jLabelUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabelUser.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelMenu.add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, 160, 20));
 
         jDesktopPaneFondo.add(jPanelMenu);
         jPanelMenu.setBounds(-3, -1, 1270, 40);
