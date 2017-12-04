@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfaces;
+package signo;
 
-import Resources.Connection;
 import java.awt.event.ItemEvent;
 import java.sql.ResultSet;
 import javax.swing.DefaultComboBoxModel;
@@ -71,29 +70,36 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
         btnRegister = new javax.swing.JButton();
         cboSubjects = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        lbTeachers = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        lbTeachers = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Notas por actividad");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel1.setText("Docente");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 30, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel2.setText("Grupo");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 83, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel3.setText("Materia");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 136, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 243, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel5.setText("Logro");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 189, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel6.setText("Actividades");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 246, -1, -1));
 
         tbData.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbData.setModel(new javax.swing.table.DefaultTableModel(
@@ -109,6 +115,8 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tbData);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 293, 397, 110));
+
         cboGroup.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cboGroupItemStateChanged(evt);
@@ -119,6 +127,7 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
                 cboGroupActionPerformed(evt);
             }
         });
+        getContentPane().add(cboGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 172, -1));
 
         cboAchievements.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         cboAchievements.addItemListener(new java.awt.event.ItemListener() {
@@ -126,6 +135,7 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
                 cboAchievementsItemStateChanged(evt);
             }
         });
+        getContentPane().add(cboAchievements, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 183, 172, -1));
 
         cboActivity.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         cboActivity.addItemListener(new java.awt.event.ItemListener() {
@@ -133,6 +143,7 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
                 cboActivityItemStateChanged(evt);
             }
         });
+        getContentPane().add(cboActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 172, -1));
 
         btnRegister.setText("REGISTRAR");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -140,101 +151,21 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 436, -1, -1));
 
         cboSubjects.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cboSubjectsItemStateChanged(evt);
             }
         });
+        getContentPane().add(cboSubjects, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 132, 172, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-
-        lbTeachers.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jButton1.setText("PDF");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jLabel2)
-                        .addGap(78, 78, 78)
-                        .addComponent(cboGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jLabel3)
-                        .addGap(69, 69, 69)
-                        .addComponent(cboSubjects, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jLabel5)
-                        .addGap(80, 80, 80)
-                        .addComponent(cboAchievements, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel4)
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel6)
-                        .addGap(48, 48, 48)
-                        .addComponent(cboActivity, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(btnRegister)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(43, 43, 43))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel2))
-                    .addComponent(cboGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel3))
-                    .addComponent(cboSubjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel5))
-                    .addComponent(cboAchievements, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel6))
-                    .addComponent(cboActivity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegister)
-                    .addComponent(jButton1))
-                .addGap(4, 4, 4))
-        );
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 436, -1, -1));
+        getContentPane().add(lbTeachers, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 172, 16));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -403,13 +334,13 @@ void loadUser(int code){
     try {
         ResultSet rs = con.consultDB("SELECT CONCAT(usu.PrimerNombre, ' ', "
                 + "usu.PrimerApellido) Name FROM usuario usu, administrador a " +
-                  "WHERE usu.NUIP = a.Codigo AND a.Codigo = "+ code);
+                  "WHERE usu.NUIP = a.Codigo AND a.Activo = 1 AND a.Codigo = "+ code);
         if(rs.next()){
             cboGroup.removeAllItems();
             jLabel1.setText("Admin");
             lbTeachers.setText(rs.getString("Name"));
             try {
-                ResultSet res = con.consultDB("SELECT count(*) conteo FROM grupo");
+                ResultSet res = con.consultDB("SELECT count(*) conteo FROM grupo WHERE Activo = 1");
             if(res.next()){
             int num = res.getInt("conteo");
             idGroup = new String[num+1];            
@@ -425,7 +356,6 @@ void loadUser(int code){
             while(resul.next()){                
                 idGroup[i] = resul.getString("idGrupo");                
                 model3.addElement(resul.getString("Nombre"));
-                System.out.println(idGroup[i]);
                 i++;        
             }
         }else{
@@ -717,11 +647,13 @@ void disableCombo(){
  */
 void loadTeacher(int id){
     try {
-        ResultSet rs = con.consultDB("SELECT CONCAT(PrimerNombre, ' '"
-                + " , PrimerApellido ) Nombre "
-                + "FROM Usuario WHERE NUIP = "+id);
+        ResultSet rs = con.consultDB("SELECT CONCAT(u.PrimerNombre, ' '"
+                + " , u.PrimerApellido ) Nombre "
+                + "FROM Usuario u INNER JOIN Docente d "
+                + "ON u.NUIP = d.Codigo "
+                + "WHERE d.Codigo = "+id);
         if(rs.next()){
-            jLabel8.setText(rs.getString("Nombre"));
+            lbTeachers.setText(rs.getString("Nombre"));
         }
     } catch (Exception e) {
     }
