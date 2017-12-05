@@ -99,6 +99,7 @@ public class Reports extends javax.swing.JInternalFrame {
         jButtonDocente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jButtonSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
         jButtonSalir.setText("SALIR");
         jButtonSalir.setBorder(null);

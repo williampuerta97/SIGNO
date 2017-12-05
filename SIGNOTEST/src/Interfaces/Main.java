@@ -51,8 +51,6 @@ public class Main extends javax.swing.JFrame {
             }else if (rol==4) {
                 
             }
-        /*OCULTACION DE MENU ACORDION
-        Animacion.Animacion.subir(0, -80, 0, 80, jPanelAdmin);*/
     }
 
     @SuppressWarnings("unchecked")
@@ -65,10 +63,12 @@ public class Main extends javax.swing.JFrame {
         jLabelUser = new javax.swing.JLabel();
         rSButtonMenu = new Resources.RSButtonMetro();
         jPanelDespMenu = new javax.swing.JPanel();
+        rSButtonMetroGAdmin = new Resources.RSButtonMetro();
         jPanelAdmin = new javax.swing.JPanel();
         rSButtonRoles = new Resources.RSButtonMetro();
         rSButtonReportes = new Resources.RSButtonMetro();
         rSButtonInactivos = new Resources.RSButtonMetro();
+        rSButtonMetroGAcadem = new Resources.RSButtonMetro();
         jPanelAcademic = new javax.swing.JPanel();
         rSButtonInactivosAsignatura = new Resources.RSButtonMetro();
         rSButtonInactivosGrados = new Resources.RSButtonMetro();
@@ -77,8 +77,6 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosNota = new Resources.RSButtonMetro();
         rSButtonInactivosPeriodo = new Resources.RSButtonMetro();
         rSButtonInactivosEvento = new Resources.RSButtonMetro();
-        rSButtonMetroGAdmin = new Resources.RSButtonMetro();
-        rSButtonMetroGAcadem = new Resources.RSButtonMetro();
         jButtonSalir = new javax.swing.JButton();
 
         jMenu2.setText("jMenu2");
@@ -117,7 +115,13 @@ public class Main extends javax.swing.JFrame {
         jPanelDespMenu.setBackground(new java.awt.Color(255, 255, 255));
         jPanelDespMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanelAdmin.setBackground(new java.awt.Color(204, 0, 0));
+        rSButtonMetroGAdmin.setBackground(new java.awt.Color(0, 0, 255));
+        rSButtonMetroGAdmin.setText("G. ADMINISTRATIVA");
+        rSButtonMetroGAdmin.setColorHover(new java.awt.Color(0, 0, 255));
+        rSButtonMetroGAdmin.setColorNormal(new java.awt.Color(0, 0, 255));
+        jPanelDespMenu.add(rSButtonMetroGAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
+
+        jPanelAdmin.setBackground(new java.awt.Color(255, 255, 255));
         jPanelAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rSButtonRoles.setBackground(new java.awt.Color(255, 255, 255));
@@ -131,11 +135,6 @@ public class Main extends javax.swing.JFrame {
         rSButtonRoles.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonRoles.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonRoles.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        rSButtonRoles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonRolesActionPerformed(evt);
-            }
-        });
         jPanelAdmin.add(rSButtonRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, 40));
 
         rSButtonReportes.setForeground(new java.awt.Color(0, 0, 0));
@@ -165,9 +164,15 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivos.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivos.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivos.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelAdmin.add(rSButtonInactivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 180, 40));
+        jPanelAdmin.add(rSButtonInactivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 180, 40));
 
         jPanelDespMenu.add(jPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 150));
+
+        rSButtonMetroGAcadem.setBackground(new java.awt.Color(0, 0, 255));
+        rSButtonMetroGAcadem.setText("G. ACADEMICA");
+        rSButtonMetroGAcadem.setColorHover(new java.awt.Color(0, 0, 255));
+        rSButtonMetroGAcadem.setColorNormal(new java.awt.Color(0, 0, 255));
+        jPanelDespMenu.add(rSButtonMetroGAcadem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 180, 50));
 
         jPanelAcademic.setOpaque(false);
         jPanelAcademic.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -273,23 +278,6 @@ public class Main extends javax.swing.JFrame {
 
         jPanelDespMenu.add(jPanelAcademic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 180, 380));
 
-        rSButtonMetroGAdmin.setBackground(new java.awt.Color(0, 0, 255));
-        rSButtonMetroGAdmin.setText("G. ADMINISTRATIVA");
-        rSButtonMetroGAdmin.setColorHover(new java.awt.Color(0, 0, 255));
-        rSButtonMetroGAdmin.setColorNormal(new java.awt.Color(0, 0, 255));
-        rSButtonMetroGAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonMetroGAdminActionPerformed(evt);
-            }
-        });
-        jPanelDespMenu.add(rSButtonMetroGAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 50));
-
-        rSButtonMetroGAcadem.setBackground(new java.awt.Color(0, 0, 255));
-        rSButtonMetroGAcadem.setText("G. ACADEMICA");
-        rSButtonMetroGAcadem.setColorHover(new java.awt.Color(0, 0, 255));
-        rSButtonMetroGAcadem.setColorNormal(new java.awt.Color(0, 0, 255));
-        jPanelDespMenu.add(rSButtonMetroGAcadem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 180, 50));
-
         jDesktopPaneFondo.add(jPanelDespMenu);
         jPanelDespMenu.setBounds(0, 40, 180, 630);
 
@@ -336,10 +324,6 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_rSButtonMenuActionPerformed
 
-    private void rSButtonRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRolesActionPerformed
-
-    }//GEN-LAST:event_rSButtonRolesActionPerformed
-
     private void rSButtonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonReportesActionPerformed
 
         try {
@@ -374,24 +358,6 @@ public class Main extends javax.swing.JFrame {
         jDesktopPaneFondo.add(entDeg);
     }//GEN-LAST:event_rSButtonInactivosGradosActionPerformed
 
-    private void rSButtonMetroGAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetroGAdminActionPerformed
-        // DESPLIGUE MODO ACORDION MUNU ADMIN:
-        
-        int posicion = this.jPanelAdmin.getY();
-        if (posicion > -1) {
-            Animacion.Animacion.subir(0, -160, 2, 2, jPanelAdmin);
-            rSButtonRoles.setVisible(false);
-            rSButtonReportes.setVisible(false);
-            rSButtonInactivos.setVisible(false);
-            Animacion.Animacion.subir(0, -2, 2, 2, rSButtonMetroGAcadem);
-        }else{
-            Animacion.Animacion.bajar(0, 50, 2, 2, jPanelAdmin);
-            rSButtonRoles.setVisible(true);
-            rSButtonReportes.setVisible(true);
-            rSButtonInactivos.setVisible(true);   
-        }
-    }//GEN-LAST:event_rSButtonMetroGAdminActionPerformed
-
 //   public static void main(String args[]) {
 //      
 //       /* Set the Nimbus look and feel */
@@ -421,6 +387,7 @@ public class Main extends javax.swing.JFrame {
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
 //                new Principal().setVisible(true);
+    
 //            }
 //        });
 //    }
