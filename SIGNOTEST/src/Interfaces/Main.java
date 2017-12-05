@@ -400,6 +400,7 @@ public class Main extends javax.swing.JFrame {
             else {
             Animacion.Animacion.bajar(-160, 50, 1, 10 , jPanelAdmin);
             Animacion.Animacion.bajar(50, 200, 1, 10 , rSButtonMetroGAcadem);
+            Animacion.Animacion.bajar(-250, 100, 1, 10 , jPanelAcademic);
             jPanelAdmin.setVisible(true);
             }     
     }//GEN-LAST:event_rSButtonMetroGAdminActionPerformed
