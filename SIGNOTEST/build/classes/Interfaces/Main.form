@@ -182,7 +182,7 @@
                 <Property name="useNullLayout" type="boolean" value="true"/>
               </Layout>
               <SubComponents>
-                <Component class="Resources.RSButtonMetro" name="rSButtonRoles">
+                <Component class="Resources.RSButtonMetro" name="rSButtonRegistro">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -193,7 +193,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/imagenes/roles.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="   PERFILES  "/>
+                    <Property name="text" type="java.lang.String" value="   REGISTRO  "/>
                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="cc" red="cc" type="rgb"/>
                     </Property>
@@ -212,9 +212,12 @@
                     <Property name="horizontalAlignment" type="int" value="10"/>
                     <Property name="horizontalTextPosition" type="int" value="2"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonRegistroActionPerformed"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="0" y="10" width="180" height="40"/>
+                      <AbsoluteConstraints x="0" y="0" width="180" height="40"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -250,7 +253,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="0" y="60" width="180" height="40"/>
+                      <AbsoluteConstraints x="0" y="50" width="180" height="40"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -283,7 +286,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="0" y="110" width="180" height="40"/>
+                      <AbsoluteConstraints x="0" y="100" width="180" height="40"/>
                     </Constraint>
                   </Constraints>
                 </Component>

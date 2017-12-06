@@ -25,7 +25,7 @@ public class Main extends javax.swing.JFrame {
         jPanelAcademic.setLayout(null);
         //System.out.println(rol+"-"+id+"-"+user);
         this.setLocationRelativeTo(null);
-        this.rSButtonRoles.setSelected(true);
+        this.rSButtonRegistro.setSelected(true);
        /*ESTABLECER EL FONDO DE LA HOJA*/
         imagen1 = new File ("src/Img/fond.jpg");
          try{                
@@ -72,7 +72,7 @@ public class Main extends javax.swing.JFrame {
         jPanelDespMenu = new javax.swing.JPanel();
         rSButtonMetroGAdmin = new Resources.RSButtonMetro();
         jPanelAdmin = new javax.swing.JPanel();
-        rSButtonRoles = new Resources.RSButtonMetro();
+        rSButtonRegistro = new Resources.RSButtonMetro();
         rSButtonReportes = new Resources.RSButtonMetro();
         rSButtonInactivos = new Resources.RSButtonMetro();
         jPanelGFAcademico = new javax.swing.JPanel();
@@ -141,19 +141,24 @@ public class Main extends javax.swing.JFrame {
         jPanelAdmin.setBackground(new java.awt.Color(255, 255, 255));
         jPanelAdmin.setLayout(null);
 
-        rSButtonRoles.setBackground(new java.awt.Color(255, 255, 255));
-        rSButtonRoles.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonRoles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/roles.png"))); // NOI18N
-        rSButtonRoles.setText("   PERFILES  ");
-        rSButtonRoles.setColorHover(new java.awt.Color(204, 204, 204));
-        rSButtonRoles.setColorNormal(new java.awt.Color(255, 255, 255));
-        rSButtonRoles.setColorPressed(new java.awt.Color(255, 255, 255));
-        rSButtonRoles.setColorTextNormal(new java.awt.Color(0, 0, 0));
-        rSButtonRoles.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        rSButtonRoles.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        rSButtonRoles.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelAdmin.add(rSButtonRoles);
-        rSButtonRoles.setBounds(0, 10, 180, 40);
+        rSButtonRegistro.setBackground(new java.awt.Color(255, 255, 255));
+        rSButtonRegistro.setForeground(new java.awt.Color(0, 0, 0));
+        rSButtonRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/roles.png"))); // NOI18N
+        rSButtonRegistro.setText("   REGISTRO  ");
+        rSButtonRegistro.setColorHover(new java.awt.Color(204, 204, 204));
+        rSButtonRegistro.setColorNormal(new java.awt.Color(255, 255, 255));
+        rSButtonRegistro.setColorPressed(new java.awt.Color(255, 255, 255));
+        rSButtonRegistro.setColorTextNormal(new java.awt.Color(0, 0, 0));
+        rSButtonRegistro.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        rSButtonRegistro.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        rSButtonRegistro.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        rSButtonRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonRegistroActionPerformed(evt);
+            }
+        });
+        jPanelAdmin.add(rSButtonRegistro);
+        rSButtonRegistro.setBounds(0, 0, 180, 40);
 
         rSButtonReportes.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reportes.png"))); // NOI18N
@@ -171,7 +176,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAdmin.add(rSButtonReportes);
-        rSButtonReportes.setBounds(0, 60, 180, 40);
+        rSButtonReportes.setBounds(0, 50, 180, 40);
 
         rSButtonInactivos.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inactivo.png"))); // NOI18N
@@ -184,7 +189,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivos.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivos.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanelAdmin.add(rSButtonInactivos);
-        rSButtonInactivos.setBounds(0, 110, 180, 40);
+        rSButtonInactivos.setBounds(0, 100, 180, 40);
 
         jPanelDespMenu.add(jPanelAdmin);
         jPanelAdmin.setBounds(0, 50, 180, 150);
@@ -428,6 +433,16 @@ public class Main extends javax.swing.JFrame {
             } 
     }//GEN-LAST:event_rSButtonMetroGAcademActionPerformed
 
+    private void rSButtonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRegistroActionPerformed
+        // TODO add your handling code here:
+        
+        RegisterUser regsuser = new RegisterUser();
+        regsuser.setVisible(true);
+        regsuser.setSize(400, 550);
+        regsuser.setLocation(100, 300);
+        jDesktopPaneFondo.add(regsuser);
+    }//GEN-LAST:event_rSButtonRegistroActionPerformed
+
 //   public static void main(String args[]) {
 //      
 //       /* Set the Nimbus look and feel */
@@ -483,7 +498,7 @@ public class Main extends javax.swing.JFrame {
     private Resources.RSButtonMetro rSButtonMenu;
     private Resources.RSButtonMetro rSButtonMetroGAcadem;
     private Resources.RSButtonMetro rSButtonMetroGAdmin;
+    private Resources.RSButtonMetro rSButtonRegistro;
     private Resources.RSButtonMetro rSButtonReportes;
-    private Resources.RSButtonMetro rSButtonRoles;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,16 +30,16 @@ public class RegisterUser extends javax.swing.JInternalFrame {
         
     public RegisterUser() {
         initComponents();
+        setSize(1248,663);
+        setLocation(0,36);
+        
         cone = new Connection();
         cargarComboPais();
         cargarComboPais2();
         cargarComboExpedicion();
         cargarComboRol();
         cargarComboGroup ();
-//        cargarComboDepartamento();
-//        cargarComboDepartamento2();
-//        cargarComboCiudad();
-//        cargarComboCiudad2();
+        
     }
 
     /**
