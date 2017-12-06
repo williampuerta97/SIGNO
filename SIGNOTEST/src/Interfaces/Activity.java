@@ -1,4 +1,7 @@
+package Interfaces;
 
+
+import Resources.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.util.*;
@@ -48,7 +51,7 @@ public class Activity extends javax.swing.JInternalFrame {
 //        String fila[] = new String[5];
 //        
 //        try {
-//            ResultSet rs = cone.consultDB("SELECT idGrupo, Director, Jornada, Nombre, Activo FROM grupo");
+//            ResultSet rs = con.consultDB("SELECT idGrupo, Director, Jornada, Nombre, Activo FROM grupo");
 //            
 //            while (rs.next()) {
 //                fila[0] = rs.getString("idGrupo");
@@ -69,7 +72,7 @@ public class Activity extends javax.swing.JInternalFrame {
         String fila[] = new String[8];
         
         try {
-            ResultSet rs = cone.consultDB("SELECT idActividad, Nombre, Descripcion, Estado, Fecha_Entrega, Grupo_Id, Logro_Id, Porcentaje FROM actividad WHERE  Estado = 1 ");
+            ResultSet rs = con.consultDB("SELECT idActividad, Nombre, Descripcion, Estado, Fecha_Entrega, Grupo_Id, Logro_Id, Porcentaje FROM actividad WHERE  Estado = 1 ");
             
             while (rs.next()) {
                 fila[0] = rs.getString("idActividad");
@@ -93,7 +96,7 @@ public class Activity extends javax.swing.JInternalFrame {
           
         try {
             //seleccionar el nombre del grupo 
-            ResultSet rs= cone.consultDB("SELECT idGrupo FROM grupo");
+            ResultSet rs= con.consultDB("SELECT idGrupo FROM grupo");
             while(rs.next()){
                 //Group.addItem(rs.getObject("Nombre"));
                Group.addItem(rs.getString("idGrupo"));
@@ -108,7 +111,7 @@ public class Activity extends javax.swing.JInternalFrame {
     public void comboMateria(){
         try {
             
-            ResultSet rs= cone.consultDB("SELECT Nombre FROM materia");
+            ResultSet rs= con.consultDB("SELECT Nombre FROM materia");
             while(rs.next()){
                 
                 materia.addItem(rs.getString("Nombre"));
@@ -122,7 +125,7 @@ public class Activity extends javax.swing.JInternalFrame {
     public void comboPeriodo(){
         try {
             
-            ResultSet rs= cone.consultDB("SELECT Nombre FROM periodo");
+            ResultSet rs= con.consultDB("SELECT Nombre FROM periodo");
             while(rs.next()){
                 
                 periodo.addItem(rs.getString("Nombre"));
@@ -136,7 +139,7 @@ public class Activity extends javax.swing.JInternalFrame {
     public void comboLogros(){
         try {
             
-            ResultSet rs= cone.consultDB("SELECT idLogro FROM logro");
+            ResultSet rs= con.consultDB("SELECT idLogro FROM logro");
             while(rs.next()){
                 
                 logros.addItem(rs.getString("idLogro"));
@@ -149,7 +152,7 @@ public class Activity extends javax.swing.JInternalFrame {
     
     public void cargarId(){        
         try {
-            ResultSet rs = cone.consultDB("SELECT max(idActividad) FROM actividad");
+            ResultSet rs = con.consultDB("SELECT max(idActividad) FROM actividad");
              
             if (rs.next()){
                 lblId.setText((rs.getInt("max(idActividad)")+1)+"");
@@ -161,7 +164,7 @@ public class Activity extends javax.swing.JInternalFrame {
     }
     
     public int porcent(){
-        ResultSet rs = cone.consultDB("select sum(Porcentaje) from actividad");
+        ResultSet rs = con.consultDB("select sum(Porcentaje) from actividad");
         int temp=0;
         try {
             if(rs.next())
@@ -552,11 +555,11 @@ public class Activity extends javax.swing.JInternalFrame {
         SimpleDateFormat form = new SimpleDateFormat(formato);
         String fecha = String.valueOf(form.format(dato));
         System.out.println(id + "," + nom + "," + des + "," + porce + "," + grupo + "," + logro + "," + dato);
-        //cone.modifyDB("INSERT INTO actividades VALUES (" + ',' + nom + ',' + desc + ',' + porce + ',' + fecha);
+        //con.modifyDB("INSERT INTO actividades VALUES (" + ',' + nom + ',' + desc + ',' + porce + ',' + fecha);
         
       //  '"+txtName.getText()+"'
         try {
-            cone.modifyDB("INSERT INTO actividad "
+            con.modifyDB("INSERT INTO actividad "
                 + "VALUES('" + id + "','" + nom + "','" + des + "','" + 1 + "','" + fecha + "','" + grupo + "','" + logro + "','" + porce + "')");
             
             JOptionPane.showMessageDialog(rootPane, "Dato ingresado");
@@ -567,7 +570,7 @@ public class Activity extends javax.swing.JInternalFrame {
         
         /*try {
             PreparedStatement pst;
-            pst = cone.PreparedStatement(sql);
+            pst = con.PreparedStatement(sql);
             pst.setString(1, id);
             pst.setString(2, nom);
             pst.setString(3, des);
@@ -605,7 +608,7 @@ public class Activity extends javax.swing.JInternalFrame {
         String value = jTable1.getValueAt(fila, 0).toString();
         
         if (fila >= 0) {
-            cone.modifyDB("UPDATE actividad SET Estado = 0 WHERE idActividad= '" + value + "'");
+            con.modifyDB("UPDATE actividad SET Estado = 0 WHERE idActividad= '" + value + "'");
             JOptionPane.showMessageDialog(rootPane, "Dato eliminado");
         }
         
