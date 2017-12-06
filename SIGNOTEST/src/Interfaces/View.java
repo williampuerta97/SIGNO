@@ -7,13 +7,13 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class View extends javax.swing.JInternalFrame {
-    ConexionDB con;
+    Connection con;
     DefaultTableModel Modelo;
     
     
     public View() {
         initComponents();
-        con=new ConexionDB();
+        con=new Connection();
         ingreso();
 
         //creacion de columnas         

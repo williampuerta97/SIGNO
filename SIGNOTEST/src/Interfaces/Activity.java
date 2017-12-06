@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class Activity extends javax.swing.JInternalFrame {
 
-    ConexionDB cone;
+    Connection con;
     DefaultTableModel model;
     int temp2 = 0;
     
         
    public Activity() {
         initComponents();
-        cone = new ConexionDB();
+        con = new Connection();
         consult();
         cargarComboGrupo();
         comboMateria();

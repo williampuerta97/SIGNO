@@ -18,13 +18,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Period extends javax.swing.JInternalFrame {
     
-    ConexionDB cone;
+    Connection con;
     DefaultTableModel modelo;
     int temp2 = 0;
     
     public Period() {
         initComponents();
-        cone = new ConexionDB();
+        con = new Connection();
         loadPercent();   
         consultDB();
     }
@@ -48,7 +48,7 @@ public class Period extends javax.swing.JInternalFrame {
         String fila[] = new String[3];
         
         try {
-            ResultSet rs = cone.consultDB("SELECT idperiodo, Nombre, Porcentaje FROM periodo");
+            ResultSet rs = con.consultDB("SELECT idperiodo, Nombre, Porcentaje FROM periodo");
 
             while (rs.next()) {
                 fila[0] = rs.getString("idperiodo");
@@ -68,7 +68,7 @@ public class Period extends javax.swing.JInternalFrame {
     }
     
     public int loadPercent(){
-        ResultSet rs = cone.consultDB("select sum(porcentaje) from periodo");
+        ResultSet rs = con.consultDB("select sum(porcentaje) from periodo");
         int temp=0;
         try {
             if(rs.next())
@@ -235,7 +235,7 @@ public class Period extends javax.swing.JInternalFrame {
         int temp2 = loadPercent();
         int percent = (int) spiPercent.getValue();
         if (percent <= temp2) {
-             cone.modifyDB("insert into periodo( idperiodo, Nombre, Porcentaje) values(null, '"+txtName.getText()+"',"+percent+")");
+             con.modifyDB("insert into periodo( idperiodo, Nombre, Porcentaje) values(null, '"+txtName.getText()+"',"+percent+")");
          //  cone.modifyDB("insert into periodo( idperiodo, Nombre, Porcentaje) values(null, "+txtName.getText()+","+percent+")");  
            consultDB();
              JOptionPane.showMessageDialog(null, "Se agregó el dato exitosamente");
@@ -254,7 +254,7 @@ public class Period extends javax.swing.JInternalFrame {
         String value = jTable1.getValueAt(fila, 0).toString();
         
         if (fila >= 0) {
-            cone.modifyDB("DELETE FROM periodo WHERE idperiodo= '" + value + "'");
+            con.modifyDB("DELETE FROM periodo WHERE idperiodo= '" + value + "'");
             JOptionPane.showMessageDialog(rootPane, "Dato eliminado");
         }
         
