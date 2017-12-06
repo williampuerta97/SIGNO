@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Resources.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -15,14 +16,15 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author unicuces
+ * @author Grupo diseño
+ * @version 1.0
  */
 public class Observations extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form proyecto
      */
-    Resources.Connection con;
+    Connection con;
     DefaultComboBoxModel model1, model2, model3;
     DefaultTableModel tbModel1, tbModel2;
     /**
@@ -34,7 +36,7 @@ public class Observations extends javax.swing.JInternalFrame {
 
     public Observations() {
         initComponents();
-        con = new Resources.Connection();
+        con = new Connection();
         loadTables("", null, null);
         loadGroup(Main.id);
         disableCombo();
