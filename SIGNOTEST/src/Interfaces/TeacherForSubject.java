@@ -1,4 +1,3 @@
-package Interfaces;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,182 +5,173 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import Resources.Connection;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author andre
  */
 public class TeacherForSubject extends javax.swing.JInternalFrame {
 
-     /**
- * Clase principal para realizar la conexiÃ³n con las tablas grupos,materia y docente
- * <pre>gestion de docentes por materia,por grupo ;</pre>
- * @author Grupo de base de datos
- * @version 1.0 22-11-2017
- */
-    
-     Connection con;
-     DefaultTableModel modelo;
-     
+    /**
+     * Clase principal para realizar la conexiÃ³n con las tablas grupos,materia
+     * y docente
+     * <pre>gestion de docentes por materia,por grupo ;</pre>
+     *
+     * @author Grupo de base de datos
+     * @version 1.0 22-11-2017
+     */
+    ConexionDB con;
+    DefaultTableModel modelo;
+
     public TeacherForSubject() {
         initComponents();
-        
-         con=new Connection();
-   Consult();
-   chargerSubject();
-   chargerGroup();
-   chargerTeacher();
-   btnUpdate.setVisible(false);
+
+        con = new ConexionDB();
+        Consult("");
+        chargerSubject();
+        chargerGroup();
+        chargerTeacher();
+        btnUpdate.setVisible(false);
     }
 
-        
-        public void chargerSubject (){
-  /**
- * Clase utilizada para realizar la conexiÃ³n con la tabla materia de la base de datos utilizando
- * mysql como gestor de base de datos.
- * <pre>SELECT Nombre,id FROM materia;</pre>
- * @author Grupo de base de datos
- * @version 1.0 22-11-2017 
- */
+    public void chargerSubject() {
+        /**
+         * Clase utilizada para realizar la conexiÃ³n con la tabla materia de la
+         * base de datos utilizando mysql como gestor de base de datos.
+         * <pre>SELECT Nombre,id FROM materia;</pre>
+         *
+         * @author Grupo de base de datos
+         * @version 1.0 22-11-2017
+         */
         try {
             //seleccionar el nombre del grupo 
-            ResultSet rs= con.consultDB("SELECT idMateria FROM materia");
-            while(rs.next()){
+            ResultSet rs = con.consultDB("SELECT idMateria FROM materia");
+            while (rs.next()) {
                 cboSubject.addItem(rs.getString("idMateria"));
-                                            
-            }   } catch (SQLException ex) {
-            Logger.getLogger(TeacherForSubject.class.getName()).log(Level.SEVERE, null, ex);
-            
-            }
-        }
-        
-        
-         public void chargerGroup (){
-  /**
- * Clase utilizada para realizar la conexiÃ³n con la tabla grupo de la base de datos utilizando
- * mysql como gestor de base de datos.
- * <pre>SELECT id FROM grupo;</pre>
- * @author Grupo de base de datos
- * @version 1.0 22-11-2017 
- */
-        try {
-            //seleccionar el nombre del grupo 
-            ResultSet rs= con.consultDB("SELECT idGrupo FROM Grupo");
-            while(rs.next()){
-                cboGroupId.addItem(rs.getString("idGrupo"));
-                                            
-            }   } catch (SQLException ex) {
-            Logger.getLogger(TeacherForSubject.class.getName()).log(Level.SEVERE, null, ex);
-            
-            }
-        }
-         
-         
-           public void chargerTeacher (){
-  /**
- * Clase utilizada para realizar la conexiÃ³n con la tabla Docente de la base de datos utilizando
- * mysql como gestor de base de datos.
- * <pre>SELECT id FROM grupo;</pre>
- * @author Grupo de base de datos
- * @version 1.0 22-11-2017 
- */
-        try {
-            //seleccionar el nombre del grupo 
-            ResultSet rs= con.consultDB("SELECT Codigo FROM docente");
-            while(rs.next()){
-                cboTeacherId.addItem(rs.getString("Codigo"));
-                                            
-            }   } catch (SQLException ex) {
-            Logger.getLogger(TeacherForSubject.class.getName()).log(Level.SEVERE, null, ex);
-            
-            }
-        }
-           
-           
-           
-            public void Consult(){
-      
-        try{
-            String titulos[]={ "Docente_id","Grupo_id","Materia_id"};
-            String fila []= new String [3];
-            
-            modelo=new DefaultTableModel(null,titulos);
-            
-            
-         ResultSet rs =  con.consultDB("SELECT *  FROM docente_materia_grupo " );
-          
 
-           while (rs.next()){
-               fila [0]= rs.getString("Docente_id");
-               fila [1]= rs.getString("Grupo_id");
-               fila [2]= rs.getString("Materia_id");
-               
-                
-                      
-               
-                    
-               
-              modelo.addRow(fila);
-       
-                         
-           }
-           tbTeachers.setModel(modelo);
-          // cboCurso.setModel(modelo);
-          // btnActualizar.setVisible(true);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TeacherForSubject.class.getName()).log(Level.SEVERE, null, ex);
+
         }
-        
-        catch(Exception e){
-            System.out.println("Error"+e);
-            
-           
-        }      
-           
-        
     }
-            
-             void Search(String param){
-               
-        try{
-              String titulos[]={ "Docente_id","Grupo_id","Materia_id"};
-            String fila []= new String [3];
-            
-            modelo=new DefaultTableModel(null,titulos);
-            
-            
-            //ResultSet rs =st.executeQuery("SELECT * FROM cursos where CONCAT (nomCurso,'',codEst) LIKE '%"+param+"%'" );
-           //                                                                                ResultSet rs =conex.consultaBD("SELECT nombreCurso,codCurso FROM cursos where CONCAT (nombreCurso,'',codCurso,'') LIKE '%"+param+"%'" );
-            //ResultSet rs =  conex.consultaBD("SELECT cur.codCurso,cur.nombreCurso,doce.codDocente,doce.nomDocente FROM cursos as cur LEFT JOIN docentes as doce ON doce.codCurso=cur.codCurso where (nombreCurso) LIKE '%"+param+"%'" );
-          // ResultSet rs =  con.consultDB("SELECT e.codEst,e.nomEst,c.codCurso,c.nombreCurso  FROM estudiantes e INNER JOIN matriculas m ON e.codEst=m.codEst INNER JOIN cursos as c ON m.codCurso=c.codCurso where (e.codEst) LIKE '%"+param+"%'" );
-             ResultSet rs =  con.consultDB("SELECT * FROM docente_materia_grupo WHERE (Docente_id) LIKE '%"+param+"%'" );
-           while (rs.next()){
-                 fila [0]= rs.getString("Docente_id");
-               fila [1]= rs.getString("Grupo_id");
-               fila [2]= rs.getString("Materia_id");
-               
-               
-               
-               
-                             
-               
-              modelo.addRow(fila);
-       
-                         
-           }
-           tbTeachers.setModel(modelo);
+
+    public void chargerGroup() {
+        /**
+         * Clase utilizada para realizar la conexiÃ³n con la tabla grupo de la
+         * base de datos utilizando mysql como gestor de base de datos.
+         * <pre>SELECT id FROM grupo;</pre>
+         *
+         * @author Grupo de base de datos
+         * @version 1.0 22-11-2017
+         */
+        try {
+            //seleccionar el nombre del grupo 
+            ResultSet rs = con.consultDB("SELECT idGrupo FROM Grupo");
+            while (rs.next()) {
+                cboGroupId.addItem(rs.getString("idGrupo"));
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TeacherForSubject.class.getName()).log(Level.SEVERE, null, ex);
+
         }
-        
-        catch(Exception e){
-            System.out.println("Error"+e);
-            
-           
-        } 
-       }
+    }
+
+    public void chargerTeacher() {
+        /**
+         * Clase utilizada para realizar la conexiÃ³n con la tabla Docente de la
+         * base de datos utilizando mysql como gestor de base de datos.
+         * <pre>SELECT id FROM grupo;</pre>
+         *
+         * @author Grupo de base de datos
+         * @version 1.0 22-11-2017
+         */
+        try {
+            //seleccionar el nombre del grupo 
+            ResultSet rs = con.consultDB("SELECT Codigo FROM docente");
+            while (rs.next()) {
+                cboTeacherId.addItem(rs.getString("Codigo"));
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TeacherForSubject.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+    }
+
+    public void Consult(String value) {
+
+        try {
+            String titulos[] = {"Docente", "Materia", "Grupo"};
+            String fila[] = new String[3];
+
+            modelo = new DefaultTableModel(null, titulos);
+
+            ResultSet rs = con.consultDB("SELECT CONCAT(u.PrimerNombre, ' ', u.PrimerApellido) Nombre, m.Nombre, g.Nombre "
+                    + "FROM usuario u "
+                    + "INNER JOIN Docente d "
+                    + "ON u.NUIP = d.Codigo "
+                    + "INNER JOIN Docente_materia_grupo dmg "
+                    + "ON d.Codigo = dmg.Docente_id "
+                    + "INNER JOIN Materia m "
+                    + "ON dmg.Materia_id = m.idMateria "
+                    + "INNER JOIN Grupo g "
+                    + "ON dmg.Grupo_id = g.idGrupo "
+                    + "WHERE CONCAT(u.PrimerNombre, ' ', u.PrimerApellido, ' ', m.Nombre, ' ', g.Nombre) LIKE '%" + value + "%' "
+                    + "AND d.Activo = 1 AND g.Activo = 1 AND m.Activo = 1");
+
+            while (rs.next()) {
+                fila[0] = rs.getString("Nombre");
+                fila[1] = rs.getString("m.Nombre");
+                fila[2] = rs.getString("g.Nombre");
+
+                modelo.addRow(fila);
+
+            }
+            tbTeachers.setModel(modelo);
+            // cboCurso.setModel(modelo);
+            // btnActualizar.setVisible(true);
+        } catch (Exception e) {
+            System.out.println("Error" + e);
+
+        }
+
+    }
+
+    void Search(String param) {
+
+        try {
+            String titulos[] = {"Docente_id", "Grupo_id", "Materia_id"};
+            String fila[] = new String[3];
+
+            modelo = new DefaultTableModel(null, titulos);
+
+            //ResultSet rs =st.executeQuery("SELECT * FROM cursos where CONCAT (nomCurso,'',codEst) LIKE '%"+param+"%'" );
+            //                                                                                ResultSet rs =conex.consultaBD("SELECT nombreCurso,codCurso FROM cursos where CONCAT (nombreCurso,'',codCurso,'') LIKE '%"+param+"%'" );
+            //ResultSet rs =  conex.consultaBD("SELECT cur.codCurso,cur.nombreCurso,doce.codDocente,doce.nomDocente FROM cursos as cur LEFT JOIN docentes as doce ON doce.codCurso=cur.codCurso where (nombreCurso) LIKE '%"+param+"%'" );
+            // ResultSet rs =  con.consultDB("SELECT e.codEst,e.nomEst,c.codCurso,c.nombreCurso  FROM estudiantes e INNER JOIN matriculas m ON e.codEst=m.codEst INNER JOIN cursos as c ON m.codCurso=c.codCurso where (e.codEst) LIKE '%"+param+"%'" );
+            ResultSet rs = con.consultDB("SELECT * FROM docente_materia_grupo WHERE (Docente_id) LIKE '%" + param + "%'");
+            while (rs.next()) {
+                fila[0] = rs.getString("Docente_id");
+                fila[1] = rs.getString("Grupo_id");
+                fila[2] = rs.getString("Materia_id");
+
+                modelo.addRow(fila);
+
+            }
+            tbTeachers.setModel(modelo);
+        } catch (Exception e) {
+            System.out.println("Error" + e);
+
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -228,11 +218,9 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
         setTitle("Teacher For Subject and Group");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel1.setText("Materia ID");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 70, 20));
 
         cboSubject.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -244,14 +232,11 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
                 cboSubjectActionPerformed(evt);
             }
         });
-        getContentPane().add(cboSubject, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 80, -1));
 
         lblSubjectName.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        getContentPane().add(lblSubjectName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 150, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel2.setText("Grupo ID");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 80, -1));
 
         cboGroupId.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         cboGroupId.addItemListener(new java.awt.event.ItemListener() {
@@ -259,14 +244,11 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
                 cboGroupIdItemStateChanged(evt);
             }
         });
-        getContentPane().add(cboGroupId, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 90, -1));
 
         lblGroupName.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        getContentPane().add(lblGroupName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 120, 20));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel3.setText("Docente ID");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 70, 20));
 
         cboTeacherId.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         cboTeacherId.addItemListener(new java.awt.event.ItemListener() {
@@ -274,10 +256,8 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
                 cboTeacherIdItemStateChanged(evt);
             }
         });
-        getContentPane().add(cboTeacherId, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 90, 20));
 
         lblTeacherName.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        getContentPane().add(lblTeacherName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 110, 20));
 
         tbTeachers.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         tbTeachers.setModel(new javax.swing.table.DefaultTableModel(
@@ -294,8 +274,6 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
         tbTeachers.setComponentPopupMenu(jpmTeacher);
         jScrollPane1.setViewportView(tbTeachers);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, 210));
-
         lblAssign.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         lblAssign.setText("ASIGNAR");
         lblAssign.addActionListener(new java.awt.event.ActionListener() {
@@ -303,11 +281,9 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
                 lblAssignActionPerformed(evt);
             }
         });
-        getContentPane().add(lblAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel4.setText("Buscar");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 50, 20));
 
         txtSearch.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         txtSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -320,7 +296,6 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
                 txtSearchKeyReleased(evt);
             }
         });
-        getContentPane().add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 120, -1));
 
         btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         btnUpdate.setText("ACTUALIZAR");
@@ -329,7 +304,73 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
                 btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(cboTeacherId, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(lblTeacherName, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(cboGroupId, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(lblGroupName, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(cboSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(lblSubjectName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(410, 410, 410)
+                .addComponent(btnUpdate))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(lblAssign)
+                .addGap(65, 65, 65)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboTeacherId, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTeacherName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(cboGroupId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblGroupName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboSubject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSubjectName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnUpdate)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAssign)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -339,58 +380,57 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cboSubjectActionPerformed
 
     private void cboSubjectItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboSubjectItemStateChanged
-          Connection conex2= new Connection();
-        try{
-          
-            ResultSet rs2= conex2.consultDB("SELECT Nombre FROM Materia where idMateria="+cboSubject.getSelectedItem());
-        if(rs2.next()){
-            lblSubjectName.setText(rs2.getString("Nombre"));
-        }
-        }catch(Exception e){
-            System.out.println("Error"+e);
-        
+        ConexionDB conex2 = new ConexionDB();
+        try {
+
+            ResultSet rs2 = conex2.consultDB("SELECT Nombre FROM Materia where idMateria=" + cboSubject.getSelectedItem());
+            if (rs2.next()) {
+                lblSubjectName.setText(rs2.getString("Nombre"));
             }
+        } catch (Exception e) {
+            System.out.println("Error" + e);
+
+        }
     }//GEN-LAST:event_cboSubjectItemStateChanged
 
     private void cboGroupIdItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboGroupIdItemStateChanged
-             Connection conex3= new Connection();
-        try{
-          
-            ResultSet rs2= conex3.consultDB("SELECT Nombre FROM Grupo where idGrupo="+cboGroupId.getSelectedItem());
-        if(rs2.next()){
-            lblGroupName.setText(rs2.getString("Nombre"));
-        }
-        }catch(Exception e){
-            System.out.println("Error"+e);
-        
+        ConexionDB conex3 = new ConexionDB();
+        try {
+
+            ResultSet rs2 = conex3.consultDB("SELECT Nombre FROM Grupo where idGrupo=" + cboGroupId.getSelectedItem());
+            if (rs2.next()) {
+                lblGroupName.setText(rs2.getString("Nombre"));
             }
+        } catch (Exception e) {
+            System.out.println("Error" + e);
+
+        }
     }//GEN-LAST:event_cboGroupIdItemStateChanged
 
     private void cboTeacherIdItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboTeacherIdItemStateChanged
-         Connection conex4= new Connection();
-        try{
-          
-            ResultSet rs2= conex4.consultDB("SELECT PrimerNombre from usuario u INNER JOIN rol r ON r.idRol=u.Rol_id INNER JOIN docente d ON r.idrol=d.Rol_Id where d.Codigo="+cboTeacherId.getSelectedItem());
-        if(rs2.next()){
-            lblTeacherName.setText(rs2.getString("PrimerNombre"));
-        }
-        }catch(Exception e){
-            System.out.println("Error"+e);
-        
+        ConexionDB conex4 = new ConexionDB();
+        try {
+
+            ResultSet rs2 = conex4.consultDB("SELECT PrimerNombre from usuario u INNER JOIN rol r ON r.idRol=u.Rol_id INNER JOIN docente d ON r.idrol=d.Rol_Id where d.Codigo=" + cboTeacherId.getSelectedItem());
+            if (rs2.next()) {
+                lblTeacherName.setText(rs2.getString("PrimerNombre"));
             }
+        } catch (Exception e) {
+            System.out.println("Error" + e);
+
+        }
     }//GEN-LAST:event_cboTeacherIdItemStateChanged
 
     private void lblAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblAssignActionPerformed
-      String teacher=(String)cboTeacherId.getSelectedItem();
-      String group=(String)cboGroupId.getSelectedItem(); 
-      String subject=(String)cboSubject.getSelectedItem(); 
-            
-            
-            con.modifyDB("INSERT INTO docente_materia_grupo VALUES('"+subject+"','"+group+"','"+teacher+"')");
-            JOptionPane.showMessageDialog(null, "El registro ha sido ingresado");
-           // txtNombre.setText("");
-            
-            Consult(); 
+        String teacher = (String) cboTeacherId.getSelectedItem();
+        String group = (String) cboGroupId.getSelectedItem();
+        String subject = (String) cboSubject.getSelectedItem();
+
+        con.modifyDB("INSERT INTO docente_materia_grupo VALUES('" + subject + "','" + group + "','" + teacher + "')");
+        JOptionPane.showMessageDialog(null, "El registro ha sido ingresado");
+        // txtNombre.setText("");
+
+        Consult("");
     }//GEN-LAST:event_lblAssignActionPerformed
 
     private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
@@ -398,45 +438,44 @@ public class TeacherForSubject extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSearchActionPerformed
 
     private void txtSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyReleased
-         Search(txtSearch.getText());
+        Consult(txtSearch.getText());
     }//GEN-LAST:event_txtSearchKeyReleased
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         int filaselec;
         String cod;
-          
-               
+
         // try{
-             filaselec=tbTeachers.getSelectedRow();
-             if (filaselec==-1){
-                 JOptionPane.showMessageDialog(null, "No se ha seleccionado una fila");
-             }else{
-                 
-                 DefaultTableModel modelo =(DefaultTableModel)tbTeachers.getModel();
-                 cod=(String)modelo.getValueAt(filaselec, 0);
-                 modelo.removeRow(filaselec);
-                 
-                  con.modifyDB("DELETE FROM docente_materia_grupo WHERE Docente_id='"+cod+"'");
-             JOptionPane.showMessageDialog(null, "El registro ha sido eliminado");
-                 
-             }
-              Consult();
+        filaselec = tbTeachers.getSelectedRow();
+        if (filaselec == -1) {
+            JOptionPane.showMessageDialog(null, "No se ha seleccionado una fila");
+        } else {
+
+            DefaultTableModel modelo = (DefaultTableModel) tbTeachers.getModel();
+            cod = (String) modelo.getValueAt(filaselec, 0);
+            modelo.removeRow(filaselec);
+
+            con.modifyDB("DELETE FROM docente_materia_grupo WHERE Docente_id='" + cod + "'");
+            JOptionPane.showMessageDialog(null, "El registro ha sido eliminado");
+
+        }
+        Consult("");
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
-           int filaselec;
-          
-            filaselec=tbTeachers.getSelectedRow();
-            String group=(String)modelo.getValueAt(filaselec, 1);
-            String teacher=(String)modelo.getValueAt(filaselec, 0);
-            String subject=(String)modelo.getValueAt(filaselec, 2);
-            
-            btnUpdate.setVisible(true);
-          
-              cboTeacherId.setSelectedItem(teacher);
-              cboSubject.setSelectedItem(subject);
-              cboGroupId.setSelectedItem(group);
-              
+        int filaselec;
+
+        filaselec = tbTeachers.getSelectedRow();
+        String group = (String) modelo.getValueAt(filaselec, 1);
+        String teacher = (String) modelo.getValueAt(filaselec, 0);
+        String subject = (String) modelo.getValueAt(filaselec, 2);
+
+        btnUpdate.setVisible(true);
+
+        cboTeacherId.setSelectedItem(teacher);
+        cboSubject.setSelectedItem(subject);
+        cboGroupId.setSelectedItem(group);
+
 
     }//GEN-LAST:event_ModificarActionPerformed
 
