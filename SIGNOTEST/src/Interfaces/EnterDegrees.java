@@ -6,7 +6,6 @@
 package Interfaces;
 
 import Resources.Connection;
-
 import java.sql.ResultSet;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
@@ -54,7 +53,7 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPopupMenu1 = new javax.swing.JPopupMenu();
         miModify = new javax.swing.JMenuItem();
-        miDelete = new javax.swing.JMenuItem();
+        miInactive = new javax.swing.JMenuItem();
         miActive = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -88,15 +87,15 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
         });
         jPopupMenu1.add(miModify);
 
-        miDelete.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        miDelete.setText("Eliminar");
-        miDelete.setComponentPopupMenu(jPopupMenu1);
-        miDelete.addActionListener(new java.awt.event.ActionListener() {
+        miInactive.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        miInactive.setText("Inactivar");
+        miInactive.setComponentPopupMenu(jPopupMenu1);
+        miInactive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miDeleteActionPerformed(evt);
+                miInactiveActionPerformed(evt);
             }
         });
-        jPopupMenu1.add(miDelete);
+        jPopupMenu1.add(miInactive);
 
         miActive.setText("Activar");
         miActive.setComponentPopupMenu(jPopupMenu1);
@@ -223,7 +222,7 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtGroupName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 40, -1, 95));
@@ -381,7 +380,7 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
         btnRegister.setEnabled(false);
     }//GEN-LAST:event_miModifyActionPerformed
 
-    private void miDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miDeleteActionPerformed
+    private void miInactiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miInactiveActionPerformed
         int row = tbData.getSelectedRow();
         id = (String) tbData.getValueAt(row, 0);
         try {
@@ -390,7 +389,7 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
             loadTable("", 1);
         } catch (Exception e) {
         }
-    }//GEN-LAST:event_miDeleteActionPerformed
+    }//GEN-LAST:event_miInactiveActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         String code = txtNuip.getText();
@@ -417,7 +416,7 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
 
     private void btnInactiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInactiveActionPerformed
         loadTable("", 0);
-        miDelete.setVisible(false);
+        miInactive.setVisible(false);
         miModify.setVisible(false);
         miActive.setVisible(true);
     }//GEN-LAST:event_btnInactiveActionPerformed
@@ -437,6 +436,8 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
  * @version 1.0
  * @param value Recibe un parámetro de tipo cadena para el filtro de busqueda
  * en la tabla
+ * @param num Recibe un parámetros de tipo entero, donde se recibirá el estado del
+ * grado, 1 si es activo y 0 si es inactivo.
  * Este método carga los datos (id, director de grupo, jornada, nombre) del grado
  * en una tabla
  */
@@ -472,7 +473,7 @@ void loadTable(String value, int num){
         }catch(Exception e){
             System.out.println("Error 2 "+e);
         }
-    miDelete.setVisible(true);
+    miInactive.setVisible(true);
     miModify.setVisible(true);  
     miActive.setVisible(false);
 }
@@ -510,7 +511,7 @@ void emptyFields(){
     private javax.swing.JLabel lbNameDirector;
     private javax.swing.JLabel lbSearch;
     private javax.swing.JMenuItem miActive;
-    private javax.swing.JMenuItem miDelete;
+    private javax.swing.JMenuItem miInactive;
     private javax.swing.JMenuItem miModify;
     private javax.swing.JRadioButton rbAfternoon;
     private javax.swing.JRadioButton rbMorning;
