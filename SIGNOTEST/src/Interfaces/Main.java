@@ -97,11 +97,12 @@ public class Main extends javax.swing.JFrame {
         jDesktopPaneFondo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
 
         jPanelMenu.setBackground(new java.awt.Color(0, 0, 255));
-        jPanelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelMenu.setLayout(null);
 
         jLabelUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelUser.setForeground(new java.awt.Color(255, 255, 255));
-        jPanelMenu.add(jLabelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 250, 20));
+        jPanelMenu.add(jLabelUser);
+        jLabelUser.setBounds(1000, 10, 250, 20);
 
         rSButtonMenu.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menu.png"))); // NOI18N
@@ -114,7 +115,8 @@ public class Main extends javax.swing.JFrame {
                 rSButtonMenuActionPerformed(evt);
             }
         });
-        jPanelMenu.add(rSButtonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
+        jPanelMenu.add(rSButtonMenu);
+        rSButtonMenu.setBounds(0, 0, 80, 40);
 
         jDesktopPaneFondo.add(jPanelMenu);
         jPanelMenu.setBounds(-3, -1, 1260, 40);
@@ -400,7 +402,7 @@ public class Main extends javax.swing.JFrame {
             else {
             Animacion.Animacion.bajar(-160, 50, 1, 10 , jPanelAdmin);
             Animacion.Animacion.bajar(50, 200, 1, 10 , rSButtonMetroGAcadem);
-            Animacion.Animacion.bajar(-250, 100, 1, 10 , jPanelAcademic);
+            Animacion.Animacion.bajar(60, 210, 1, 10, jPanelAcademic);
             jPanelAdmin.setVisible(true);
             }     
     }//GEN-LAST:event_rSButtonMetroGAdminActionPerformed
@@ -413,7 +415,7 @@ public class Main extends javax.swing.JFrame {
             jPanelAcademic.setVisible(false);
             }
             else {
-            Animacion.Animacion.bajar(-200, 100, 1, 10 , jPanelAcademic);
+            Animacion.Animacion.bajar(-200, 180, 1, 10 , jPanelAcademic);
             jPanelAcademic.setVisible(true);
             } 
     }//GEN-LAST:event_rSButtonMetroGAcademActionPerformed
