@@ -94,7 +94,6 @@ public class Main extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jDesktopPaneFondo.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPaneFondo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
 
         jPanelMenu.setBackground(new java.awt.Color(0, 0, 255));
@@ -276,6 +275,11 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosMaterias.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivosMaterias.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosMaterias.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        rSButtonInactivosMaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonInactivosMateriasActionPerformed(evt);
+            }
+        });
         jPanelAcademic.add(rSButtonInactivosMaterias);
         rSButtonInactivosMaterias.setBounds(0, 180, 180, 40);
 
@@ -315,6 +319,11 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosEvento.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonInactivosEvento.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosEvento.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        rSButtonInactivosEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonInactivosEventoActionPerformed(evt);
+            }
+        });
         jPanelAcademic.add(rSButtonInactivosEvento);
         rSButtonInactivosEvento.setBounds(0, 330, 180, 40);
 
@@ -386,6 +395,11 @@ public class Main extends javax.swing.JFrame {
 
     private void rSButtonInactivosLogrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonInactivosLogrosActionPerformed
         // TODO add your handling code here:
+        Achievements achie = new Achievements();
+        achie.setVisible(true);
+        achie.setSize(400, 550);
+        achie.setLocation(100, 300);
+        jDesktopPaneFondo.add(achie);
     }//GEN-LAST:event_rSButtonInactivosLogrosActionPerformed
 
     private void rSButtonInactivosAsignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonInactivosAsignaturaActionPerformed
@@ -434,7 +448,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonMetroGAcademActionPerformed
 
     private void rSButtonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRegistroActionPerformed
-        // TODO add your handling code here:
         
         RegisterUser regsuser = new RegisterUser();
         regsuser.setVisible(true);
@@ -442,6 +455,23 @@ public class Main extends javax.swing.JFrame {
         regsuser.setLocation(100, 300);
         jDesktopPaneFondo.add(regsuser);
     }//GEN-LAST:event_rSButtonRegistroActionPerformed
+
+    private void rSButtonInactivosMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonInactivosMateriasActionPerformed
+       
+        Subjects subj = new Subjects();
+        subj.setVisible(true);
+        subj.setSize(400, 550);
+        subj.setLocation(100, 300);
+        jDesktopPaneFondo.add(subj);
+    }//GEN-LAST:event_rSButtonInactivosMateriasActionPerformed
+
+    private void rSButtonInactivosEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonInactivosEventoActionPerformed
+        Events eve = new Events();
+        eve.setVisible(true);
+        eve.setSize(400, 550);
+        eve.setLocation(100, 300);
+        jDesktopPaneFondo.add(eve);
+    }//GEN-LAST:event_rSButtonInactivosEventoActionPerformed
 
 //   public static void main(String args[]) {
 //      
