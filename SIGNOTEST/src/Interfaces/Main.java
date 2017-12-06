@@ -53,10 +53,10 @@ public class Main extends javax.swing.JFrame {
             }
         /*OCULTAMIENTO DE MENU VERTICAL ADMIN*/
             Animacion.Animacion.subir(35, -160, 1, 10 , jPanelAdmin);
-            Animacion.Animacion.subir(160, 35, 1, 10 , rSButtonMetroGAcadem);
+            Animacion.Animacion.subir(160, 35, 1, 10 , jPanelGFAcademico);
             jPanelAdmin.setVisible(false);
         /*OCULTAMIENTO DE MENU VERTICAL ACADEMICO*/
-            Animacion.Animacion.subir(35, -160, 1, 10 , jPanelAcademic);
+            //Animacion.Animacion.subir(35, -160, 1, 10 , jPanelAcademic);
             jPanelAcademic.setVisible(false);
     }
 
@@ -75,6 +75,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonRoles = new Resources.RSButtonMetro();
         rSButtonReportes = new Resources.RSButtonMetro();
         rSButtonInactivos = new Resources.RSButtonMetro();
+        jPanelGFAcademico = new javax.swing.JPanel();
         rSButtonMetroGAcadem = new Resources.RSButtonMetro();
         jPanelAcademic = new javax.swing.JPanel();
         rSButtonInactivosAsignatura = new Resources.RSButtonMetro();
@@ -122,6 +123,7 @@ public class Main extends javax.swing.JFrame {
         jPanelMenu.setBounds(-3, -1, 1260, 40);
 
         jPanelDespMenu.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelDespMenu.setOpaque(false);
         jPanelDespMenu.setLayout(null);
 
         rSButtonMetroGAdmin.setBackground(new java.awt.Color(0, 0, 255));
@@ -187,6 +189,9 @@ public class Main extends javax.swing.JFrame {
         jPanelDespMenu.add(jPanelAdmin);
         jPanelAdmin.setBounds(0, 50, 180, 150);
 
+        jPanelGFAcademico.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelGFAcademico.setLayout(null);
+
         rSButtonMetroGAcadem.setBackground(new java.awt.Color(0, 0, 255));
         rSButtonMetroGAcadem.setText("G. ACADEMICA");
         rSButtonMetroGAcadem.setColorHover(new java.awt.Color(0, 0, 255));
@@ -196,8 +201,8 @@ public class Main extends javax.swing.JFrame {
                 rSButtonMetroGAcademActionPerformed(evt);
             }
         });
-        jPanelDespMenu.add(rSButtonMetroGAcadem);
-        rSButtonMetroGAcadem.setBounds(0, 200, 180, 50);
+        jPanelGFAcademico.add(rSButtonMetroGAcadem);
+        rSButtonMetroGAcadem.setBounds(0, 0, 180, 50);
 
         jPanelAcademic.setOpaque(false);
         jPanelAcademic.setLayout(null);
@@ -218,7 +223,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAcademic.add(rSButtonInactivosAsignatura);
-        rSButtonInactivosAsignatura.setBounds(0, 0, 180, 50);
+        rSButtonInactivosAsignatura.setBounds(0, 10, 180, 50);
 
         rSButtonInactivosGrados.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosGrados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/grados.png"))); // NOI18N
@@ -236,7 +241,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAcademic.add(rSButtonInactivosGrados);
-        rSButtonInactivosGrados.setBounds(0, 60, 180, 50);
+        rSButtonInactivosGrados.setBounds(0, 70, 180, 50);
 
         rSButtonInactivosLogros.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosLogros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logros.png"))); // NOI18N
@@ -254,7 +259,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAcademic.add(rSButtonInactivosLogros);
-        rSButtonInactivosLogros.setBounds(0, 120, 180, 40);
+        rSButtonInactivosLogros.setBounds(0, 130, 180, 40);
 
         rSButtonInactivosMaterias.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosMaterias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/materias.png"))); // NOI18N
@@ -267,7 +272,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosMaterias.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosMaterias.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanelAcademic.add(rSButtonInactivosMaterias);
-        rSButtonInactivosMaterias.setBounds(0, 170, 180, 40);
+        rSButtonInactivosMaterias.setBounds(0, 180, 180, 40);
 
         rSButtonInactivosNota.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosNota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/notas.png"))); // NOI18N
@@ -280,7 +285,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosNota.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosNota.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanelAcademic.add(rSButtonInactivosNota);
-        rSButtonInactivosNota.setBounds(0, 220, 180, 40);
+        rSButtonInactivosNota.setBounds(0, 230, 180, 40);
 
         rSButtonInactivosPeriodo.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosPeriodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Periodo.png"))); // NOI18N
@@ -293,7 +298,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosPeriodo.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosPeriodo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanelAcademic.add(rSButtonInactivosPeriodo);
-        rSButtonInactivosPeriodo.setBounds(0, 270, 180, 40);
+        rSButtonInactivosPeriodo.setBounds(0, 280, 180, 40);
 
         rSButtonInactivosEvento.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonInactivosEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inactivo.png"))); // NOI18N
@@ -306,13 +311,16 @@ public class Main extends javax.swing.JFrame {
         rSButtonInactivosEvento.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonInactivosEvento.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanelAcademic.add(rSButtonInactivosEvento);
-        rSButtonInactivosEvento.setBounds(0, 320, 180, 40);
+        rSButtonInactivosEvento.setBounds(0, 330, 180, 40);
 
-        jPanelDespMenu.add(jPanelAcademic);
-        jPanelAcademic.setBounds(0, 250, 180, 380);
+        jPanelGFAcademico.add(jPanelAcademic);
+        jPanelAcademic.setBounds(0, 50, 180, 380);
+
+        jPanelDespMenu.add(jPanelGFAcademico);
+        jPanelGFAcademico.setBounds(0, 200, 180, 460);
 
         jDesktopPaneFondo.add(jPanelDespMenu);
-        jPanelDespMenu.setBounds(0, 40, 180, 630);
+        jPanelDespMenu.setBounds(0, 40, 180, 660);
 
         jButtonSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jButtonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
@@ -396,13 +404,13 @@ public class Main extends javax.swing.JFrame {
         int posicion = this.jPanelAdmin.getY();
             if (posicion > -1) {
             Animacion.Animacion.subir(35, -160, 1, 10 , jPanelAdmin);
-            Animacion.Animacion.subir(160, 35, 1, 10 , rSButtonMetroGAcadem);
+            Animacion.Animacion.subir(160, 35, 1, 10 , jPanelGFAcademico);
             jPanelAdmin.setVisible(false);
             }
             else {
             Animacion.Animacion.bajar(-160, 50, 1, 10 , jPanelAdmin);
-            Animacion.Animacion.bajar(50, 200, 1, 10 , rSButtonMetroGAcadem);
-            Animacion.Animacion.bajar(60, 210, 1, 10, jPanelAcademic);
+            Animacion.Animacion.bajar(50, 200, 1, 10 , jPanelGFAcademico);
+           // Animacion.Animacion.bajar(60, 210, 1, 10, jPanelAcademic);
             jPanelAdmin.setVisible(true);
             }     
     }//GEN-LAST:event_rSButtonMetroGAdminActionPerformed
@@ -411,11 +419,11 @@ public class Main extends javax.swing.JFrame {
                // DESPLIGUE OPCIONES DEL MENU ADMIN:
         int posicion = this.jPanelAcademic.getY();
             if (posicion > -1) {
-            Animacion.Animacion.subir(70, -200, 1, 10 , jPanelAcademic);
+            Animacion.Animacion.subir(35, -200, 1, 10 , jPanelAcademic);
             jPanelAcademic.setVisible(false);
             }
             else {
-            Animacion.Animacion.bajar(-200, 180, 1, 10 , jPanelAcademic);
+            Animacion.Animacion.bajar(-200, 50, 1, 10 , jPanelAcademic);
             jPanelAcademic.setVisible(true);
             } 
     }//GEN-LAST:event_rSButtonMetroGAcademActionPerformed
@@ -462,6 +470,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelAcademic;
     private javax.swing.JPanel jPanelAdmin;
     private javax.swing.JPanel jPanelDespMenu;
+    private javax.swing.JPanel jPanelGFAcademico;
     private javax.swing.JPanel jPanelMenu;
     private Resources.RSButtonMetro rSButtonInactivos;
     private Resources.RSButtonMetro rSButtonInactivosAsignatura;
