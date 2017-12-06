@@ -13,22 +13,35 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Valentina
+ * @author Grupo prueba y calidad
  */
 public class Country extends javax.swing.JInternalFrame {
 
    DefaultTableModel modelo;
    Connection cone;
    
+   /**
+ @author Grupo prueba y calidad 
+ @version 1.0 
+ Constructor para iniciar la conexion a la base de datos,iniciar el metodo actualizar de la tabla y deshabilitar el boton actualizar en la interfaz.
+ 
+*/
     public Country() {
         initComponents();
         cone = new Connection();
-        actualizar();
+        update();
         
         btnUpdate.setVisible(false);
     }
+ 
     
-    public void cargarId(){
+/**
+ @author Grupo prueba y calidad 
+ @version 1.0 
+ Metodo que genera el ID o identificacion de cada pais que se registre en la base de datos.
+*/
+    
+    public void chargeId(){
  
         try{
             
@@ -45,7 +58,13 @@ public class Country extends javax.swing.JInternalFrame {
         
     }
     
-    public void actualizar(){
+    
+    /**
+ @author Grupo prueba y calidad 
+ @version 1.0 
+ Metodo que reestablece los datos de la tabla al ser modificada por un usuario.
+*/
+    public void update(){
         
         try {
       String[] registros = new String[4];
@@ -56,6 +75,7 @@ public class Country extends javax.swing.JInternalFrame {
        ResultSet rs = cone.consultDB("SELECT * FROM Pais" );
        
             while(rs.next()){
+                
                 registros[0] = rs.getString("idPais");
                 registros[1] = rs.getString("Nombre");
                 registros[2] = rs.getString("NombreCorto");
@@ -67,10 +87,16 @@ public class Country extends javax.swing.JInternalFrame {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        cargarId();
+        chargeId();
     }
     
-    public void cargar(String valor){
+    /**
+ @author Grupo prueba y calidad 
+ @version 1.0 
+ Metodo que tiene la funcion de cargar nuevamente la tabla con datos al ser actualizada.
+ @param valor El parametro valor es el que contiene el dato que genera la consulta en la base de datos especificamente en la tabla pais.
+*/
+    public void charge(String valor){
     
         try{
       String[] registros = new String[2];
@@ -93,7 +119,7 @@ public class Country extends javax.swing.JInternalFrame {
         }catch (Exception e){
             System.out.println("Error"+e);
         }
-            cargarId();
+            chargeId();
         }
 
     
@@ -202,9 +228,9 @@ public class Country extends javax.swing.JInternalFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
+                        .addGap(77, 77, 77)
                         .addComponent(btnAdd)
-                        .addGap(75, 75, 75)
+                        .addGap(72, 72, 72)
                         .addComponent(btnUpdate)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -227,13 +253,13 @@ public class Country extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtIndicative, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
                     .addComponent(btnUpdate))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -242,6 +268,10 @@ public class Country extends javax.swing.JInternalFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         cone.modifyDB("INSERT INTO pais VALUES(null,' "+txtName.getText()+" ',' "+txtShortName.getText()+" ',' "+txtIndicative.getText()+" ')");
+        JOptionPane.showMessageDialog(rootPane, "El pais ha sido registrado exitosamente");
+        
+        charge("");
+        update();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -252,14 +282,17 @@ public class Country extends javax.swing.JInternalFrame {
         String Indicativo = txtIndicative.getText();
        
         try {
-        cone.modifyDB("UPDATE pais SET Nombre=' "+nombre+" ',NombreCorto=' "+nomcorto+" ',Indicativo=' "+Indicativo+" ' WHERE idPais="+Id);    
+        cone.modifyDB("UPDATE pais SET Nombre=' "+nombre+" ',NombreCorto=' "+nomcorto+" ',Indicativo=' "+Indicativo+" ' WHERE idPais="+Id); 
+        
+        JOptionPane.showMessageDialog(rootPane, "El pais ha sido actualizado exitosamente");
+            
+        
         } catch (Exception e) {
             System.out.println("Error"+ e);
-        }
-        
-        
-        cargar("");
-        actualizar();
+            
+        }        
+        charge("");
+        update();               
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
@@ -268,8 +301,8 @@ public class Country extends javax.swing.JInternalFrame {
      
         try {
             cone.modifyDB("DELETE FROM pais WHERE idPais="+ jTable1.getValueAt(row, 0));
-            actualizar();
-            JOptionPane.showMessageDialog(rootPane, "el estudiantes a sido eliminado");
+            update();
+            JOptionPane.showMessageDialog(rootPane, "el Pais ha sido eliminado");
             
         } catch (Exception e) {
             System.out.println("Error"+ e);
