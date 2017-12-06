@@ -304,10 +304,6 @@ public class Achievements extends javax.swing.JInternalFrame {
      */
     public void id() {
         try {
-
-           
-
-            
             ResultSet rs = cone.consultDB("SELECT MAX(idLogro) FROM logro");
             if (rs.next()) {
                 int num = rs.getInt("MAX(idLogro)") + 1;
@@ -373,7 +369,7 @@ public class Achievements extends javax.swing.JInternalFrame {
                 int porsrntage = Integer.parseInt(rs.getString("porcentaje"));
                 total = total + porsrntage;
             }
-            
+
             txtTotal.setText(String.valueOf(total));
             if (total == 90) {
                 JOptionPane.showMessageDialog(null, "El porcentaje esta por llegar al 100%");
@@ -528,7 +524,7 @@ public class Achievements extends javax.swing.JInternalFrame {
         jLabel11.setText("%");
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel13.setText("Id Materia:");
+        jLabel13.setText("Id Logro:");
 
         jLabel14.setText("Total:");
 
@@ -595,11 +591,11 @@ public class Achievements extends javax.swing.JInternalFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -712,13 +708,13 @@ public class Achievements extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(580, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -767,29 +763,28 @@ public class Achievements extends javax.swing.JInternalFrame {
             while (rs.next()) {
 
                 total = total + rs.getInt("Porcentaje");
-                System.out.println(total);
+               
 
             }
-            
+
             int porcen = (int) spiPercentage.getValue();
-            if(porcen > total && total > 100){
-                 JOptionPane.showMessageDialog(null, "El porcentaje no puede ser mayor a 100 HOLA");
-  
-            }else if(porcen > 100) {
-                    JOptionPane.showMessageDialog(null, "El porcentaje no puede ser mayor a 100 chao");
-                }else if (total > 100) {
-                    JOptionPane.showMessageDialog(null, "El porcentaje ingresado no Puede sobrepasar el 100%");
+            if (porcen > total || total > 100) {
+                JOptionPane.showMessageDialog(null, "El porcentaje no puede ser mayor a 100");
 
-                } else {
-                    insert();
-                    clear();
-                    tbAchievements("");
-                    sumPercentage();
-                    id();
+            } else if (porcen > 100) {
+                JOptionPane.showMessageDialog(null, "El porcentaje no puede ser mayor a 100");
+            } else if (total > 100) {
+                JOptionPane.showMessageDialog(null, "El porcentaje ingresado no Puede sobrepasar el 100%");
 
-                }
-            
-            
+            } else {
+                insert();
+                clear();
+                tbAchievements("");
+                sumPercentage();
+                id();
+
+            }
+
         } catch (SQLException ex) {
             Logger.getLogger(Achievements.class.getName()).log(Level.SEVERE, null, ex);
         }
