@@ -363,7 +363,7 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
                     + "INNER JOIN docente as doc "
                     + "ON usu.Nuip = doc.Codigo "
                     + "INNER JOIN grupo as gru "
-                    + "ON doc.Codigo = gru.Director");
+                    + "ON doc.Codigo = gru.Director WHERE gru.idGrupo = "+id);
             if(rs.next()){
                 lbNameDirector.setText(rs.getString("Nombre"));
                 txtNuip.setText(rs.getString("gru.Director"));                

@@ -94,6 +94,7 @@ public class Main extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jDesktopPaneFondo.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPaneFondo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
 
         jPanelMenu.setBackground(new java.awt.Color(0, 0, 255));
@@ -311,6 +312,11 @@ public class Main extends javax.swing.JFrame {
         rSButtonPeriodo.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         rSButtonPeriodo.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         rSButtonPeriodo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        rSButtonPeriodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonPeriodoActionPerformed(evt);
+            }
+        });
         jPanelAcademic.add(rSButtonPeriodo);
         rSButtonPeriodo.setBounds(0, 280, 180, 40);
 
@@ -402,24 +408,22 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Achievements achie = new Achievements();
         achie.setVisible(true);
-        achie.setSize(400, 550);
-        achie.setLocation(100, 300);
+        achie.setLocation(300, 50);
         jDesktopPaneFondo.add(achie);
     }//GEN-LAST:event_rSButtonLogrosActionPerformed
 
     private void rSButtonAsignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonAsignaturaActionPerformed
         EnterSubjects entSub = new EnterSubjects();
         entSub.setVisible(true);
-        entSub.setSize(400, 550);
-        entSub.setLocation(100, 300);
+        entSub.setLocation(300, 50);
         jDesktopPaneFondo.add(entSub);
     }//GEN-LAST:event_rSButtonAsignaturaActionPerformed
 
     private void rSButtonGradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonGradosActionPerformed
         EnterDegrees entDeg = new EnterDegrees();
         entDeg.setVisible(true);
-        entDeg.setSize(400, 550);
-        entDeg.setLocation(100, 300);
+        entDeg.setSize(610, 467);
+        entDeg.setLocation(300, 50);
         jDesktopPaneFondo.add(entDeg);
     }//GEN-LAST:event_rSButtonGradosActionPerformed
 
@@ -453,28 +457,35 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonMetroGAcademActionPerformed
 
     private void rSButtonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRegistroActionPerformed
+
         
-        RegisterUser regsuser = new RegisterUser();
-        regsuser.setVisible(true);
-        regsuser.setSize(400, 550);
-        regsuser.setLocation(100, 300);
-        jDesktopPaneFondo.add(regsuser);
+            // CONEXION A LA INTERFAZ REPORTES:
+            /*RegisterUser regsuser = new RegisterUser();
+            this.setLocationRelativeTo(null);
+            regsuser.setVisible(true);
+            jDesktopPaneFondo.add(regsuser);
+            regsuser.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+            RegisterUser regsuser = new RegisterUser();
+            regsuser.setVisible(true);
+            regsuser.setLocation(300, 50);
+            jDesktopPaneFondo.add(regsuser);
     }//GEN-LAST:event_rSButtonRegistroActionPerformed
 
     private void rSButtonMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMateriasActionPerformed
        
         Subjects subj = new Subjects();
         subj.setVisible(true);
-        subj.setSize(400, 550);
-        subj.setLocation(100, 300);
+        subj.setLocation(300, 50);
         jDesktopPaneFondo.add(subj);
     }//GEN-LAST:event_rSButtonMateriasActionPerformed
 
     private void rSButtonEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonEventoActionPerformed
         Events eve = new Events();
         eve.setVisible(true);
-        eve.setSize(400, 550);
-        eve.setLocation(100, 300);
+        eve.setLocation(300, 50);
         jDesktopPaneFondo.add(eve);
     }//GEN-LAST:event_rSButtonEventoActionPerformed
 
@@ -491,6 +502,13 @@ public class Main extends javax.swing.JFrame {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }       
     }//GEN-LAST:event_rSButtonNotasActionPerformed
+
+    private void rSButtonPeriodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonPeriodoActionPerformed
+        periodo per = new periodo();
+        per.setVisible(true);
+        per.setLocation(300, 50);
+        jDesktopPaneFondo.add(per);
+    }//GEN-LAST:event_rSButtonPeriodoActionPerformed
 
 //   public static void main(String args[]) {
 //      
