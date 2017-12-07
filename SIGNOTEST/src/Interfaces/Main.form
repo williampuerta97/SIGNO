@@ -341,7 +341,7 @@
                     <Property name="useNullLayout" type="boolean" value="true"/>
                   </Layout>
                   <SubComponents>
-                    <Component class="Resources.RSButtonMetro" name="rSButtonInactivosAsignatura">
+                    <Component class="Resources.RSButtonMetro" name="rSButtonAsignatura">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -369,7 +369,7 @@
                         <Property name="horizontalTextPosition" type="int" value="2"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonInactivosAsignaturaActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonAsignaturaActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -377,7 +377,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="Resources.RSButtonMetro" name="rSButtonInactivosGrados">
+                    <Component class="Resources.RSButtonMetro" name="rSButtonGrados">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -405,7 +405,7 @@
                         <Property name="horizontalTextPosition" type="int" value="2"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonInactivosGradosActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonGradosActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -413,7 +413,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="Resources.RSButtonMetro" name="rSButtonInactivosLogros">
+                    <Component class="Resources.RSButtonMetro" name="rSButtonLogros">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -441,7 +441,7 @@
                         <Property name="horizontalTextPosition" type="int" value="2"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonInactivosLogrosActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonLogrosActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -449,7 +449,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="Resources.RSButtonMetro" name="rSButtonInactivosMaterias">
+                    <Component class="Resources.RSButtonMetro" name="rSButtonMaterias">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -477,7 +477,7 @@
                         <Property name="horizontalTextPosition" type="int" value="2"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonInactivosMateriasActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMateriasActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -485,7 +485,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="Resources.RSButtonMetro" name="rSButtonInactivosNota">
+                    <Component class="Resources.RSButtonMetro" name="rSButtonNotas">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -493,7 +493,7 @@
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/imagenes/notas.png"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="   NOTAS  "/>
+                        <Property name="text" type="java.lang.String" value="   CALIFICACION  "/>
                         <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
                         </Property>
@@ -512,13 +512,16 @@
                         <Property name="horizontalAlignment" type="int" value="10"/>
                         <Property name="horizontalTextPosition" type="int" value="2"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonNotasActionPerformed"/>
+                      </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="0" y="230" width="180" height="40"/>
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="Resources.RSButtonMetro" name="rSButtonInactivosPeriodo">
+                    <Component class="Resources.RSButtonMetro" name="rSButtonPeriodo">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -551,7 +554,7 @@
                         </Constraint>
                       </Constraints>
                     </Component>
-                    <Component class="Resources.RSButtonMetro" name="rSButtonInactivosEvento">
+                    <Component class="Resources.RSButtonMetro" name="rSButtonEvento">
                       <Properties>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -579,7 +582,7 @@
                         <Property name="horizontalTextPosition" type="int" value="2"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonInactivosEventoActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonEventoActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
