@@ -613,6 +613,8 @@ public class Observations extends javax.swing.JInternalFrame {
             try {
                 ResultSet query = con.consultDB("SELECT COUNT(log.idLogro) as cantidad "
                         + "FROM logro as log "
+                        + "INNER JOIN nota_logro as ntl "
+                        + "ON log.idLogro = ntl.Logro_id "
                         + "INNER JOIN periodo as per "
                         + "ON per.idperiodo = log.periodo_id "
                         + "INNER JOIN materia as mat "

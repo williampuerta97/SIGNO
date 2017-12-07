@@ -379,9 +379,6 @@ public class RegisterUser extends javax.swing.JInternalFrame {
         jLabel27 = new javax.swing.JLabel();
 
         setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
@@ -595,7 +592,7 @@ public class RegisterUser extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 478, -1, -1));
         getContentPane().add(txtGuardian, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 478, 130, -1));
 
-        lblImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionusuarios/50744-200.png"))); // NOI18N
+        lblImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/buscador-de-lupa.png"))); // NOI18N
         lblImg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblImgMousePressed(evt);
