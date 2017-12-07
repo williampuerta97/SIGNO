@@ -489,9 +489,7 @@ public class Main extends javax.swing.JFrame {
             grade.setSelected(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+        }       
     }//GEN-LAST:event_rSButtonNotasActionPerformed
 
 //   public static void main(String args[]) {

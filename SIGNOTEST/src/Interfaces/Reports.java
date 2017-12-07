@@ -29,6 +29,8 @@ public class Reports extends javax.swing.JInternalFrame {
         jButtonCalificIndividual = new javax.swing.JButton();
         jButtonIndicadores = new javax.swing.JButton();
 
+        getContentPane().setLayout(null);
+
         jDesktopPaneFondo.setBackground(new java.awt.Color(30, 30, 156));
         jDesktopPaneFondo.setForeground(new java.awt.Color(255, 255, 255));
         jDesktopPaneFondo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -252,16 +254,8 @@ public class Reports extends javax.swing.JInternalFrame {
                         .addContainerGap())))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPaneFondo)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPaneFondo, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
+        getContentPane().add(jDesktopPaneFondo);
+        jDesktopPaneFondo.setBounds(0, 0, 1192, 672);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
