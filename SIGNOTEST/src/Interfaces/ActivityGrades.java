@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfaces;
+package signo;
 
-import Resources.Connection;
 import java.awt.event.ItemEvent;
 import java.sql.ResultSet;
 import javax.swing.DefaultComboBoxModel;
@@ -18,7 +17,7 @@ import javax.swing.table.TableColumnModel;
  * @author Grupo diseño
  * @version 1.0
  */
-public class ActivityNotes extends javax.swing.JInternalFrame {
+public class ActivityGrades extends javax.swing.JInternalFrame {
 
     /**
      * Crea una nueva ventana para el ingreso de notas por actividad, y 
@@ -38,7 +37,7 @@ public class ActivityNotes extends javax.swing.JInternalFrame {
      * establecer el nombre del profesor que ingrese al sistema. Se instancia la clase
      * de modelo de la tabla y la clase del modelo de la columna de la tabla
      */
-    public ActivityNotes() {
+    public ActivityGrades() {
         initComponents();
         con = new Connection();
         disableCombo();
@@ -595,15 +594,15 @@ void loadTableAchievements(String id){
 "ON usu.NUIP = est.Codigo\n" +
 "INNER JOIN grupo gru\n" +
 "on est.Grupo_Id = gru.idGrupo\n" +
-"INNER JOIN docente_materia_grupo as dmg\n" +
+"INNER JOIN docente_materia_grupo dmg\n" +
 "ON gru.idGrupo = dmg.Grupo_id\n" +
-"INNER JOIN materia as mat\n" +
+"INNER JOIN materia mat \n" +
 "ON dmg.Materia_id = mat.idMateria\n" +
-"INNER JOIN logro as log\n" +
-"ON mat.idMateria = log.idLogro\n" +
-"LEFT JOIN actividad as act\n" +
-"ON log.idLogro = act.idActividad "+
-"WHERE gru.idGrupo =  "+idGroup[pos]+" AND act.idActividad IS NULL AND est.Activo = 1");
+"INNER JOIN logro logr\n" +
+"ON mat.idMateria = logr.Materia_id\n" +
+"LEFT JOIN actividad act\n" +
+"ON logr.idLogro = act.Logro_id\n" +
+"WHERE gru.idGrupo = "+idGroup[pos]+"  AND est.Activo = 1 AND act.idActividad IS NULL GROUP BY usu.NUIP");
         
         while(rs.next()){
             reg[0] = rs.getString("usu.NUIP");
