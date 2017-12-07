@@ -45,7 +45,7 @@ public class Achievements extends javax.swing.JInternalFrame {
         initComponents();
         cone = new Connection();
         id();
-        tbAchievements("");
+        tbAchievements();
         mostrarPeriodo();
         mostrarMateria();
         sumPercentage();
@@ -63,15 +63,16 @@ public class Achievements extends javax.swing.JInternalFrame {
      * @version 1.0 04-12-2017
      *
      */
-    void tbAchievements(String value) {
+    void tbAchievements() {
+        
         String[] titulos = {"idlogro", "Nombre", "Descripcion", "Materia", "Periodo", "Porcentaje"};
         String[] registros = new String[6];
         String sql = "select idLogro,descripcion,log.Porcentaje as porcentaje,log.Nombre as Nombre,mat.Nombre as materias"
                 + ",per.Nombre as periodo,log.Activo as Activo from logro as log"
                 + " INNER JOIN materia as mat on log.Materia_id=mat.idMateria"
                 + " INNER JOIN periodo as per on log.Periodo_id=per.idperiodo";
-//                + "WHERE log.Materia_id LIKE "+cdoSubjects.getSelectedItem()
-//                + "log.periodo_id LIKE"+cboPeriod.getSelectedItem();
+//                + "WHERE log.Materia_id = "+cboSubjects.getSelectedItem()
+//                + "AND log.periodo_id ="+cboPeriod.getSelectedItem();
 
         model = new DefaultTableModel(null, titulos);
         try {
@@ -96,6 +97,7 @@ public class Achievements extends javax.swing.JInternalFrame {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
+        
 
     }
 
@@ -136,12 +138,12 @@ public class Achievements extends javax.swing.JInternalFrame {
             String mysql = "SELECT * FROM materia";
             Connection cone2 = new Connection();
             ResultSet rs = cone2.consultDB(mysql);
-            cdoSubjects.addItem("seleccione");
+            cboSubjects.addItem("seleccione");
             while (rs.next()) {
                 int state;
                 state = Integer.parseInt(rs.getString("Activo"));
                 if (state == 1) {
-                    cdoSubjects.addItem(rs.getString("idMateria"));
+                    cboSubjects.addItem(rs.getString("idMateria"));
                 }
             }
 
@@ -200,7 +202,7 @@ public class Achievements extends javax.swing.JInternalFrame {
                     txtId.setText(idT);
                     txtName.setText(rs.getString("Nombre"));
                     txtDescription.setText(rs.getString("descripcion"));
-                    cdoSubjects.setSelectedItem(rs.getString("Materia_id"));
+                    cboSubjects.setSelectedItem(rs.getString("Materia_id"));
                     if (rs.getString("Tipo").equals("ACA")) {
 
                         rbAcademic.setSelected(true);
@@ -248,7 +250,7 @@ public class Achievements extends javax.swing.JInternalFrame {
         String idA = txtId.getText();
         String name = txtName.getText();
         String descr = txtDescription.getText();
-        String idS = (String) cdoSubjects.getSelectedItem();
+        String idS = (String) cboSubjects.getSelectedItem();
         String idP = (String) cboPeriod.getSelectedItem();
         int Percentaje = (int) spiPercentage.getValue();
         String type = "";
@@ -275,7 +277,7 @@ public class Achievements extends javax.swing.JInternalFrame {
      */
     public void insert() {
         int Porcentaje;
-        String materias = (String) cdoSubjects.getSelectedItem();
+        String materias = (String) cboSubjects.getSelectedItem();
         String periodo = (String) cboPeriod.getSelectedItem();
         String name, area, tipo = "", id;
         id = txtId.getText();
@@ -359,7 +361,7 @@ public class Achievements extends javax.swing.JInternalFrame {
     public void sumPercentage() {
 
         ResultSet rs = cone.consultDB("select * from logro where Materia_id = '"
-                + cdoSubjects.getSelectedItem() + "'AND periodo_id ='" + cboPeriod.getSelectedItem() + "'"
+                + cboSubjects.getSelectedItem() + "'AND periodo_id ='" + cboPeriod.getSelectedItem() + "'"
                 + "AND Activo='1'");
 
         try {
@@ -400,7 +402,7 @@ public class Achievements extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        cdoSubjects = new javax.swing.JComboBox();
+        cboSubjects = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescription = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
@@ -425,8 +427,6 @@ public class Achievements extends javax.swing.JInternalFrame {
         tbAchievements = new javax.swing.JTable();
         btnInsert = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
-        txtSearch = new javax.swing.JTextField();
 
         Actualizar.setText("Actualizar");
         Actualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -458,10 +458,10 @@ public class Achievements extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel2.setText("ID_Materia");
 
-        cdoSubjects.setToolTipText("");
-        cdoSubjects.addActionListener(new java.awt.event.ActionListener() {
+        cboSubjects.setToolTipText("");
+        cboSubjects.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdoSubjectsActionPerformed(evt);
+                cboSubjectsActionPerformed(evt);
             }
         });
 
@@ -573,7 +573,7 @@ public class Achievements extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(cdoSubjects, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cboSubjects, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel4))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -591,7 +591,7 @@ public class Achievements extends javax.swing.JInternalFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -622,7 +622,7 @@ public class Achievements extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel9))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cdoSubjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboSubjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(1, 1, 1)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -687,19 +687,6 @@ public class Achievements extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel12.setText("Buscar:");
-
-        txtSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchActionPerformed(evt);
-            }
-        });
-        txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtSearchKeyReleased(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -710,11 +697,6 @@ public class Achievements extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(580, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -736,11 +718,7 @@ public class Achievements extends javax.swing.JInternalFrame {
                     .addComponent(btnUpdate))
                 .addGap(19, 19, 19)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
@@ -757,7 +735,7 @@ public class Achievements extends javax.swing.JInternalFrame {
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
         int total = 0;
         try {
-            ResultSet rs = cone.consultDB("SELECT * FROM logro WHERE Materia_id='" + cdoSubjects.getSelectedItem() + "'AND "
+            ResultSet rs = cone.consultDB("SELECT * FROM logro WHERE Materia_id='" + cboSubjects.getSelectedItem() + "'AND "
                     + "periodo_id='" + cboPeriod.getSelectedItem() + "' AND Activo='1'");
 
             while (rs.next()) {
@@ -766,9 +744,11 @@ public class Achievements extends javax.swing.JInternalFrame {
                
 
             }
+            
 
             int porcen = (int) spiPercentage.getValue();
-            if (porcen > total || total > 100) {
+            int num=total+porcen;
+            if (num > 100 ) {
                 JOptionPane.showMessageDialog(null, "El porcentaje no puede ser mayor a 100");
 
             } else if (porcen > 100) {
@@ -779,7 +759,7 @@ public class Achievements extends javax.swing.JInternalFrame {
             } else {
                 insert();
                 clear();
-                tbAchievements("");
+                tbAchievements();
                 sumPercentage();
                 id();
 
@@ -835,10 +815,10 @@ public class Achievements extends javax.swing.JInternalFrame {
      * @version 1.0 04-12-2017
      *
      */
-    private void cdoSubjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdoSubjectsActionPerformed
-        int num = cdoSubjects.getSelectedIndex();
+    private void cboSubjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboSubjectsActionPerformed
+        int num = cboSubjects.getSelectedIndex();
         if (num != 0) {
-            String mate = (String) cdoSubjects.getSelectedItem();
+            String mate = (String) cboSubjects.getSelectedItem();
             String sql = "SELECT Nombre FROM materia WHERE idMateria = " + mate;
             ResultSet rs = cone.consultDB(sql);
             try {
@@ -858,19 +838,7 @@ public class Achievements extends javax.swing.JInternalFrame {
         }
 
 
-    }//GEN-LAST:event_cdoSubjectsActionPerformed
-
-    /**
-     * campo para hacer la consulta de datos en la tabla
-     * <pre> Connection.Connection(); </pre>
-     *
-     * @autor grupo Documentación
-     * @version 1.0 04-12-2017
-     *
-     */
-    private void txtSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyReleased
-        tbAchievements(txtSearch.getText());
-    }//GEN-LAST:event_txtSearchKeyReleased
+    }//GEN-LAST:event_cboSubjectsActionPerformed
 
     private void rbInstitutionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbInstitutionalActionPerformed
         // TODO add your handling code here:
@@ -896,14 +864,10 @@ public class Achievements extends javax.swing.JInternalFrame {
         clear();
         btnUpdate.setEnabled(false);
         btnInsert.setEnabled(true);
-        tbAchievements("");
+        tbAchievements();
 
 
     }//GEN-LAST:event_btnUpdateActionPerformed
-
-    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearchActionPerformed
 
     /**
      * Actualiza datos en la tabla
@@ -942,11 +906,10 @@ public class Achievements extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnUpdate;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox cboPeriod;
-    private javax.swing.JComboBox cdoSubjects;
+    private javax.swing.JComboBox cboSubjects;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -969,7 +932,6 @@ public class Achievements extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea txtDescription;
     private javax.swing.JLabel txtId;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtSearch;
     private javax.swing.JLabel txtTotal;
     // End of variables declaration//GEN-END:variables
 }
