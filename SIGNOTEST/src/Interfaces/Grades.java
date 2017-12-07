@@ -59,6 +59,11 @@ public class Grades extends javax.swing.JInternalFrame {
         jButtonNotas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonNotas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonNotas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonNotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNotasActionPerformed(evt);
+            }
+        });
 
         jButtonDefinitiva.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonDefinitiva.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,6 +74,11 @@ public class Grades extends javax.swing.JInternalFrame {
         jButtonDefinitiva.setContentAreaFilled(false);
         jButtonDefinitiva.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonDefinitiva.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonDefinitiva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDefinitivaActionPerformed(evt);
+            }
+        });
 
         jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jButtonSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -121,6 +131,20 @@ public class Grades extends javax.swing.JInternalFrame {
         // SALIR AL PRINCIPAL:
         this.dispose();
     }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jButtonDefinitivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDefinitivaActionPerformed
+        Observations obs = new Observations();
+        obs.setBounds(300, 100, 550, 400);
+        obs.setVisible(true);
+        jDesktopPane1.add(obs);
+    }//GEN-LAST:event_jButtonDefinitivaActionPerformed
+
+    private void jButtonNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNotasActionPerformed
+        ActivityGrades actGra = new ActivityGrades();
+        actGra.setBounds(300, 100, 450, 550);
+        actGra.setVisible(true);
+        jDesktopPane1.add(actGra);
+    }//GEN-LAST:event_jButtonNotasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
