@@ -42,7 +42,7 @@ public class Reports extends javax.swing.JInternalFrame {
 
         jButtonRepIndividual.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonRepIndividual.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonRepIndividual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteIn.png"))); // NOI18N
+        jButtonRepIndividual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/reporteIn.png"))); // NOI18N
         jButtonRepIndividual.setText("REP. INDIVIDUAL");
         jButtonRepIndividual.setToolTipText("Informe individual de cualquier estudiantes de la institución");
         jButtonRepIndividual.setBorder(null);
@@ -53,7 +53,7 @@ public class Reports extends javax.swing.JInternalFrame {
 
         jButtonRepGrado.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonRepGrado.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonRepGrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteGrad.png"))); // NOI18N
+        jButtonRepGrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/reporteGrad.png"))); // NOI18N
         jButtonRepGrado.setText("REP. GRADO");
         jButtonRepGrado.setToolTipText("Informe de los estudiantes pertenecientes a cada grado");
         jButtonRepGrado.setBorder(null);
@@ -64,7 +64,7 @@ public class Reports extends javax.swing.JInternalFrame {
 
         jButtonRepAsignaturas.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonRepAsignaturas.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonRepAsignaturas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteGrp.png"))); // NOI18N
+        jButtonRepAsignaturas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/reporteGrp.png"))); // NOI18N
         jButtonRepAsignaturas.setText("REP. ASIGNATURAS");
         jButtonRepAsignaturas.setToolTipText("Informe de las asignaturas que tiene asignado cada docente.");
         jButtonRepAsignaturas.setBorder(null);
@@ -75,7 +75,7 @@ public class Reports extends javax.swing.JInternalFrame {
 
         jButtonRepAreas.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonRepAreas.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonRepAreas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteArea.png"))); // NOI18N
+        jButtonRepAreas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/reporteArea.png"))); // NOI18N
         jButtonRepAreas.setText("REP. AREA");
         jButtonRepAreas.setToolTipText("Informe de las distintas áreas que se enseñan en la institución.");
         jButtonRepAreas.setBorder(null);
@@ -91,7 +91,7 @@ public class Reports extends javax.swing.JInternalFrame {
 
         jButtonDocente.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonDocente.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonDocente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteDocen.png"))); // NOI18N
+        jButtonDocente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/reporteDocen.png"))); // NOI18N
         jButtonDocente.setText("REP. DOCENTES");
         jButtonDocente.setToolTipText("Informe de los docentes que trabajan en la institución");
         jButtonDocente.setBorder(null);
@@ -102,7 +102,7 @@ public class Reports extends javax.swing.JInternalFrame {
 
         jButtonSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
+        jButtonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/salir.png"))); // NOI18N
         jButtonSalir.setText("SALIR");
         jButtonSalir.setBorder(null);
         jButtonSalir.setBorderPainted(false);
@@ -116,7 +116,7 @@ public class Reports extends javax.swing.JInternalFrame {
 
         jButtonNivelAcade.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonNivelAcade.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonNivelAcade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteNivelAcade.png"))); // NOI18N
+        jButtonNivelAcade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/reporteNivelAcade.png"))); // NOI18N
         jButtonNivelAcade.setText("REP. NIVEL ACADEMICO");
         jButtonNivelAcade.setToolTipText("Informe de los grados (niveles académicos) que existen en la institución");
         jButtonNivelAcade.setBorder(null);
@@ -127,7 +127,7 @@ public class Reports extends javax.swing.JInternalFrame {
 
         jButtonCalificGrupal.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonCalificGrupal.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCalificGrupal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteCalifGrupo.png"))); // NOI18N
+        jButtonCalificGrupal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/reporteCalifGrupo.png"))); // NOI18N
         jButtonCalificGrupal.setText("REP. GRUPAL CALIF.");
         jButtonCalificGrupal.setToolTipText("Informe grupal de las calificaciones obtenidas por los estudiantes en cada asignatura");
         jButtonCalificGrupal.setBorder(null);
@@ -138,7 +138,7 @@ public class Reports extends javax.swing.JInternalFrame {
 
         jButtonCalificIndividual.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonCalificIndividual.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCalificIndividual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteCalifIndiv.png"))); // NOI18N
+        jButtonCalificIndividual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/reporteCalifIndiv.png"))); // NOI18N
         jButtonCalificIndividual.setText("REP. INDIVIDUAL CALIF.");
         jButtonCalificIndividual.setToolTipText("Informe individual de calificaciones obtenidas por cada estudiante.");
         jButtonCalificIndividual.setBorder(null);
@@ -149,7 +149,7 @@ public class Reports extends javax.swing.JInternalFrame {
 
         jButtonIndicadores.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonIndicadores.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonIndicadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporteIndicadores.png"))); // NOI18N
+        jButtonIndicadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/reporteIndicadores.png"))); // NOI18N
         jButtonIndicadores.setText("REP. INDICADORES");
         jButtonIndicadores.setToolTipText("Informe de los indicadores de logro que tiene cada asignatura para cada periodo académico.");
         jButtonIndicadores.setBorder(null);
@@ -197,22 +197,20 @@ public class Reports extends javax.swing.JInternalFrame {
                 .addGroup(jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPaneFondoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPaneFondoLayout.createSequentialGroup()
-                                .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPaneFondoLayout.createSequentialGroup()
-                                .addComponent(jButtonNivelAcade, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43))))
+                        .addComponent(jButtonNivelAcade, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43))
                     .addGroup(jDesktopPaneFondoLayout.createSequentialGroup()
                         .addGroup(jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jDesktopPaneFondoLayout.createSequentialGroup()
                                 .addGap(96, 96, 96)
-                                .addComponent(jButtonCalificIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButtonCalificIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jDesktopPaneFondoLayout.createSequentialGroup()
                                 .addGap(105, 105, 105)
-                                .addComponent(jButtonIndicadores, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 200, Short.MAX_VALUE))))
+                                .addComponent(jButtonIndicadores, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                                .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
             .addComponent(jLabelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jDesktopPaneFondoLayout.setVerticalGroup(
@@ -239,23 +237,22 @@ public class Reports extends javax.swing.JInternalFrame {
                         .addComponent(jButtonCalificIndividual)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonNivelAcade, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPaneFondoLayout.createSequentialGroup()
                         .addComponent(jButtonRepAreas, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(51, 51, 51))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPaneFondoLayout.createSequentialGroup()
-                        .addComponent(jButtonIndicadores)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
                     .addGroup(jDesktopPaneFondoLayout.createSequentialGroup()
-                        .addComponent(jButtonDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGroup(jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButtonIndicadores)
+                                .addComponent(jButtonDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(34, 34, 34))))
         );
 
         getContentPane().add(jDesktopPaneFondo);
-        jDesktopPaneFondo.setBounds(0, 0, 1192, 672);
+        jDesktopPaneFondo.setBounds(0, 0, 1240, 670);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -32,7 +32,7 @@ public class Connection {
         try {
 		//Cargamos el Driver MySQL
 		Class.forName("com.mysql.jdbc.Driver");
-		java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/signo_db2","root","");
+		java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/signo_db","root","");
 		System.out.println("conexion establecida");
 		//JOptionPane.showMessageDialog(null,"Estas Conectado");
                 st = con.createStatement();

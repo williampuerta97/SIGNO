@@ -105,7 +105,7 @@ public class Main extends javax.swing.JFrame {
         jLabelUser.setBounds(1000, 10, 250, 20);
 
         rSButtonMenu.setBackground(new java.awt.Color(255, 255, 255));
-        rSButtonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menu.png"))); // NOI18N
+        rSButtonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/menu.png"))); // NOI18N
         rSButtonMenu.setColorHover(new java.awt.Color(255, 255, 255));
         rSButtonMenu.setColorNormal(new java.awt.Color(255, 255, 255));
         rSButtonMenu.setColorPressed(new java.awt.Color(255, 255, 255));
@@ -142,7 +142,7 @@ public class Main extends javax.swing.JFrame {
 
         rSButtonRegistro.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonRegistro.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/roles.png"))); // NOI18N
+        rSButtonRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/roles.png"))); // NOI18N
         rSButtonRegistro.setText("   REGISTRO  ");
         rSButtonRegistro.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonRegistro.setColorNormal(new java.awt.Color(255, 255, 255));
@@ -160,7 +160,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonRegistro.setBounds(0, 0, 180, 40);
 
         rSButtonReportes.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reportes.png"))); // NOI18N
+        rSButtonReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/reportes.png"))); // NOI18N
         rSButtonReportes.setText("   REPORTES");
         rSButtonReportes.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonReportes.setColorNormal(new java.awt.Color(255, 255, 255));
@@ -178,7 +178,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonReportes.setBounds(0, 50, 180, 40);
 
         rSButtonInactivos.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonInactivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inactivo.png"))); // NOI18N
+        rSButtonInactivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/inactivo.png"))); // NOI18N
         rSButtonInactivos.setText("   INACTIVOS");
         rSButtonInactivos.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonInactivos.setColorNormal(new java.awt.Color(255, 255, 255));
@@ -212,7 +212,7 @@ public class Main extends javax.swing.JFrame {
         jPanelAcademic.setLayout(null);
 
         rSButtonAsignatura.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/asignaturas.png"))); // NOI18N
+        rSButtonAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/asignaturas.png"))); // NOI18N
         rSButtonAsignatura.setText("   ASIGNATURAS  ");
         rSButtonAsignatura.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonAsignatura.setColorNormal(new java.awt.Color(255, 255, 255));
@@ -230,7 +230,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonAsignatura.setBounds(0, 10, 180, 50);
 
         rSButtonGrados.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonGrados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/grados.png"))); // NOI18N
+        rSButtonGrados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/grados.png"))); // NOI18N
         rSButtonGrados.setText("   GRADOS  ");
         rSButtonGrados.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonGrados.setColorNormal(new java.awt.Color(255, 255, 255));
@@ -248,7 +248,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonGrados.setBounds(0, 70, 180, 50);
 
         rSButtonLogros.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonLogros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logros.png"))); // NOI18N
+        rSButtonLogros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logros.png"))); // NOI18N
         rSButtonLogros.setText("   LOGROS  ");
         rSButtonLogros.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonLogros.setColorNormal(new java.awt.Color(255, 255, 255));
@@ -266,7 +266,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonLogros.setBounds(0, 130, 180, 40);
 
         rSButtonMaterias.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonMaterias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/materias.png"))); // NOI18N
+        rSButtonMaterias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/materias.png"))); // NOI18N
         rSButtonMaterias.setText("   MATERIAS  ");
         rSButtonMaterias.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonMaterias.setColorNormal(new java.awt.Color(255, 255, 255));
@@ -284,7 +284,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonMaterias.setBounds(0, 180, 180, 40);
 
         rSButtonNotas.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonNotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/notas.png"))); // NOI18N
+        rSButtonNotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/notas.png"))); // NOI18N
         rSButtonNotas.setText("   CALIFICACION  ");
         rSButtonNotas.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonNotas.setColorNormal(new java.awt.Color(255, 255, 255));
@@ -302,7 +302,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonNotas.setBounds(0, 230, 180, 40);
 
         rSButtonPeriodo.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonPeriodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Periodo.png"))); // NOI18N
+        rSButtonPeriodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Periodo.png"))); // NOI18N
         rSButtonPeriodo.setText("   PERIODO  ");
         rSButtonPeriodo.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonPeriodo.setColorNormal(new java.awt.Color(255, 255, 255));
@@ -315,8 +315,8 @@ public class Main extends javax.swing.JFrame {
         rSButtonPeriodo.setBounds(0, 280, 180, 40);
 
         rSButtonEvento.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inactivo.png"))); // NOI18N
-        rSButtonEvento.setText("   EVENTOS");
+        rSButtonEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eventos.png"))); // NOI18N
+        rSButtonEvento.setText("   EVENTOS   ");
         rSButtonEvento.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonEvento.setColorNormal(new java.awt.Color(255, 255, 255));
         rSButtonEvento.setColorPressed(new java.awt.Color(255, 255, 255));
@@ -342,7 +342,7 @@ public class Main extends javax.swing.JFrame {
         jPanelDespMenu.setBounds(0, 40, 180, 660);
 
         jButtonSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jButtonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
+        jButtonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/salir.png"))); // NOI18N
         jButtonSalir.setText("SALIR");
         jButtonSalir.setBorder(null);
         jButtonSalir.setBorderPainted(false);
@@ -355,7 +355,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jDesktopPaneFondo.add(jButtonSalir);
-        jButtonSalir.setBounds(1164, 643, 65, 44);
+        jButtonSalir.setBounds(1170, 650, 70, 44);
 
         getContentPane().add(jDesktopPaneFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 700));
 
