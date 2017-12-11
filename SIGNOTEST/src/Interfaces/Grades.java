@@ -28,7 +28,7 @@ public class Grades extends javax.swing.JInternalFrame {
         jButtonNotas = new javax.swing.JButton();
         jButtonDefinitiva = new javax.swing.JButton();
 
-        jDesktopPane1.setBackground(new java.awt.Color(30, 30, 156));
+        jDesktopPane1.setBackground(new java.awt.Color(0, 0, 255));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

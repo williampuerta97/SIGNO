@@ -8,10 +8,7 @@ package Interfaces;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import Resources.Connection;
-/**
- *
- * @author Grupo prueba y calidad
- */
+/* @author Grupo prueba y calidad  */
 public class RegisterUser extends javax.swing.JInternalFrame {
 
     Connection cone;
