@@ -79,7 +79,6 @@ public class Main extends javax.swing.JFrame {
         rSButtonMetroGAcadem = new Resources.RSButtonMetro();
         jPanelAcademic = new javax.swing.JPanel();
         rSButtonAsignatura = new Resources.RSButtonMetro();
-        rSButtonGrados = new Resources.RSButtonMetro();
         rSButtonLogros = new Resources.RSButtonMetro();
         rSButtonMaterias = new Resources.RSButtonMetro();
         rSButtonNotas = new Resources.RSButtonMetro();
@@ -213,7 +212,7 @@ public class Main extends javax.swing.JFrame {
         jPanelAcademic.setLayout(null);
 
         rSButtonAsignatura.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/asignaturas.png"))); // NOI18N
+        rSButtonAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/not.png"))); // NOI18N
         rSButtonAsignatura.setText("   ASIGNATURAS  ");
         rSButtonAsignatura.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonAsignatura.setColorNormal(new java.awt.Color(255, 255, 255));
@@ -229,24 +228,6 @@ public class Main extends javax.swing.JFrame {
         });
         jPanelAcademic.add(rSButtonAsignatura);
         rSButtonAsignatura.setBounds(0, 10, 180, 50);
-
-        rSButtonGrados.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonGrados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/grados.png"))); // NOI18N
-        rSButtonGrados.setText("   GRADOS  ");
-        rSButtonGrados.setColorHover(new java.awt.Color(204, 204, 204));
-        rSButtonGrados.setColorNormal(new java.awt.Color(255, 255, 255));
-        rSButtonGrados.setColorPressed(new java.awt.Color(255, 255, 255));
-        rSButtonGrados.setColorTextNormal(new java.awt.Color(0, 0, 0));
-        rSButtonGrados.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        rSButtonGrados.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        rSButtonGrados.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        rSButtonGrados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonGradosActionPerformed(evt);
-            }
-        });
-        jPanelAcademic.add(rSButtonGrados);
-        rSButtonGrados.setBounds(0, 70, 180, 50);
 
         rSButtonLogros.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonLogros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logros.png"))); // NOI18N
@@ -339,7 +320,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonEvento.setBounds(0, 330, 180, 40);
 
         jPanelGFAcademico.add(jPanelAcademic);
-        jPanelAcademic.setBounds(0, 50, 180, 380);
+        jPanelAcademic.setBounds(0, 50, 180, 410);
 
         jPanelDespMenu.add(jPanelGFAcademico);
         jPanelGFAcademico.setBounds(0, 200, 180, 460);
@@ -391,7 +372,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonMenuActionPerformed
 
     private void rSButtonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonReportesActionPerformed
-
         try {
             // CONEXION A LA INTERFAZ REPORTES:
             Reports rep = new Reports();
@@ -413,19 +393,17 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonLogrosActionPerformed
 
     private void rSButtonAsignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonAsignaturaActionPerformed
-        EnterSubjects entSub = new EnterSubjects();
-        entSub.setVisible(true);
-        entSub.setLocation(300, 50);
-        jDesktopPaneFondo.add(entSub);
+        try {
+            // CONEXION A LA INTERFAZ REPORTES:
+            SubjectGrade subjetGr = new SubjectGrade();
+            this.setLocationRelativeTo(null);
+            subjetGr.setVisible(true);
+            jDesktopPaneFondo.add(subjetGr);
+            subjetGr.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_rSButtonAsignaturaActionPerformed
-
-    private void rSButtonGradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonGradosActionPerformed
-        EnterDegrees entDeg = new EnterDegrees();
-        entDeg.setVisible(true);
-        entDeg.setSize(610, 467);
-        entDeg.setLocation(300, 50);
-        jDesktopPaneFondo.add(entDeg);
-    }//GEN-LAST:event_rSButtonGradosActionPerformed
 
     private void rSButtonMetroGAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetroGAdminActionPerformed
        // DESPLIGUE OPCIONES DEL MENU ADMIN:
@@ -556,7 +534,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelMenu;
     private Resources.RSButtonMetro rSButtonAsignatura;
     private Resources.RSButtonMetro rSButtonEvento;
-    private Resources.RSButtonMetro rSButtonGrados;
     private Resources.RSButtonMetro rSButtonInactivos;
     private Resources.RSButtonMetro rSButtonLogros;
     private Resources.RSButtonMetro rSButtonMaterias;
