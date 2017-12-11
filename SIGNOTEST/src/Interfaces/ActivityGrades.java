@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package signo;
+package Interfaces;
 
 import java.awt.event.ItemEvent;
 import java.sql.ResultSet;
@@ -11,7 +11,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
-
+import Resources.Connection;
 /**
  *
  * @author Grupo diseño
@@ -115,7 +115,7 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tbData);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 293, 397, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 293, 440, 110));
 
         cboGroup.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -151,7 +151,7 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 436, -1, -1));
+        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, -1, -1));
 
         cboSubjects.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -164,7 +164,12 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jButton1.setText("PDF");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 436, -1, -1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 440, 70, -1));
 
         lbTeachers.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         getContentPane().add(lbTeachers, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 172, 16));
@@ -323,6 +328,10 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
             model.setRowCount(0);
         }    
     }//GEN-LAST:event_cboActivityItemStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 /**
  * @author Grupo diseño
  * @version 1.0
