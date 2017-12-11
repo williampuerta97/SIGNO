@@ -392,7 +392,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonMenuActionPerformed
 
     private void rSButtonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonReportesActionPerformed
-
         try {
             // CONEXION A LA INTERFAZ REPORTES:
             Reports rep = new Reports();
@@ -414,18 +413,24 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonLogrosActionPerformed
 
     private void rSButtonNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonNotasActionPerformed
-        EnterSubjects entSub = new EnterSubjects();
-        entSub.setVisible(true);
-        entSub.setLocation(300, 50);
-        jDesktopPaneFondo.add(entSub);
+        try {
+            // CONEXION A LA INTERFAZ REPORTES:
+            Reports rep = new Reports();
+            this.setLocationRelativeTo(null);
+            rep.setVisible(true);
+            jDesktopPaneFondo.add(rep);
+            rep.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_rSButtonNotasActionPerformed
 
     private void rSButtonGradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonGradosActionPerformed
-        EnterDegrees entDeg = new EnterDegrees();
-        entDeg.setVisible(true);
-        entDeg.setSize(610, 467);
-        entDeg.setLocation(300, 50);
-        jDesktopPaneFondo.add(entDeg);
+        SubjectGrade subDeg = new SubjectGrade();
+        subDeg.setVisible(true);
+        subDeg.setSize(610, 467);
+        subDeg.setLocation(300, 50);
+        jDesktopPaneFondo.add(subDeg);
     }//GEN-LAST:event_rSButtonGradosActionPerformed
 
     private void rSButtonMetroGAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetroGAdminActionPerformed
