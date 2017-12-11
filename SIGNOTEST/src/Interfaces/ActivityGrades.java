@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfaces;
+package signo;
 
-import Resources.Connection;
 import java.awt.event.ItemEvent;
 import java.sql.ResultSet;
 import javax.swing.DefaultComboBoxModel;
@@ -166,6 +165,8 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
 
         jButton1.setText("PDF");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 436, -1, -1));
+
+        lbTeachers.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         getContentPane().add(lbTeachers, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 172, 16));
 
         pack();
@@ -265,7 +266,7 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
             jLabel6.setVisible(false);
             cboActivity.setVisible(false);
             int pos = cboGroup.getSelectedIndex();
-            loadSubjects(idGroup[pos]);        
+            loadSubjects(idGroup[pos], Main.id);        
         }else if(cboGroup.getSelectedIndex() == 0){
             disableCombo();    
             cboSubjects.removeAllItems();
@@ -413,7 +414,7 @@ void loadGroup(int code){
  * grupo.
  * @param value Recibe en un String, la id del grupo para cargar sus materias en el jComboBox
  */
-void loadSubjects(String value){
+void loadSubjects(String value, int id){
     try {
         ResultSet rs = con.consultDB("SELECT count(*) conteo "
                 + "FROM materia mat, docente_materia_grupo dmg "
@@ -426,26 +427,48 @@ void loadSubjects(String value){
     } catch (Exception e) {
     }
     cboSubjects.removeAllItems();
+    model2 = new DefaultComboBoxModel();
+    cboSubjects.setModel(model2);
+    model2.addElement("Seleccione una materia");
     int i = 1;
     try {
-         ResultSet rs = con.consultDB("SELECT mat.idMateria, mat.Nombre "
+        ResultSet rs = con.consultDB("SELECT mat.idMateria, mat.Nombre "
+            + "FROM materia as mat "
+            + "INNER JOIN Docente_Materia_Grupo as dmg "
+            + "ON mat.idMateria = dmg.Materia_id "
+            + "INNER JOIN grupo as gru "
+            + "ON dmg.Grupo_id = gru.idGrupo "
+            + "WHERE gru.idGrupo = "+value+" AND mat.Activo = 1 AND dmg.Docente_id = "+id);
+        
+        if(rs.next()){
+            rs.beforeFirst();
+            while(rs.next()){
+                model2.addElement(rs.getString("Nombre"));
+                idSubject[i] = rs.getString("mat.idMateria");
+                i++;
+            }            
+        }else{
+            try {
+            ResultSet res = con.consultDB("SELECT mat.idMateria, mat.Nombre "
             + "FROM materia as mat "
             + "INNER JOIN Docente_Materia_Grupo as dmg "
             + "ON mat.idMateria = dmg.Materia_id "
             + "INNER JOIN grupo as gru "
             + "ON dmg.Grupo_id = gru.idGrupo "
             + "WHERE gru.idGrupo = "+value+" AND mat.Activo = 1");      
-         model2 = new DefaultComboBoxModel();
-         cboSubjects.setModel(model2);
-         model2.addElement("Seleccione una materia");
-        while(rs.next()){
-            model2.addElement(rs.getString("Nombre"));
-            idSubject[i] = rs.getString("mat.idMateria");
-            i++;
-        }
+         
+            while(res.next()){
+                model2.addElement(res.getString("Nombre"));
+                idSubject[i] = res.getString("mat.idMateria");
+                i++;
+            }
         
+            } catch (Exception e) {
+            }
+        }
     } catch (Exception e) {
     }
+    
 }
 /**
  * @author Grupo diseño
