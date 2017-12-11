@@ -21,6 +21,7 @@ public class Main extends javax.swing.JFrame {
     
     public Main() {
         initComponents();
+        this.setLocationRelativeTo(null);
         jPanelAdmin.setLayout(null);
         jPanelAcademic.setLayout(null);
         //System.out.println(rol+"-"+id+"-"+user);
@@ -79,7 +80,6 @@ public class Main extends javax.swing.JFrame {
         rSButtonMetroGAcadem = new Resources.RSButtonMetro();
         jPanelAcademic = new javax.swing.JPanel();
         rSButtonNotas = new Resources.RSButtonMetro();
-        rSButtonGrados = new Resources.RSButtonMetro();
         rSButtonLogros = new Resources.RSButtonMetro();
         rSButtonMaterias = new Resources.RSButtonMetro();
         rSButtonCalifica = new Resources.RSButtonMetro();
@@ -213,7 +213,7 @@ public class Main extends javax.swing.JFrame {
         jPanelAcademic.setLayout(null);
 
         rSButtonNotas.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonNotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/asignaturas.png"))); // NOI18N
+        rSButtonNotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/not.png"))); // NOI18N
         rSButtonNotas.setText("   NOTAS  ");
         rSButtonNotas.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonNotas.setColorNormal(new java.awt.Color(255, 255, 255));
@@ -228,25 +228,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAcademic.add(rSButtonNotas);
-        rSButtonNotas.setBounds(0, 10, 180, 50);
-
-        rSButtonGrados.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonGrados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/grados.png"))); // NOI18N
-        rSButtonGrados.setText("   GRADOS  ");
-        rSButtonGrados.setColorHover(new java.awt.Color(204, 204, 204));
-        rSButtonGrados.setColorNormal(new java.awt.Color(255, 255, 255));
-        rSButtonGrados.setColorPressed(new java.awt.Color(255, 255, 255));
-        rSButtonGrados.setColorTextNormal(new java.awt.Color(0, 0, 0));
-        rSButtonGrados.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        rSButtonGrados.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        rSButtonGrados.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        rSButtonGrados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonGradosActionPerformed(evt);
-            }
-        });
-        jPanelAcademic.add(rSButtonGrados);
-        rSButtonGrados.setBounds(0, 70, 180, 50);
+        rSButtonNotas.setBounds(0, 0, 180, 50);
 
         rSButtonLogros.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonLogros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logros.png"))); // NOI18N
@@ -414,24 +396,16 @@ public class Main extends javax.swing.JFrame {
 
     private void rSButtonNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonNotasActionPerformed
         try {
-            // CONEXION A LA INTERFAZ REPORTES:
-            Reports rep = new Reports();
+            // CONEXION A LA INTERFAZ MATICRULAS:
+            SubjectGrade subj = new SubjectGrade();
             this.setLocationRelativeTo(null);
-            rep.setVisible(true);
-            jDesktopPaneFondo.add(rep);
-            rep.setSelected(true);
+            subj.setVisible(true);
+            jDesktopPaneFondo.add(subj);
+            subj.setSelected(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_rSButtonNotasActionPerformed
-
-    private void rSButtonGradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonGradosActionPerformed
-        SubjectGrade subDeg = new SubjectGrade();
-        subDeg.setVisible(true);
-        subDeg.setSize(610, 467);
-        subDeg.setLocation(300, 50);
-        jDesktopPaneFondo.add(subDeg);
-    }//GEN-LAST:event_rSButtonGradosActionPerformed
 
     private void rSButtonMetroGAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetroGAdminActionPerformed
        // DESPLIGUE OPCIONES DEL MENU ADMIN:
@@ -562,7 +536,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelMenu;
     private Resources.RSButtonMetro rSButtonCalifica;
     private Resources.RSButtonMetro rSButtonEvento;
-    private Resources.RSButtonMetro rSButtonGrados;
     private Resources.RSButtonMetro rSButtonInactivos;
     private Resources.RSButtonMetro rSButtonLogros;
     private Resources.RSButtonMetro rSButtonMaterias;

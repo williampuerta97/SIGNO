@@ -15,7 +15,9 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
 
         jDesktopPaneFondo = new javax.swing.JDesktopPane();
         jLabelTitulo = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSubject = new javax.swing.JButton();
+        btnDegree = new javax.swing.JButton();
+        jButtonSalir = new javax.swing.JButton();
 
         getContentPane().setLayout(null);
 
@@ -28,22 +30,55 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         jDesktopPaneFondo.add(jLabelTitulo);
         jLabelTitulo.setBounds(0, 30, 730, 22);
 
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/asignaturas.png"))); // NOI18N
-        jButton1.setText("   ASIGNATURAS   ");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSubject.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnSubject.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubject.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/asignaturas.png"))); // NOI18N
+        btnSubject.setText("   ASIGNATURAS   ");
+        btnSubject.setBorder(null);
+        btnSubject.setBorderPainted(false);
+        btnSubject.setContentAreaFilled(false);
+        btnSubject.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSubject.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSubject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSubjectActionPerformed(evt);
             }
         });
-        jDesktopPaneFondo.add(jButton1);
-        jButton1.setBounds(80, 130, 180, 170);
+        jDesktopPaneFondo.add(btnSubject);
+        btnSubject.setBounds(80, 130, 180, 170);
+
+        btnDegree.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnDegree.setForeground(new java.awt.Color(255, 255, 255));
+        btnDegree.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/grados.png"))); // NOI18N
+        btnDegree.setText("   GRADO   ");
+        btnDegree.setBorder(null);
+        btnDegree.setBorderPainted(false);
+        btnDegree.setContentAreaFilled(false);
+        btnDegree.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDegree.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnDegree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDegreeActionPerformed(evt);
+            }
+        });
+        jDesktopPaneFondo.add(btnDegree);
+        btnDegree.setBounds(410, 130, 170, 170);
+
+        jButtonSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/salir.png"))); // NOI18N
+        jButtonSalir.setText("SALIR");
+        jButtonSalir.setBorder(null);
+        jButtonSalir.setBorderPainted(false);
+        jButtonSalir.setContentAreaFilled(false);
+        jButtonSalir.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
+        jDesktopPaneFondo.add(jButtonSalir);
+        jButtonSalir.setBounds(660, 530, 65, 31);
 
         getContentPane().add(jDesktopPaneFondo);
         jDesktopPaneFondo.setBounds(0, 0, 730, 570);
@@ -51,17 +86,32 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubjectActionPerformed
         // CONECTAR CON LA INTERFAZ ASIGNATURAS:
         EnterSubjects entSub = new EnterSubjects();
         entSub.setVisible(true);
         entSub.setLocation(300, 50);
         jDesktopPaneFondo.add(entSub);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSubjectActionPerformed
+
+    private void btnDegreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDegreeActionPerformed
+        SubjectGrade subDeg = new SubjectGrade();
+        subDeg.setVisible(true);
+        subDeg.setSize(610, 467);
+        subDeg.setLocation(300, 50);
+        jDesktopPaneFondo.add(subDeg);
+    }//GEN-LAST:event_btnDegreeActionPerformed
+
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        // SALIR AL PRINCIPAL:
+        this.dispose();
+    }//GEN-LAST:event_jButtonSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnDegree;
+    private javax.swing.JButton btnSubject;
+    private javax.swing.JButton jButtonSalir;
     private javax.swing.JDesktopPane jDesktopPaneFondo;
     private javax.swing.JLabel jLabelTitulo;
     // End of variables declaration//GEN-END:variables
