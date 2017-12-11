@@ -111,7 +111,7 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
         setTitle("GRADOS");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -173,7 +173,8 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(50, 40, 240, 95);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -225,7 +226,8 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 40, -1, 95));
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(308, 40, 222, 95);
 
         btnRegister.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         btnRegister.setText("REGISTRAR");
@@ -234,7 +236,8 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 167, -1, -1));
+        getContentPane().add(btnRegister);
+        btnRegister.setBounds(121, 167, 99, 25);
 
         btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         btnUpdate.setText("ACTUALIZAR");
@@ -243,7 +246,8 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
                 btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 167, -1, -1));
+        getContentPane().add(btnUpdate);
+        btnUpdate.setBounds(371, 167, 105, 25);
 
         tbData.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbData.setModel(new javax.swing.table.DefaultTableModel(
@@ -265,18 +269,21 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(tbData);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 403, 112));
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(90, 210, 403, 112);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel5.setText("Buscar:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 350, -1, 20));
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(193, 350, 43, 20);
 
         txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtSearchKeyReleased(evt);
             }
         });
-        getContentPane().add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 160, -1));
+        getContentPane().add(txtSearch);
+        txtSearch.setBounds(260, 350, 160, 20);
 
         btnActive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/math-add-icon.png"))); // NOI18N
         btnActive.addActionListener(new java.awt.event.ActionListener() {
@@ -284,7 +291,8 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
                 btnActiveActionPerformed(evt);
             }
         });
-        getContentPane().add(btnActive, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+        getContentPane().add(btnActive);
+        btnActive.setBounds(30, 210, 49, 25);
 
         btnInactive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/math-minus-icon.png"))); // NOI18N
         btnInactive.addActionListener(new java.awt.event.ActionListener() {
@@ -292,7 +300,8 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
                 btnInactiveActionPerformed(evt);
             }
         });
-        getContentPane().add(btnInactive, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, -1, -1));
+        getContentPane().add(btnInactive);
+        btnInactive.setBounds(500, 210, 49, 25);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

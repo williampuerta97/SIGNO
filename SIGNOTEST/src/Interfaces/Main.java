@@ -92,7 +92,7 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         jDesktopPaneFondo.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPaneFondo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
@@ -363,7 +363,8 @@ public class Main extends javax.swing.JFrame {
         jDesktopPaneFondo.add(jButtonSalir);
         jButtonSalir.setBounds(1170, 650, 70, 44);
 
-        getContentPane().add(jDesktopPaneFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 700));
+        getContentPane().add(jDesktopPaneFondo);
+        jDesktopPaneFondo.setBounds(0, 0, 1250, 700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
