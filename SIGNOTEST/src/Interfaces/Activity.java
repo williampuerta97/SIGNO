@@ -1,4 +1,6 @@
+package Interfaces;
 
+import Resources.Connection;
 import com.toedter.calendar.demo.DateChooserPanel;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -14,16 +16,16 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-public class Actividad extends javax.swing.JInternalFrame {
+public class Activity extends javax.swing.JInternalFrame {
 
-    ConexionDB cone;
+    Connection cone;
     DefaultTableModel model;
     int temp2 = 0;
     int idAch, idGroup;
 
-    public Actividad() {
+    public Activity() {
         initComponents();
-        cone = new ConexionDB();
+        cone = new Connection();
         consult();
         cargarComboGrupo();
         comboMateria();
@@ -112,7 +114,7 @@ public class Actividad extends javax.swing.JInternalFrame {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -132,7 +134,7 @@ public class Actividad extends javax.swing.JInternalFrame {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -152,7 +154,7 @@ public class Actividad extends javax.swing.JInternalFrame {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -172,7 +174,7 @@ public class Actividad extends javax.swing.JInternalFrame {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -191,7 +193,7 @@ public class Actividad extends javax.swing.JInternalFrame {
             }
 
         } catch (Exception e) {
-            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 
@@ -595,7 +597,7 @@ public class Actividad extends javax.swing.JInternalFrame {
 
             JOptionPane.showMessageDialog(rootPane, "Dato ingresado");
         } catch (Exception e) {
-            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, e);
         }
         
         porcent();
@@ -633,7 +635,7 @@ public class Actividad extends javax.swing.JInternalFrame {
                 SpinnerPor.setValue(rs.getString("Porcentaje"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
