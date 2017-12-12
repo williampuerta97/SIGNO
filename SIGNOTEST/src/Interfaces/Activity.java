@@ -1,28 +1,29 @@
-package Interfaces;
 
-
-import Resources.Connection;
+import com.toedter.calendar.demo.DateChooserPanel;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.util.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-public class Activity extends javax.swing.JInternalFrame {
 
-    Connection con;
+public class Actividad extends javax.swing.JInternalFrame {
+
+    ConexionDB cone;
     DefaultTableModel model;
     int temp2 = 0;
-    
-        
-   public Activity() {
+    int idAch, idGroup;
+
+    public Actividad() {
         initComponents();
-        con = new Connection();
+        cone = new ConexionDB();
         consult();
         cargarComboGrupo();
         comboMateria();
@@ -32,8 +33,8 @@ public class Activity extends javax.swing.JInternalFrame {
         porcent();
         //desactivar();
     }
-   
-  /* public void desactivar(){
+
+    /* public void desactivar(){
        
        if(i < jPanel1.getComponents().length) {
             jPanel2.getComponent(i).setEnabled(false);
@@ -43,15 +44,20 @@ public class Activity extends javax.swing.JInternalFrame {
            
                 
     }*/
-   
+    public void consult() {
 
-    public void consult(){
+        /*
+      @autor: Bases de datos  
+      @version: 1.0
+      @metodo: Su función es consultar registros a la base de datos
+        
+         */
 //        String titulos[] = {"ID_GRUPO", "DIRECTOR", "JORNADA", "NOMBRE", "ACTIVO"};
 //        model = new DefaultTableModel(null, titulos);
 //        String fila[] = new String[5];
 //        
 //        try {
-//            ResultSet rs = con.consultDB("SELECT idGrupo, Director, Jornada, Nombre, Activo FROM grupo");
+//            ResultSet rs = cone.consultDB("SELECT idGrupo, Director, Jornada, Nombre, Activo FROM grupo");
 //            
 //            while (rs.next()) {
 //                fila[0] = rs.getString("idGrupo");
@@ -66,14 +72,13 @@ public class Activity extends javax.swing.JInternalFrame {
 //        } catch (Exception e) {
 //            System.out.println("Error" + e);
 //        }
-
         String titulos[] = {"ID_ACTIVIDAD", "NOMBRE", "DESCRIPCION", "ESTADO", "ENTREGA", "GRUPO", "LOGRO", "PORCENTAJE"};
         model = new DefaultTableModel(null, titulos);
         String fila[] = new String[8];
-        
+
         try {
-            ResultSet rs = con.consultDB("SELECT idActividad, Nombre, Descripcion, Estado, Fecha_Entrega, Grupo_Id, Logro_Id, Porcentaje FROM actividad WHERE  Estado = 1 ");
-            
+            ResultSet rs = cone.consultDB("SELECT idActividad, Nombre, Descripcion, Estado, Fecha_Entrega, Grupo_Id, Logro_Id, Porcentaje FROM actividad WHERE  Estado = 1 ");
+
             while (rs.next()) {
                 fila[0] = rs.getString("idActividad");
                 fila[1] = rs.getString("Nombre");
@@ -83,7 +88,7 @@ public class Activity extends javax.swing.JInternalFrame {
                 fila[5] = rs.getString("Grupo_Id");
                 fila[6] = rs.getString("Logro_Id");
                 fila[7] = rs.getString("Porcentaje");
-                
+
                 model.addRow(fila);
             }
             jTable1.setModel(model);
@@ -91,96 +96,127 @@ public class Activity extends javax.swing.JInternalFrame {
             System.out.println("Error" + e);
         }
     }
-        
-    public void cargarComboGrupo(){
-          
+
+    public void cargarComboGrupo() {
+        /*
+    @autor:Bases de datos
+    @version:1.0
+    @metodo: Consulta los datos de la tabla grupo y muestra los datos que estan activos mediante un jComboBox
+         */
         try {
             //seleccionar el nombre del grupo 
-            ResultSet rs= con.consultDB("SELECT idGrupo FROM grupo");
-            while(rs.next()){
+            ResultSet rs = cone.consultDB("SELECT Nombre FROM grupo WHERE Activo = 1 ");
+            while (rs.next()) {
                 //Group.addItem(rs.getObject("Nombre"));
-               Group.addItem(rs.getString("idGrupo"));
-                
-                }
-        } catch (SQLException ex) {
-            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
-    
-    public void comboMateria(){
-        try {
-            
-            ResultSet rs= con.consultDB("SELECT Nombre FROM materia");
-            while(rs.next()){
-                
-                materia.addItem(rs.getString("Nombre"));
-               
-                }
-        } catch (SQLException ex) {
-            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    public void comboPeriodo(){
-        try {
-            
-            ResultSet rs= con.consultDB("SELECT Nombre FROM periodo");
-            while(rs.next()){
-                
-                periodo.addItem(rs.getString("Nombre"));
-               
-                }
-        } catch (SQLException ex) {
-            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    public void comboLogros(){
-        try {
-            
-            ResultSet rs= con.consultDB("SELECT idLogro FROM logro");
-            while(rs.next()){
-                
-                logros.addItem(rs.getString("idLogro"));
-               
-                }
-        } catch (SQLException ex) {
-            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    public void cargarId(){        
-        try {
-            ResultSet rs = con.consultDB("SELECT max(idActividad) FROM actividad");
-             
-            if (rs.next()){
-                lblId.setText((rs.getInt("max(idActividad)")+1)+"");
+                Group.addItem(rs.getString("Nombre"));
+
             }
-            
-        } catch (Exception e) {
-            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, e);
+        } catch (SQLException ex) {
+            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
-    
-    public int porcent(){
-        ResultSet rs = con.consultDB("select sum(Porcentaje) from actividad");
-        int temp=0;
+
+    public void comboMateria() {
+        /*
+    @autor:Bases de datos
+    @version:1.0
+    @metodo:Consulta los datos de la tabla materia y muestra los datos que estan activos mediante un jComboBox
+         */
         try {
-            if(rs.next())
-             temp = rs.getInt("sum(Porcentaje)");
-        } catch (Exception e) {
-            System.out.println("Error"+e.getMessage());
+
+            ResultSet rs = cone.consultDB("SELECT Nombre FROM materia WHERE Activo= 1");
+            while (rs.next()) {
+
+                materia.addItem(rs.getString("Nombre"));
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, ex);
         }
-        temp2 = 100-temp;
-        jLabel13.setText(""+temp2);
-        
-        return temp2;
-        
-        
     }
-    
-    
+
+    public void comboPeriodo() {
+
+        /*
+    @autor:Bases de datos
+    @version:1.0
+    @metodo:Consulta los datos de la tabla periodo y muestra los datos  mediante un jComboBox
+         */
+        try {
+
+            ResultSet rs = cone.consultDB("SELECT Nombre FROM periodo");
+            while (rs.next()) {
+
+                periodo.addItem(rs.getString("Nombre"));
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void comboLogros() {
+
+        /*
+    @autor:Bases de datos
+    @version:1.0
+    @metodo:Consulta los datos de la tabla logro y muestra los datos que están activos mediante un jComboBox
+         */
+        try {
+
+            ResultSet rs = cone.consultDB("SELECT Nombre FROM logro WHERE Activo=1");
+            while (rs.next()) {
+
+                logros.addItem(rs.getString("Nombre"));
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void cargarId() {
+
+        /*
+    @autor:Bases de datos
+    @version:1.0
+    @metodo: Muestra el untimo datos de idActividad que están en la tabla Actividad por medio de un jLabel
+         */
+        try {
+            ResultSet rs = cone.consultDB("SELECT max(idActividad) FROM actividad");
+
+            if (rs.next()) {
+                lblId.setText((rs.getInt("max(idActividad)") + 1) + "");
+            }
+
+        } catch (Exception e) {
+            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    public int porcent() {
+
+        /*
+    @autor:Bases de datos
+    @version:1.0
+    @metodo:Consulta y suma los datos del campo porcentaje de la tabla actividad 
+         */
+        ResultSet rs = cone.consultDB("select sum(Porcentaje) from actividad");
+        int temp = 0;
+        try {
+            if (rs.next()) {
+                temp = rs.getInt("sum(Porcentaje)");
+            }
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+        }
+        temp2 = 100 - temp;
+        jLabel13.setText("" + temp2);
+
+        return temp2;
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -205,7 +241,6 @@ public class Activity extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         logros = new javax.swing.JComboBox();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -237,6 +272,11 @@ public class Activity extends javax.swing.JInternalFrame {
 
         jMenuItem1.setText("Editar");
         jMenuItem1.setComponentPopupMenu(jPopupMenu1);
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jPopupMenu1.add(jMenuItem1);
 
         setClosable(true);
@@ -274,27 +314,11 @@ public class Activity extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setText("INGRESAR");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(111, 111, 111))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -338,9 +362,7 @@ public class Activity extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(logros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(21, 21, 21))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -369,6 +391,8 @@ public class Activity extends javax.swing.JInternalFrame {
                 aggActionPerformed(evt);
             }
         });
+
+        jDateChooser1.setDateFormatString("yyyy-MM-dd");
 
         jLabel13.setText("000");
 
@@ -466,7 +490,7 @@ public class Activity extends javax.swing.JInternalFrame {
                             .addComponent(jLabel12)
                             .addComponent(jLabel13))
                         .addGap(5, 5, 5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(agg)
                 .addGap(29, 29, 29))
         );
@@ -492,27 +516,24 @@ public class Activity extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(10, 10, 10)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(10, 10, 10)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 957, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -527,93 +548,94 @@ public class Activity extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_materiaActionPerformed
 
     private void aggActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aggActionPerformed
+
        
 //        Ingresada ing = new Ingresada();
 //        Principal1.jDesktopPane1.add(ing);
 //        ing.toFront();
 //        ing.setVisible(true); //Comentar
+         
+        int porce = (int) SpinnerPor.getValue();
+        String grupo = (String) Group.getSelectedItem();
+        String logro = (String) logros.getSelectedItem();
         
-        java.util.Date utilDate = new java.util.Date();
-        java.sql.Date dato = new java.sql.Date(utilDate.getTime());
-
-        int porce = (int)SpinnerPor.getValue();
-        String grupo = (String)Group.getSelectedItem();
-        String logro = (String)logros.getSelectedItem();
-        //String sql = "";
         String id, nom, des;
         
         id = lblId.getText();
         nom = TextNom.getText();
         des = TextDesc.getText();
-                
+
         /*nom = TextNom.getText();
         desc = TextDesc.getText();
         porce = (double)SpinnerPor.getValue();*/
-        String formato = jDateChooser1.getDateFormatString();
-        
-        
-        SimpleDateFormat form = new SimpleDateFormat(formato);
-        String fecha = String.valueOf(form.format(dato));
-        System.out.println(id + "," + nom + "," + des + "," + porce + "," + grupo + "," + logro + "," + dato);
-        //con.modifyDB("INSERT INTO actividades VALUES (" + ',' + nom + ',' + desc + ',' + porce + ',' + fecha);
-        
-      //  '"+txtName.getText()+"'
+                        
+        ResultSet rs = cone.consultDB("SELECT * FROM logro WHERE Nombre = '"+logro+"'");
         try {
-            con.modifyDB("INSERT INTO actividad "
-                + "VALUES('" + id + "','" + nom + "','" + des + "','" + 1 + "','" + fecha + "','" + grupo + "','" + logro + "','" + porce + "')");
-            
+             if (rs.next()) {
+            idAch = rs.getInt("idLogro");
+        }
+        } catch (Exception e) {
+        }
+        ResultSet rs2 = cone.consultDB("SELECT * FROM grupo WHERE Nombre = '"+grupo+"'");
+        try {
+             if (rs2.next()) {
+            idGroup = rs2.getInt("idGrupo");
+        }
+        } catch (Exception e) {
+        }
+       
+        java.sql.Date date = new java.sql.Date(jDateChooser1.getDate().getTime());
+
+        System.out.println(id + "," + nom + "," + des + "," + porce + "," + idGroup + "," + idAch + "," + date);
+        
+       try {
+           
+            cone.modifyDB("INSERT INTO actividad "
+                    + "VALUES(" + id + ",'" + nom + "','" + des + "'," + 1 + ",'" + date + "'," + idGroup + ", " + idAch + " ," + porce + ")");
+
             JOptionPane.showMessageDialog(rootPane, "Dato ingresado");
         } catch (Exception e) {
-            Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, e);
         }
         
-        
-        /*try {
-            PreparedStatement pst;
-            pst = con.PreparedStatement(sql);
-            pst.setString(1, id);
-            pst.setString(2, nom);
-            pst.setString(3, des);
-            pst.setInt(4, 1);
-            pst.setDate(5, new java.sql.Date(dato.getTime()));
-            pst.setString(6, grupo);
-            pst.setString(7, logro);
-            pst.setInt(8, porce);
- 
-            
-        } catch (Exception e) {
-            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, e);
-        }*/
         porcent();
         cargarId();
         consult();
-        
+
     }//GEN-LAST:event_aggActionPerformed
 
     private void logrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logrosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_logrosActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseClicked
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       //desactivar();
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         int fila = jTable1.getSelectedRow();
         String value = jTable1.getValueAt(fila, 0).toString();
-        
+
         if (fila >= 0) {
-            con.modifyDB("UPDATE actividad SET Estado = 0 WHERE idActividad= '" + value + "'");
+            cone.modifyDB("UPDATE actividad SET Estado = 0 WHERE idActividad= '" + value + "'");
             JOptionPane.showMessageDialog(rootPane, "Dato eliminado");
         }
-        
+
         consult();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        int id = jTable1.getSelectedRow();
+
+        ResultSet rs = cone.consultDB("SELECT * FROM Actividad WHERE  idActividad = " + jTable1.getValueAt(id, 0));
+
+        try {
+            while (rs.next()) {
+                TextNom.setText(rs.getString("Nombre"));
+                TextDesc.setText(rs.getString("Descripcion"));
+                jDateChooser1.setDateFormatString(rs.getString("Fecha_Entrega"));
+                SpinnerPor.setValue(rs.getString("Porcentaje"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Actividad.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -622,7 +644,6 @@ public class Activity extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea TextDesc;
     private javax.swing.JTextField TextNom;
     public static javax.swing.JButton agg;
-    private javax.swing.JButton jButton2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
