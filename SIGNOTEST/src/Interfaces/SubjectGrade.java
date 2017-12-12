@@ -1,5 +1,10 @@
 /* CONECTAR CON LAS INTERCES DE LOGROS MATERIAS ASIGNATURAS NOTAS */
 package Interfaces;
+
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /* @author1354951 */
 public class SubjectGrade extends javax.swing.JInternalFrame {
 
@@ -90,8 +95,14 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         // CONECTAR CON LA INTERFAZ ASIGNATURAS:
         EnterSubjects entSub = new EnterSubjects();
         entSub.setVisible(true);
+        entSub.setSize(610, 467);
         entSub.setLocation(300, 50);
         jDesktopPaneFondo.add(entSub);
+        try {
+            entSub.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(SubjectGrade.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnSubjectActionPerformed
 
     private void btnDegreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDegreeActionPerformed
@@ -100,6 +111,11 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         enterDeg.setSize(610, 467);
         enterDeg.setLocation(300, 50);
         jDesktopPaneFondo.add(enterDeg);
+        try {
+            enterDeg.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(SubjectGrade.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnDegreeActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed

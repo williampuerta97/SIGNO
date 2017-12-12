@@ -52,11 +52,9 @@ public class Main extends javax.swing.JFrame {
                 
             }
         /*OCULTAMIENTO DE MENU VERTICAL ADMIN*/
-            Animacion.Animacion.subir(35, -160, 1, 10 , jPanelAdmin);
-            Animacion.Animacion.subir(160, 35, 1, 10 , jPanelGFAcademico);
+            Animacion.Animacion.subir(35, -190, 1, 10 , jPanelAdmin);
+            Animacion.Animacion.subir(190, 35, 1, 10 , jPanelGFAcademico);
             jPanelAdmin.setVisible(false);
-        /*OCULTAMIENTO DE MENU VERTICAL ACADEMICO*/
-            //Animacion.Animacion.subir(35, -160, 1, 10 , jPanelAcademic);
             jPanelAcademic.setVisible(false);
     }
 
@@ -123,7 +121,6 @@ public class Main extends javax.swing.JFrame {
         jPanelMenu.setBounds(-3, -1, 1260, 40);
 
         jPanelDespMenu.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelDespMenu.setOpaque(false);
         jPanelDespMenu.setLayout(null);
 
         rSButtonMetroGAdmin.setBackground(new java.awt.Color(0, 0, 255));
@@ -430,14 +427,13 @@ public class Main extends javax.swing.JFrame {
        // DESPLIGUE OPCIONES DEL MENU ADMIN:
         int posicion = this.jPanelAdmin.getY();
             if (posicion > -1) {
-            Animacion.Animacion.subir(35, -160, 1, 10 , jPanelAdmin);
-            Animacion.Animacion.subir(160, 35, 1, 10 , jPanelGFAcademico);
+            Animacion.Animacion.subir(35, -190, 1, 10 , jPanelAdmin);
+            Animacion.Animacion.subir(190, 35, 1, 10 , jPanelGFAcademico);
             jPanelAdmin.setVisible(false);
             }
             else {
-            Animacion.Animacion.bajar(-160, 50, 1, 10 , jPanelAdmin);
+            Animacion.Animacion.bajar(-190, 50, 1, 10 , jPanelAdmin);
             Animacion.Animacion.bajar(50, 200, 1, 10 , jPanelGFAcademico);
-           // Animacion.Animacion.bajar(60, 210, 1, 10, jPanelAcademic);
             jPanelAdmin.setVisible(true);
             }     
     }//GEN-LAST:event_rSButtonMetroGAdminActionPerformed
@@ -478,7 +474,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonEventoActionPerformed
 
     private void rSButtonNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonNotasActionPerformed
-
         try {
             // CONEXION A LA INTERFAZ REPORTES:
             Grades grade = new Grades();
