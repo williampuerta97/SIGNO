@@ -27,15 +27,30 @@ public class Nationality extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDesktopPaneFondo = new javax.swing.JDesktopPane();
+
+        jDesktopPaneFondo.setBackground(new java.awt.Color(0, 0, 255));
+
+        javax.swing.GroupLayout jDesktopPaneFondoLayout = new javax.swing.GroupLayout(jDesktopPaneFondo);
+        jDesktopPaneFondo.setLayout(jDesktopPaneFondoLayout);
+        jDesktopPaneFondoLayout.setHorizontalGroup(
+            jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1240, Short.MAX_VALUE)
+        );
+        jDesktopPaneFondoLayout.setVerticalGroup(
+            jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 677, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addComponent(jDesktopPaneFondo)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addComponent(jDesktopPaneFondo)
         );
 
         pack();
@@ -43,5 +58,6 @@ public class Nationality extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane jDesktopPaneFondo;
     // End of variables declaration//GEN-END:variables
 }

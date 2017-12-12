@@ -31,7 +31,7 @@ public class Reports extends javax.swing.JInternalFrame {
 
         getContentPane().setLayout(null);
 
-        jDesktopPaneFondo.setBackground(new java.awt.Color(30, 30, 156));
+        jDesktopPaneFondo.setBackground(new java.awt.Color(0, 0, 255));
         jDesktopPaneFondo.setForeground(new java.awt.Color(255, 255, 255));
         jDesktopPaneFondo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
