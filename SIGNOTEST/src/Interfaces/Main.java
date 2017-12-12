@@ -171,8 +171,8 @@ public class Main extends javax.swing.JFrame {
 
         rSButtonCountry.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonCountry.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonCountry.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/roles.png"))); // NOI18N
-        rSButtonCountry.setText("   COUNTRY  ");
+        rSButtonCountry.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/pais.png"))); // NOI18N
+        rSButtonCountry.setText("   NACIONALIDAD  ");
         rSButtonCountry.setColorHover(new java.awt.Color(204, 204, 204));
         rSButtonCountry.setColorNormal(new java.awt.Color(255, 255, 255));
         rSButtonCountry.setColorPressed(new java.awt.Color(255, 255, 255));
@@ -427,13 +427,13 @@ public class Main extends javax.swing.JFrame {
        // DESPLIGUE OPCIONES DEL MENU ADMIN:
         int posicion = this.jPanelAdmin.getY();
             if (posicion > -1) {
-            Animacion.Animacion.subir(35, -190, 1, 10 , jPanelAdmin);
-            Animacion.Animacion.subir(190, 35, 1, 10 , jPanelGFAcademico);
+            Animacion.Animacion.subir(35, -210, 1, 10 , jPanelAdmin);
+            Animacion.Animacion.subir(210, 35, 1, 10 , jPanelGFAcademico);
             jPanelAdmin.setVisible(false);
             }
             else {
-            Animacion.Animacion.bajar(-190, 50, 1, 10 , jPanelAdmin);
-            Animacion.Animacion.bajar(50, 200, 1, 10 , jPanelGFAcademico);
+            Animacion.Animacion.bajar(-200, 50, 1, 10 , jPanelAdmin);
+            Animacion.Animacion.bajar(50, 300, 1, 10 , jPanelGFAcademico);
             jPanelAdmin.setVisible(true);
             }     
     }//GEN-LAST:event_rSButtonMetroGAdminActionPerformed

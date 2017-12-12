@@ -23,6 +23,7 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         btnSubject = new javax.swing.JButton();
         btnDegree = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         getContentPane().setLayout(null);
 
@@ -85,6 +86,10 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         jDesktopPaneFondo.add(jButtonSalir);
         jButtonSalir.setBounds(1160, 590, 80, 31);
 
+        jButton1.setText("jButton1");
+        jDesktopPaneFondo.add(jButton1);
+        jButton1.setBounds(280, 490, 73, 23);
+
         getContentPane().add(jDesktopPaneFondo);
         jDesktopPaneFondo.setBounds(0, 0, 1240, 680);
 
@@ -127,6 +132,7 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDegree;
     private javax.swing.JButton btnSubject;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JDesktopPane jDesktopPaneFondo;
     private javax.swing.JLabel jLabelTitulo;

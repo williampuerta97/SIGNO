@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaces;
 
 import java.sql.ResultSet;
@@ -377,114 +372,148 @@ public class RegisterUser extends javax.swing.JInternalFrame {
         jLabel27 = new javax.swing.JLabel();
 
         setClosable(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel12.setText("Ciudad");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 441, 50, -1));
-        getContentPane().add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 24, 195, -1));
-        getContentPane().add(txtSecondName, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 62, 195, -1));
-        getContentPane().add(txtSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 100, 195, -1));
-        getContentPane().add(txtSecondL, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 138, 195, -1));
-        getContentPane().add(jsAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 176, 83, -1));
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(38, 441, 50, 16);
+        getContentPane().add(txtFirstName);
+        txtFirstName.setBounds(166, 24, 195, 20);
+        getContentPane().add(txtSecondName);
+        txtSecondName.setBounds(166, 62, 195, 20);
+        getContentPane().add(txtSurname);
+        txtSurname.setBounds(166, 100, 195, 20);
+        getContentPane().add(txtSecondL);
+        txtSecondL.setBounds(166, 138, 195, 20);
+        getContentPane().add(jsAge);
+        jsAge.setBounds(278, 176, 83, 20);
 
         jrMas.setText("Masculino");
-        getContentPane().add(jrMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 214, -1, -1));
+        getContentPane().add(jrMas);
+        jrMas.setBounds(290, 214, 71, 23);
 
         jrFem.setText("Femenino");
-        getContentPane().add(jrFem, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 237, -1, -1));
-        getContentPane().add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 276, 195, -1));
-        getContentPane().add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 314, 195, -1));
+        getContentPane().add(jrFem);
+        jrFem.setBounds(290, 237, 71, 23);
+        getContentPane().add(txtPhone);
+        txtPhone.setBounds(166, 276, 195, 20);
+        getContentPane().add(txtAddress);
+        txtAddress.setBounds(166, 314, 195, 20);
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel21.setText("Lugar de expedicion");
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 299, -1, -1));
-        getContentPane().add(txtNuip, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 24, 189, -1));
+        getContentPane().add(jLabel21);
+        jLabel21.setBounds(410, 299, 114, 16);
+        getContentPane().add(txtNuip);
+        txtNuip.setBounds(545, 24, 189, 20);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel1.setText("Primer Nombre");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 28, -1, -1));
-        getContentPane().add(txtDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 55, 189, -1));
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(38, 28, 87, 16);
+        getContentPane().add(txtDate);
+        txtDate.setBounds(545, 55, 189, 20);
 
         jcCountry2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jcCountry2ItemStateChanged(evt);
             }
         });
-        getContentPane().add(jcCountry2, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 82, 189, -1));
+        getContentPane().add(jcCountry2);
+        jcCountry2.setBounds(545, 82, 189, 20);
 
         jcDepartment2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jcDepartment2ItemStateChanged(evt);
             }
         });
-        getContentPane().add(jcDepartment2, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 120, 189, -1));
+        getContentPane().add(jcDepartment2);
+        jcDepartment2.setBounds(545, 120, 189, 20);
 
         jcBirthPlace.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jcBirthPlaceItemStateChanged(evt);
             }
         });
-        getContentPane().add(jcBirthPlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 158, 189, -1));
-        getContentPane().add(txtHeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 196, 189, -1));
-        getContentPane().add(txtRH, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 222, 189, -1));
-        getContentPane().add(txtExpeditionDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 260, 189, -1));
+        getContentPane().add(jcBirthPlace);
+        jcBirthPlace.setBounds(545, 158, 189, 20);
+        getContentPane().add(txtHeight);
+        txtHeight.setBounds(545, 196, 189, 20);
+        getContentPane().add(txtRH);
+        txtRH.setBounds(545, 222, 189, 20);
+        getContentPane().add(txtExpeditionDate);
+        txtExpeditionDate.setBounds(545, 260, 189, 20);
 
         jcExpeditionPlace.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jcExpeditionPlaceItemStateChanged(evt);
             }
         });
-        getContentPane().add(jcExpeditionPlace, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 298, 189, -1));
+        getContentPane().add(jcExpeditionPlace);
+        jcExpeditionPlace.setBounds(545, 298, 189, 20);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel2.setText("Segundo Nombre");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 63, -1, -1));
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(38, 63, 99, 16);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel3.setText("Primer Apellido");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 101, -1, -1));
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(38, 101, 87, 16);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel4.setText("Segundo Apellido");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 139, -1, -1));
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(38, 139, 99, 16);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel5.setText("Edad");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 177, -1, -1));
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(38, 177, 28, 16);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel6.setText("Genero");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 216, -1, -1));
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(38, 216, 41, 16);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel7.setText("Telefono");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 277, -1, -1));
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(38, 277, 50, 16);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel8.setText("Direccion ");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 315, -1, -1));
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(38, 315, 56, 16);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel9.setText("E-mail");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 341, -1, -1));
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(38, 341, 36, 16);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel13.setText("Nuip");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 25, -1, -1));
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(408, 25, 25, 16);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel10.setText("Pais");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 372, -1, -1));
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(38, 372, 23, 16);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel14.setText("Fecha de nacimiento");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 56, -1, -1));
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(409, 56, 118, 16);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel11.setText("Departamento");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 406, -1, -1));
-        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 340, 195, -1));
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(38, 406, 81, 16);
+        getContentPane().add(txtEmail);
+        txtEmail.setBounds(166, 340, 195, 20);
 
         jbRegister.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jbRegister.setText("Registrar");
@@ -493,14 +522,16 @@ public class RegisterUser extends javax.swing.JInternalFrame {
                 jbRegisterActionPerformed(evt);
             }
         });
-        getContentPane().add(jbRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 483, -1, -1));
+        getContentPane().add(jbRegister);
+        jbRegister.setBounds(38, 483, 85, 25);
 
         jcCountry.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jcCountryItemStateChanged(evt);
             }
         });
-        getContentPane().add(jcCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 371, 195, -1));
+        getContentPane().add(jcCountry);
+        jcCountry.setBounds(166, 371, 195, 20);
 
         jbConsult.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jbConsult.setText("Consultar");
@@ -509,14 +540,16 @@ public class RegisterUser extends javax.swing.JInternalFrame {
                 jbConsultActionPerformed(evt);
             }
         });
-        getContentPane().add(jbConsult, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 483, -1, -1));
+        getContentPane().add(jbConsult);
+        jbConsult.setBounds(150, 483, 87, 25);
 
         jcDepartment.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jcDepartmentItemStateChanged(evt);
             }
         });
-        getContentPane().add(jcDepartment, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 402, 195, -1));
+        getContentPane().add(jcDepartment);
+        jcDepartment.setBounds(166, 402, 195, 20);
 
         jbUpdate.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jbUpdate.setText("Actualizar");
@@ -525,70 +558,88 @@ public class RegisterUser extends javax.swing.JInternalFrame {
                 jbUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(jbUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 483, -1, -1));
+        getContentPane().add(jbUpdate);
+        jbUpdate.setBounds(272, 483, 89, 25);
 
         jcCity.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jcCityItemStateChanged(evt);
             }
         });
-        getContentPane().add(jcCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 440, 195, -1));
+        getContentPane().add(jcCity);
+        jcCity.setBounds(166, 440, 195, 20);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel15.setText("Pais");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 83, -1, -1));
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(408, 83, 23, 16);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel16.setText("Departamento");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 121, -1, -1));
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(408, 121, 81, 16);
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel17.setText("Lugar de nacimiento");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 159, -1, -1));
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(411, 159, 116, 16);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel18.setText("Estatura");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 197, -1, -1));
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(411, 197, 47, 16);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel19.setText("RH");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 223, -1, -1));
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(411, 223, 16, 16);
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel20.setText("Fecha de expedicion");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 261, -1, -1));
+        getContentPane().add(jLabel20);
+        jLabel20.setBounds(408, 261, 116, 16);
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel22.setText("Rol");
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
+        getContentPane().add(jLabel22);
+        jLabel22.setBounds(410, 340, 18, 16);
 
         jcRol.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jcRolItemStateChanged(evt);
             }
         });
-        getContentPane().add(jcRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 340, 189, -1));
+        getContentPane().add(jcRol);
+        jcRol.setBounds(547, 340, 189, 20);
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel23.setText("Usuario");
-        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 372, -1, -1));
+        getContentPane().add(jLabel23);
+        jLabel23.setBounds(410, 372, 43, 16);
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel24.setText("Contraseña");
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 402, -1, -1));
-        getContentPane().add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 371, 189, -1));
-        getContentPane().add(jpPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 402, 189, -1));
+        getContentPane().add(jLabel24);
+        jLabel24.setBounds(410, 402, 65, 16);
+        getContentPane().add(txtUser);
+        txtUser.setBounds(547, 371, 189, 20);
+        getContentPane().add(jpPassword);
+        jpPassword.setBounds(547, 402, 189, 20);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel25.setText("Grupo");
-        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 441, -1, -1));
+        getContentPane().add(jLabel25);
+        jLabel25.setBounds(410, 441, 34, 16);
 
-        getContentPane().add(jcGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 440, 189, -1));
+        getContentPane().add(jcGroup);
+        jcGroup.setBounds(547, 440, 189, 20);
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel26.setText("Acudiente");
-        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 478, -1, -1));
-        getContentPane().add(txtGuardian, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 478, 130, -1));
+        getContentPane().add(jLabel26);
+        jLabel26.setBounds(410, 478, 56, 16);
+        getContentPane().add(txtGuardian);
+        txtGuardian.setBounds(547, 478, 130, 20);
 
         lblImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/buscador-de-lupa.png"))); // NOI18N
         lblImg.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -596,12 +647,15 @@ public class RegisterUser extends javax.swing.JInternalFrame {
                 lblImgMousePressed(evt);
             }
         });
-        getContentPane().add(lblImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 478, -1, -1));
-        getContentPane().add(lblAcu, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 140, 18));
+        getContentPane().add(lblImg);
+        lblImg.setBounds(695, 478, 24, 24);
+        getContentPane().add(lblAcu);
+        lblAcu.setBounds(540, 510, 140, 18);
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel27.setText("Nombre");
-        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 510, -1, -1));
+        getContentPane().add(jLabel27);
+        jLabel27.setBounds(410, 510, 45, 16);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
