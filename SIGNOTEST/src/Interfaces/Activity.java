@@ -110,7 +110,7 @@ public class Activity extends javax.swing.JInternalFrame {
             ResultSet rs = cone.consultDB("SELECT Nombre FROM grupo WHERE Activo = 1 ");
             while (rs.next()) {
                 //Group.addItem(rs.getObject("Nombre"));
-                Group.addItem(rs.getString("Nombre"));
+                cboGroup.addItem(rs.getString("Nombre"));
 
             }
         } catch (SQLException ex) {
@@ -130,7 +130,7 @@ public class Activity extends javax.swing.JInternalFrame {
             ResultSet rs = cone.consultDB("SELECT Nombre FROM materia WHERE Activo= 1");
             while (rs.next()) {
 
-                materia.addItem(rs.getString("Nombre"));
+                cboSubjects.addItem(rs.getString("Nombre"));
 
             }
         } catch (SQLException ex) {
@@ -150,7 +150,7 @@ public class Activity extends javax.swing.JInternalFrame {
             ResultSet rs = cone.consultDB("SELECT Nombre FROM periodo");
             while (rs.next()) {
 
-                periodo.addItem(rs.getString("Nombre"));
+                cboPeriod.addItem(rs.getString("Nombre"));
 
             }
         } catch (SQLException ex) {
@@ -170,7 +170,7 @@ public class Activity extends javax.swing.JInternalFrame {
             ResultSet rs = cone.consultDB("SELECT Nombre FROM logro WHERE Activo=1");
             while (rs.next()) {
 
-                logros.addItem(rs.getString("Nombre"));
+                txtAchievements.addItem(rs.getString("Nombre"));
 
             }
         } catch (SQLException ex) {
@@ -234,31 +234,31 @@ public class Activity extends javax.swing.JInternalFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        Group = new javax.swing.JComboBox();
+        cboGroup = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        materia = new javax.swing.JComboBox();
+        cboSubjects = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
-        periodo = new javax.swing.JComboBox();
+        cboPeriod = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
-        logros = new javax.swing.JComboBox();
+        txtAchievements = new javax.swing.JComboBox();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        TextNom = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TextDesc = new javax.swing.JTextArea();
+        txtDescription = new javax.swing.JTextArea();
         jLabel12 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        agg = new javax.swing.JButton();
-        SpinnerPor = new javax.swing.JSpinner();
+        btnAdd = new javax.swing.JButton();
+        spiPercent = new javax.swing.JSpinner();
         lblId = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        calDate = new com.toedter.calendar.JDateChooser();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -290,9 +290,9 @@ public class Activity extends javax.swing.JInternalFrame {
 
         jLabel1.setText("DATOS");
 
-        Group.addActionListener(new java.awt.event.ActionListener() {
+        cboGroup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GroupActionPerformed(evt);
+                cboGroupActionPerformed(evt);
             }
         });
 
@@ -300,9 +300,9 @@ public class Activity extends javax.swing.JInternalFrame {
 
         jLabel3.setText("MATERIA");
 
-        materia.addActionListener(new java.awt.event.ActionListener() {
+        cboSubjects.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                materiaActionPerformed(evt);
+                cboSubjectsActionPerformed(evt);
             }
         });
 
@@ -310,9 +310,9 @@ public class Activity extends javax.swing.JInternalFrame {
 
         jLabel5.setText("LOGROS");
 
-        logros.addActionListener(new java.awt.event.ActionListener() {
+        txtAchievements.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logrosActionPerformed(evt);
+                txtAchievementsActionPerformed(evt);
             }
         });
 
@@ -332,10 +332,10 @@ public class Activity extends javax.swing.JInternalFrame {
                             .addComponent(jLabel2))
                         .addGap(44, 44, 44)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Group, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(periodo, 0, 131, Short.MAX_VALUE)
-                            .addComponent(logros, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(materia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(cboGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboPeriod, 0, 131, Short.MAX_VALUE)
+                            .addComponent(txtAchievements, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cboSubjects, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(127, 127, 127)
                         .addComponent(jLabel1)))
@@ -351,19 +351,19 @@ public class Activity extends javax.swing.JInternalFrame {
                 .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(Group, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cboGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(materia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboSubjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(periodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cboPeriod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(logros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAchievements, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
 
@@ -381,20 +381,20 @@ public class Activity extends javax.swing.JInternalFrame {
 
         jLabel11.setText("PORCENTAJE");
 
-        TextDesc.setColumns(20);
-        TextDesc.setRows(5);
-        jScrollPane1.setViewportView(TextDesc);
+        txtDescription.setColumns(20);
+        txtDescription.setRows(5);
+        jScrollPane1.setViewportView(txtDescription);
 
         jLabel12.setText("%");
 
-        agg.setText("AGREGAR");
-        agg.addActionListener(new java.awt.event.ActionListener() {
+        btnAdd.setText("AGREGAR");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aggActionPerformed(evt);
+                btnAddActionPerformed(evt);
             }
         });
 
-        jDateChooser1.setDateFormatString("yyyy-MM-dd");
+        calDate.setDateFormatString("yyyy-MM-dd");
 
         jLabel13.setText("000");
 
@@ -422,8 +422,8 @@ public class Activity extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SpinnerPor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(calDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(spiPercent, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(17, 17, 17))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -444,11 +444,11 @@ public class Activity extends javax.swing.JInternalFrame {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGap(5, 5, 5)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(TextNom, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(261, 261, 261)
-                        .addComponent(agg)))
+                        .addComponent(btnAdd)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -470,7 +470,7 @@ public class Activity extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(TextNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -482,18 +482,18 @@ public class Activity extends javax.swing.JInternalFrame {
                         .addGap(17, 17, 17)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel10)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(calDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(SpinnerPor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(spiPercent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
                             .addComponent(jLabel13))
                         .addGap(5, 5, 5)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(agg)
+                .addComponent(btnAdd)
                 .addGap(29, 29, 29))
         );
 
@@ -541,15 +541,15 @@ public class Activity extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void GroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GroupActionPerformed
+    private void cboGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboGroupActionPerformed
 
-    }//GEN-LAST:event_GroupActionPerformed
+    }//GEN-LAST:event_cboGroupActionPerformed
 
-    private void materiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_materiaActionPerformed
+    private void cboSubjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboSubjectsActionPerformed
 
-    }//GEN-LAST:event_materiaActionPerformed
+    }//GEN-LAST:event_cboSubjectsActionPerformed
 
-    private void aggActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aggActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
 
        
 //        Ingresada ing = new Ingresada();
@@ -557,15 +557,15 @@ public class Activity extends javax.swing.JInternalFrame {
 //        ing.toFront();
 //        ing.setVisible(true); //Comentar
          
-        int porce = (int) SpinnerPor.getValue();
-        String grupo = (String) Group.getSelectedItem();
-        String logro = (String) logros.getSelectedItem();
+        int porce = (int) spiPercent.getValue();
+        String grupo = (String) cboGroup.getSelectedItem();
+        String logro = (String) txtAchievements.getSelectedItem();
         
         String id, nom, des;
         
         id = lblId.getText();
-        nom = TextNom.getText();
-        des = TextDesc.getText();
+        nom = txtName.getText();
+        des = txtDescription.getText();
 
         /*nom = TextNom.getText();
         desc = TextDesc.getText();
@@ -586,7 +586,7 @@ public class Activity extends javax.swing.JInternalFrame {
         } catch (Exception e) {
         }
        
-        java.sql.Date date = new java.sql.Date(jDateChooser1.getDate().getTime());
+        java.sql.Date date = new java.sql.Date(calDate.getDate().getTime());
 
         System.out.println(id + "," + nom + "," + des + "," + porce + "," + idGroup + "," + idAch + "," + date);
         
@@ -604,11 +604,11 @@ public class Activity extends javax.swing.JInternalFrame {
         cargarId();
         consult();
 
-    }//GEN-LAST:event_aggActionPerformed
+    }//GEN-LAST:event_btnAddActionPerformed
 
-    private void logrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logrosActionPerformed
+    private void txtAchievementsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAchievementsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_logrosActionPerformed
+    }//GEN-LAST:event_txtAchievementsActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         int fila = jTable1.getSelectedRow();
@@ -629,10 +629,10 @@ public class Activity extends javax.swing.JInternalFrame {
 
         try {
             while (rs.next()) {
-                TextNom.setText(rs.getString("Nombre"));
-                TextDesc.setText(rs.getString("Descripcion"));
-                jDateChooser1.setDateFormatString(rs.getString("Fecha_Entrega"));
-                SpinnerPor.setValue(rs.getString("Porcentaje"));
+                txtName.setText(rs.getString("Nombre"));
+                txtDescription.setText(rs.getString("Descripcion"));
+                calDate.setDateFormatString(rs.getString("Fecha_Entrega"));
+                spiPercent.setValue(rs.getString("Porcentaje"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(Activity.class.getName()).log(Level.SEVERE, null, ex);
@@ -641,12 +641,11 @@ public class Activity extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox Group;
-    private javax.swing.JSpinner SpinnerPor;
-    private javax.swing.JTextArea TextDesc;
-    private javax.swing.JTextField TextNom;
-    public static javax.swing.JButton agg;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    public static javax.swing.JButton btnAdd;
+    private com.toedter.calendar.JDateChooser calDate;
+    private javax.swing.JComboBox cboGroup;
+    private javax.swing.JComboBox cboPeriod;
+    private javax.swing.JComboBox cboSubjects;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -671,8 +670,9 @@ public class Activity extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblId;
-    private javax.swing.JComboBox logros;
-    private javax.swing.JComboBox materia;
-    private javax.swing.JComboBox periodo;
+    private javax.swing.JSpinner spiPercent;
+    private javax.swing.JComboBox txtAchievements;
+    private javax.swing.JTextArea txtDescription;
+    private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }
