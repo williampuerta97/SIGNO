@@ -95,11 +95,11 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSubjectActionPerformed
 
     private void btnDegreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDegreeActionPerformed
-        SubjectGrade subDeg = new SubjectGrade();
-        subDeg.setVisible(true);
-        subDeg.setSize(610, 467);
-        subDeg.setLocation(300, 50);
-        jDesktopPaneFondo.add(subDeg);
+        EnterDegrees enterDeg = new EnterDegrees();
+        enterDeg.setVisible(true);
+        enterDeg.setSize(610, 467);
+        enterDeg.setLocation(300, 50);
+        jDesktopPaneFondo.add(enterDeg);
     }//GEN-LAST:event_btnDegreeActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
