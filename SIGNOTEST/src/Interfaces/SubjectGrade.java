@@ -23,6 +23,7 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         btnSubject = new javax.swing.JButton();
         btnDegree = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
+        btnLogros = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         getContentPane().setLayout(null);
@@ -68,7 +69,7 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
             }
         });
         jDesktopPaneFondo.add(btnDegree);
-        btnDegree.setBounds(410, 130, 170, 180);
+        btnDegree.setBounds(670, 130, 170, 180);
 
         jButtonSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
@@ -86,9 +87,39 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         jDesktopPaneFondo.add(jButtonSalir);
         jButtonSalir.setBounds(1160, 590, 80, 31);
 
-        jButton1.setText("jButton1");
+        btnLogros.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnLogros.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logro.png"))); // NOI18N
+        btnLogros.setText("LOGROS");
+        btnLogros.setBorder(null);
+        btnLogros.setBorderPainted(false);
+        btnLogros.setContentAreaFilled(false);
+        btnLogros.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnLogros.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnLogros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogrosActionPerformed(evt);
+            }
+        });
+        jDesktopPaneFondo.add(btnLogros);
+        btnLogros.setBounds(310, 390, 210, 200);
+
+        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/materia.png"))); // NOI18N
+        jButton1.setText("MATERIAS");
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jDesktopPaneFondo.add(jButton1);
-        jButton1.setBounds(280, 490, 73, 23);
+        jButton1.setBounds(750, 470, 321, 120);
 
         getContentPane().add(jDesktopPaneFondo);
         jDesktopPaneFondo.setBounds(0, 0, 1240, 680);
@@ -128,9 +159,36 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
+    private void btnLogrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogrosActionPerformed
+        // CONEXION CON INTERFAZ DE LOGROS:
+        Achievements achie = new Achievements();
+        achie.setVisible(true);
+        achie.setLocation(300, 50);
+        jDesktopPaneFondo.add(achie);
+        try {
+            achie.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(SubjectGrade.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnLogrosActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // CONEXION CON INTERFAZ DE MATERIAS:
+        Subjects subj = new Subjects();
+        subj.setVisible(true);
+        subj.setLocation(300, 50);
+        jDesktopPaneFondo.add(subj);
+        try {
+            subj.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(SubjectGrade.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDegree;
+    private javax.swing.JButton btnLogros;
     private javax.swing.JButton btnSubject;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonSalir;

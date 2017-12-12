@@ -79,8 +79,6 @@ public class Main extends javax.swing.JFrame {
         rSButtonMetroGAcadem = new Resources.RSButtonMetro();
         jPanelAcademic = new javax.swing.JPanel();
         rSButtonAsignatura = new Resources.RSButtonMetro();
-        rSButtonLogros = new Resources.RSButtonMetro();
-        rSButtonMaterias = new Resources.RSButtonMetro();
         rSButtonNotas = new Resources.RSButtonMetro();
         rSButtonPeriodo = new Resources.RSButtonMetro();
         jButtonSalir = new javax.swing.JButton();
@@ -265,42 +263,6 @@ public class Main extends javax.swing.JFrame {
         jPanelAcademic.add(rSButtonAsignatura);
         rSButtonAsignatura.setBounds(0, 10, 180, 50);
 
-        rSButtonLogros.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonLogros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logros.png"))); // NOI18N
-        rSButtonLogros.setText("   LOGROS  ");
-        rSButtonLogros.setColorHover(new java.awt.Color(204, 204, 204));
-        rSButtonLogros.setColorNormal(new java.awt.Color(255, 255, 255));
-        rSButtonLogros.setColorPressed(new java.awt.Color(255, 255, 255));
-        rSButtonLogros.setColorTextNormal(new java.awt.Color(0, 0, 0));
-        rSButtonLogros.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        rSButtonLogros.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        rSButtonLogros.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        rSButtonLogros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonLogrosActionPerformed(evt);
-            }
-        });
-        jPanelAcademic.add(rSButtonLogros);
-        rSButtonLogros.setBounds(0, 90, 180, 40);
-
-        rSButtonMaterias.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonMaterias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/materias.png"))); // NOI18N
-        rSButtonMaterias.setText("   MATERIAS  ");
-        rSButtonMaterias.setColorHover(new java.awt.Color(204, 204, 204));
-        rSButtonMaterias.setColorNormal(new java.awt.Color(255, 255, 255));
-        rSButtonMaterias.setColorPressed(new java.awt.Color(255, 255, 255));
-        rSButtonMaterias.setColorTextNormal(new java.awt.Color(0, 0, 0));
-        rSButtonMaterias.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        rSButtonMaterias.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        rSButtonMaterias.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        rSButtonMaterias.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonMateriasActionPerformed(evt);
-            }
-        });
-        jPanelAcademic.add(rSButtonMaterias);
-        rSButtonMaterias.setBounds(0, 150, 180, 40);
-
         rSButtonNotas.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonNotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/notas.png"))); // NOI18N
         rSButtonNotas.setText("   CALIFICACION  ");
@@ -317,7 +279,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAcademic.add(rSButtonNotas);
-        rSButtonNotas.setBounds(0, 200, 180, 40);
+        rSButtonNotas.setBounds(0, 70, 180, 50);
 
         rSButtonPeriodo.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonPeriodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Periodo.png"))); // NOI18N
@@ -335,7 +297,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAcademic.add(rSButtonPeriodo);
-        rSButtonPeriodo.setBounds(0, 250, 180, 40);
+        rSButtonPeriodo.setBounds(0, 130, 180, 40);
 
         jPanelGFAcademico.add(jPanelAcademic);
         jPanelAcademic.setBounds(0, 50, 180, 310);
@@ -402,14 +364,6 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_rSButtonReportesActionPerformed
 
-    private void rSButtonLogrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonLogrosActionPerformed
-        // TODO add your handling code here:
-        Achievements achie = new Achievements();
-        achie.setVisible(true);
-        achie.setLocation(300, 50);
-        jDesktopPaneFondo.add(achie);
-    }//GEN-LAST:event_rSButtonLogrosActionPerformed
-
     private void rSButtonAsignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonAsignaturaActionPerformed
         try {
             // CONEXION A LA INTERFAZ REPORTES:
@@ -457,14 +411,6 @@ public class Main extends javax.swing.JFrame {
             regsuser.setLocation(300, 50);
             jDesktopPaneFondo.add(regsuser);
     }//GEN-LAST:event_rSButtonRegistroActionPerformed
-
-    private void rSButtonMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMateriasActionPerformed
-       
-        Subjects subj = new Subjects();
-        subj.setVisible(true);
-        subj.setLocation(300, 50);
-        jDesktopPaneFondo.add(subj);
-    }//GEN-LAST:event_rSButtonMateriasActionPerformed
 
     private void rSButtonEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonEventoActionPerformed
         Events eve = new Events();
@@ -545,8 +491,6 @@ public class Main extends javax.swing.JFrame {
     private Resources.RSButtonMetro rSButtonCountry;
     private Resources.RSButtonMetro rSButtonEvento;
     private Resources.RSButtonMetro rSButtonInactivos;
-    private Resources.RSButtonMetro rSButtonLogros;
-    private Resources.RSButtonMetro rSButtonMaterias;
     private Resources.RSButtonMetro rSButtonMenu;
     private Resources.RSButtonMetro rSButtonMetroGAcadem;
     private Resources.RSButtonMetro rSButtonMetroGAdmin;
