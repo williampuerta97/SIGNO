@@ -65,7 +65,7 @@ public class City extends javax.swing.JInternalFrame {
         
         try {
       String[] registros = new String[4];
-      String[] titulos = {"IdCiudad","Nombre","Indicativo", "Departamento_id"};
+      String[] titulos = {"Id","Nombre","Indicativo", "Departamento_id"};
       
       modelo = new DefaultTableModel(null, titulos);
       
@@ -298,7 +298,7 @@ public class City extends javax.swing.JInternalFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(67, 67, 67)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAdd)
                             .addComponent(btnUpdate))))
                 .addContainerGap(79, Short.MAX_VALUE))

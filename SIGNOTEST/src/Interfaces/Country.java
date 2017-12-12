@@ -62,7 +62,7 @@ public class Country extends javax.swing.JInternalFrame {
         
         try {
       String[] registros = new String[4];
-      String[] titulos = {"IdPais","Nombre","Nombre Corto","Indicativo"};
+      String[] titulos = {"Id","Nombre","Nombre Corto","Indicativo"};
       
       modelo = new DefaultTableModel(null, titulos);
       
@@ -226,7 +226,9 @@ public class Country extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Indicativo");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
-        jPanel1.add(lblCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 134, 14));
+
+        lblCode.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jPanel1.add(lblCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 150, 14));
         jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 80, 270, -1));
         jPanel1.add(txtShortName, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 120, 270, -1));
         jPanel1.add(txtIndicative, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 170, 270, -1));
@@ -276,11 +278,14 @@ public class Country extends javax.swing.JInternalFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        cone.modifyDB("INSERT INTO pais VALUES(null,' "+txtName.getText()+" ',' "+txtShortName.getText()+" ',' "+txtIndicative.getText()+" ')");
+        cone.modifyDB("INSERT INTO pais VALUES(null,'"+txtName.getText()+"','"+txtShortName.getText()+"','"+txtIndicative.getText()+"')");
         JOptionPane.showMessageDialog(rootPane, "El pais ha sido registrado exitosamente");
         
         charge("");
         update();
+        txtName.setText("");
+        txtShortName.setText("");
+        txtIndicative.setText("");
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed

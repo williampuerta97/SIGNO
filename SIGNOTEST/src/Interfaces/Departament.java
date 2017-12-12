@@ -66,7 +66,7 @@ public class Departament extends javax.swing.JInternalFrame {
         
         try {
       String[] registros = new String[4];
-      String[] titulos = {"IdDepartamento","Nombre","Prefijo Telefonico", "Pais_id"};
+      String[] titulos = {"Id","Nombre","Prefijo Telefonico", "Pais_id"};
       
       modelo = new DefaultTableModel(null, titulos);
       
