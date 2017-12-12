@@ -33,9 +33,9 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTitulo.setText("INGRESO DE ?");
+        jLabelTitulo.setText("INGRESO DE ASIGNATURAS Y LOGROS");
         jDesktopPaneFondo.add(jLabelTitulo);
-        jLabelTitulo.setBounds(0, 30, 730, 22);
+        jLabelTitulo.setBounds(0, 30, 1240, 22);
 
         btnSubject.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnSubject.setForeground(new java.awt.Color(255, 255, 255));
@@ -52,7 +52,7 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
             }
         });
         jDesktopPaneFondo.add(btnSubject);
-        btnSubject.setBounds(80, 130, 180, 170);
+        btnSubject.setBounds(140, 130, 180, 170);
 
         btnDegree.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnDegree.setForeground(new java.awt.Color(255, 255, 255));
