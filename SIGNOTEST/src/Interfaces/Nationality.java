@@ -28,18 +28,29 @@ public class Nationality extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jDesktopPaneFondo = new javax.swing.JDesktopPane();
+        jLabelTitulo = new javax.swing.JLabel();
 
         jDesktopPaneFondo.setBackground(new java.awt.Color(0, 0, 255));
+
+        jLabelTitulo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTitulo.setText("CREACION DE NACIONALIDAD");
+
+        jDesktopPaneFondo.setLayer(jLabelTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPaneFondoLayout = new javax.swing.GroupLayout(jDesktopPaneFondo);
         jDesktopPaneFondo.setLayout(jDesktopPaneFondoLayout);
         jDesktopPaneFondoLayout.setHorizontalGroup(
             jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1240, Short.MAX_VALUE)
+            .addComponent(jLabelTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jDesktopPaneFondoLayout.setVerticalGroup(
             jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 677, Short.MAX_VALUE)
+            .addGroup(jDesktopPaneFondoLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabelTitulo)
+                .addContainerGap(628, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -59,5 +70,6 @@ public class Nationality extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPaneFondo;
+    private javax.swing.JLabel jLabelTitulo;
     // End of variables declaration//GEN-END:variables
 }

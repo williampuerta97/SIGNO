@@ -22,13 +22,13 @@ public class Grades extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jDesktopPaneFondo = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jButtonSalir = new javax.swing.JButton();
         jButtonNotas = new javax.swing.JButton();
         jButtonDefinitiva = new javax.swing.JButton();
 
-        jDesktopPane1.setBackground(new java.awt.Color(30, 30, 156));
+        jDesktopPaneFondo.setBackground(new java.awt.Color(0, 0, 255));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,33 +80,33 @@ public class Grades extends javax.swing.JInternalFrame {
             }
         });
 
-        jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jButtonSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jButtonNotas, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jButtonDefinitiva, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPaneFondo.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPaneFondo.setLayer(jButtonSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPaneFondo.setLayer(jButtonNotas, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPaneFondo.setLayer(jButtonDefinitiva, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jDesktopPaneFondoLayout = new javax.swing.GroupLayout(jDesktopPaneFondo);
+        jDesktopPaneFondo.setLayout(jDesktopPaneFondoLayout);
+        jDesktopPaneFondoLayout.setHorizontalGroup(
+            jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+            .addGroup(jDesktopPaneFondoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+            .addGroup(jDesktopPaneFondoLayout.createSequentialGroup()
                 .addGap(126, 126, 126)
                 .addComponent(jButtonNotas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                 .addComponent(jButtonDefinitiva, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(115, 115, 115))
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+        jDesktopPaneFondoLayout.setVerticalGroup(
+            jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPaneFondoLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jLabel1)
                 .addGap(87, 87, 87)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButtonNotas)
                     .addComponent(jButtonDefinitiva))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
@@ -117,11 +117,11 @@ public class Grades extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktopPaneFondo)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktopPaneFondo)
         );
 
         pack();
@@ -136,14 +136,14 @@ public class Grades extends javax.swing.JInternalFrame {
         Observations obs = new Observations();
         obs.setBounds(300, 100, 550, 400);
         obs.setVisible(true);
-        jDesktopPane1.add(obs);
+        jDesktopPaneFondo.add(obs);
     }//GEN-LAST:event_jButtonDefinitivaActionPerformed
 
     private void jButtonNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNotasActionPerformed
         ActivityGrades actGra = new ActivityGrades();
         actGra.setBounds(300, 100, 450, 550);
         actGra.setVisible(true);
-        jDesktopPane1.add(actGra);
+        jDesktopPaneFondo.add(actGra);
     }//GEN-LAST:event_jButtonNotasActionPerformed
 
 
@@ -151,7 +151,7 @@ public class Grades extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButtonDefinitiva;
     private javax.swing.JButton jButtonNotas;
     private javax.swing.JButton jButtonSalir;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane jDesktopPaneFondo;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
