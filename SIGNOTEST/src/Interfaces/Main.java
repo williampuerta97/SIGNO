@@ -81,6 +81,7 @@ public class Main extends javax.swing.JFrame {
         rSButtonAsignatura = new Resources.RSButtonMetro();
         rSButtonNotas = new Resources.RSButtonMetro();
         rSButtonPeriodo = new Resources.RSButtonMetro();
+        rSButtonActivity = new Resources.RSButtonMetro();
         jButtonSalir = new javax.swing.JButton();
 
         jMenu2.setText("jMenu2");
@@ -297,7 +298,25 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAcademic.add(rSButtonPeriodo);
-        rSButtonPeriodo.setBounds(0, 130, 180, 40);
+        rSButtonPeriodo.setBounds(0, 190, 180, 40);
+
+        rSButtonActivity.setForeground(new java.awt.Color(0, 0, 0));
+        rSButtonActivity.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Periodo.png"))); // NOI18N
+        rSButtonActivity.setText("   ACTIVIDADES  ");
+        rSButtonActivity.setColorHover(new java.awt.Color(204, 204, 204));
+        rSButtonActivity.setColorNormal(new java.awt.Color(255, 255, 255));
+        rSButtonActivity.setColorPressed(new java.awt.Color(255, 255, 255));
+        rSButtonActivity.setColorTextNormal(new java.awt.Color(0, 0, 0));
+        rSButtonActivity.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        rSButtonActivity.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        rSButtonActivity.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        rSButtonActivity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonActivityActionPerformed(evt);
+            }
+        });
+        jPanelAcademic.add(rSButtonActivity);
+        rSButtonActivity.setBounds(0, 130, 180, 40);
 
         jPanelGFAcademico.add(jPanelAcademic);
         jPanelAcademic.setBounds(0, 50, 180, 310);
@@ -440,8 +459,22 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonPeriodoActionPerformed
 
     private void rSButtonCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonCountryActionPerformed
-        // TODO add your handling code here:
+        try {
+            // CONEXION A LA INTERFAZ NACIONALIDAD:
+            Nationality nationaly = new Nationality();
+            this.setLocationRelativeTo(null);
+            nationaly.setVisible(true);
+            jDesktopPaneFondo.add(nationaly);
+            nationaly.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_rSButtonCountryActionPerformed
+
+    private void rSButtonActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonActivityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonActivityActionPerformed
 
 //   public static void main(String args[]) {
 //      
@@ -487,6 +520,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelDespMenu;
     private javax.swing.JPanel jPanelGFAcademico;
     private javax.swing.JPanel jPanelMenu;
+    private Resources.RSButtonMetro rSButtonActivity;
     private Resources.RSButtonMetro rSButtonAsignatura;
     private Resources.RSButtonMetro rSButtonCountry;
     private Resources.RSButtonMetro rSButtonEvento;
