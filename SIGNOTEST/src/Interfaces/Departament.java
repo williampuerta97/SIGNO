@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* MODULO DE CREACION DE DEPARTAMENTO */
 package Interfaces;
 
 import Resources.Connection;
@@ -29,10 +25,11 @@ public class Departament extends javax.swing.JInternalFrame {
     
     public Departament() {
         initComponents();
+        setSize(1237,629);
+        setLocation(0,0);
         cone = new Connection();
         update();
         chargeCountry();
-        
         btnUpdate.setVisible(false);
     }
     

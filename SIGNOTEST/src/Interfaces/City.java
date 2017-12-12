@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* MODULO DE CREACION DE CIUDAD */
 package Interfaces;
 
 
@@ -30,10 +26,11 @@ public class City extends javax.swing.JInternalFrame {
     
     public City() {
         initComponents();
+        setSize(1237,629);
+        setLocation(0,0);
         cone = new Connection();
         Update();
         cargarCombodepart();
-        
         btnUpdate.setVisible(false);
     } 
     
@@ -42,8 +39,6 @@ public class City extends javax.swing.JInternalFrame {
  @version 1.0 
  Metodo que genera el ID o identificacion de cada ciudad que se registre en la base de datos.
 */
-    
-
     public void chargerId(){
  
         try{

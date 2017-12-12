@@ -23,7 +23,7 @@ public class Nationality extends javax.swing.JInternalFrame {
         jLabelTitulo = new javax.swing.JLabel();
         btnPais = new javax.swing.JButton();
         btnDepartament = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnCiudad = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
 
         jDesktopPaneFondo.setBackground(new java.awt.Color(0, 0, 255));
@@ -63,18 +63,18 @@ public class Nationality extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ciudad.png"))); // NOI18N
-        jButton1.setText("CIUDAD");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCiudad.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnCiudad.setForeground(new java.awt.Color(255, 255, 255));
+        btnCiudad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ciudad.png"))); // NOI18N
+        btnCiudad.setText("CIUDAD");
+        btnCiudad.setBorder(null);
+        btnCiudad.setBorderPainted(false);
+        btnCiudad.setContentAreaFilled(false);
+        btnCiudad.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCiudad.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCiudadActionPerformed(evt);
             }
         });
 
@@ -95,7 +95,7 @@ public class Nationality extends javax.swing.JInternalFrame {
         jDesktopPaneFondo.setLayer(jLabelTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPaneFondo.setLayer(btnPais, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPaneFondo.setLayer(btnDepartament, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPaneFondo.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPaneFondo.setLayer(btnCiudad, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPaneFondo.setLayer(jButtonSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPaneFondoLayout = new javax.swing.GroupLayout(jDesktopPaneFondo);
@@ -111,7 +111,7 @@ public class Nationality extends javax.swing.JInternalFrame {
             .addComponent(jLabelTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPaneFondoLayout.createSequentialGroup()
                 .addContainerGap(497, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(406, 406, 406)
                 .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -128,7 +128,7 @@ public class Nationality extends javax.swing.JInternalFrame {
                 .addGroup(jDesktopPaneFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPaneFondoLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jDesktopPaneFondoLayout.createSequentialGroup()
                         .addGap(209, 209, 209)
                         .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -154,8 +154,6 @@ public class Nationality extends javax.swing.JInternalFrame {
             // CONEXION A LA INTERFAZ DE PAIS:
             Country country = new Country();
             country.setVisible(true);
-            country.setSize(610, 467);
-            country.setLocation(300, 50);
             jDesktopPaneFondo.add(country);
             country.setSelected(true);
         } catch (PropertyVetoException ex) {
@@ -173,8 +171,6 @@ public class Nationality extends javax.swing.JInternalFrame {
             // CONEXION A LA INTERFAZ DE DEPARTAMENTO:
             Departament depart = new Departament();
             depart.setVisible(true);
-            depart.setSize(610, 467);
-            depart.setLocation(300, 50);
             jDesktopPaneFondo.add(depart);
             depart.setSelected(true);
         } catch (PropertyVetoException ex) {
@@ -182,26 +178,24 @@ public class Nationality extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnDepartamentActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCiudadActionPerformed
         try {
             // CONEXION A LA INTERFAZ DE CIUDAD:
             City ciudad = new City();
             ciudad.setVisible(true);
-            ciudad.setSize(610, 467);
-            ciudad.setLocation(300, 50);
             jDesktopPaneFondo.add(ciudad);
             ciudad.setSelected(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(Nationality.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCiudadActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCiudad;
     private javax.swing.JButton btnDepartament;
     private javax.swing.JButton btnPais;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JDesktopPane jDesktopPaneFondo;
     private javax.swing.JLabel jLabelTitulo;
