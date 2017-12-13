@@ -40,6 +40,8 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
      */
     public ActivityGrades() {
         initComponents();
+        setSize(1237,629);
+        setLocation(0,0);
         con = new Connection();
         disableCombo();
         loadUser(Main.id);

@@ -79,7 +79,6 @@ public class Main extends javax.swing.JFrame {
         jPanelAcademic = new javax.swing.JPanel();
         rSButtonAsignatura = new Resources.RSButtonMetro();
         rSButtonNotas = new Resources.RSButtonMetro();
-        rSButtonPeriodo = new Resources.RSButtonMetro();
         rSButtonActivity = new Resources.RSButtonMetro();
         jButtonSalir = new javax.swing.JButton();
 
@@ -268,24 +267,6 @@ public class Main extends javax.swing.JFrame {
         jPanelAcademic.add(rSButtonNotas);
         rSButtonNotas.setBounds(0, 70, 180, 50);
 
-        rSButtonPeriodo.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonPeriodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Periodo.png"))); // NOI18N
-        rSButtonPeriodo.setText("   PERIODO  ");
-        rSButtonPeriodo.setColorHover(new java.awt.Color(204, 204, 204));
-        rSButtonPeriodo.setColorNormal(new java.awt.Color(255, 255, 255));
-        rSButtonPeriodo.setColorPressed(new java.awt.Color(255, 255, 255));
-        rSButtonPeriodo.setColorTextNormal(new java.awt.Color(0, 0, 0));
-        rSButtonPeriodo.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        rSButtonPeriodo.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        rSButtonPeriodo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        rSButtonPeriodo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButtonPeriodoActionPerformed(evt);
-            }
-        });
-        jPanelAcademic.add(rSButtonPeriodo);
-        rSButtonPeriodo.setBounds(0, 190, 180, 40);
-
         rSButtonActivity.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonActivity.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Periodo.png"))); // NOI18N
         rSButtonActivity.setText("   ACTIVIDADES  ");
@@ -441,10 +422,6 @@ public class Main extends javax.swing.JFrame {
         }       
     }//GEN-LAST:event_rSButtonNotasActionPerformed
 
-    private void rSButtonPeriodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonPeriodoActionPerformed
-
-    }//GEN-LAST:event_rSButtonPeriodoActionPerformed
-
     private void rSButtonCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonCountryActionPerformed
         try {
             // CONEXION A LA INTERFAZ NACIONALIDAD:
@@ -524,7 +501,6 @@ public class Main extends javax.swing.JFrame {
     private Resources.RSButtonMetro rSButtonMetroGAcadem;
     private Resources.RSButtonMetro rSButtonMetroGAdmin;
     private Resources.RSButtonMetro rSButtonNotas;
-    private Resources.RSButtonMetro rSButtonPeriodo;
     private Resources.RSButtonMetro rSButtonRegistro;
     private Resources.RSButtonMetro rSButtonReportes;
     // End of variables declaration//GEN-END:variables
