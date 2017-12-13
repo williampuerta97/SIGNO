@@ -442,10 +442,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonNotasActionPerformed
 
     private void rSButtonPeriodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonPeriodoActionPerformed
-        periodo per = new periodo();
-        per.setVisible(true);
-        per.setLocation(300, 50);
-        jDesktopPaneFondo.add(per);
+
     }//GEN-LAST:event_rSButtonPeriodoActionPerformed
 
     private void rSButtonCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonCountryActionPerformed

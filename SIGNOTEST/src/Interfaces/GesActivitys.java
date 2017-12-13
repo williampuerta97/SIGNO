@@ -69,8 +69,8 @@ public class GesActivitys extends javax.swing.JInternalFrame {
 
         jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/calificac.png"))); // NOI18N
-        jButton2.setText("NOTAS ACTIVIDAD");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/period.png"))); // NOI18N
+        jButton2.setText("PERIODO");
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
@@ -82,7 +82,7 @@ public class GesActivitys extends javax.swing.JInternalFrame {
             }
         });
         jDesktopPaneFondo.add(jButton2);
-        jButton2.setBounds(850, 120, 190, 210);
+        jButton2.setBounds(850, 120, 190, 220);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,10 +118,10 @@ public class GesActivitys extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
             // CONEXION CON LA INTERFAS NOTA ACTIVITY:
-            ActivityGrades activgr = new ActivityGrades();
-            activgr.setVisible(true);
-            jDesktopPaneFondo.add(activgr);
-            activgr.setSelected(true);
+            periodo per = new periodo();
+            per.setVisible(true);
+            jDesktopPaneFondo.add(per);
+            per.setSelected(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(GesActivitys.class.getName()).log(Level.SEVERE, null, ex);
         }

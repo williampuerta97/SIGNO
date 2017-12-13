@@ -64,7 +64,6 @@ public class Observations extends javax.swing.JInternalFrame {
         cboCourse = new javax.swing.JComboBox<>();
         cboSubjects = new javax.swing.JComboBox<>();
         cboPeriod = new javax.swing.JComboBox<>();
-        btnPdf = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -140,8 +139,6 @@ public class Observations extends javax.swing.JInternalFrame {
             }
         });
 
-        btnPdf.setText("GENERAR PDF");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -169,9 +166,7 @@ public class Observations extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(143, 143, 143)
-                .addComponent(btnPdf)
-                .addGap(30, 30, 30)
+                .addGap(194, 194, 194)
                 .addComponent(btnSave)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -201,10 +196,8 @@ public class Observations extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPdf)
-                    .addComponent(btnSave))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addComponent(btnSave)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -821,7 +814,6 @@ public class Observations extends javax.swing.JInternalFrame {
         cboPeriod.setEnabled(false);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnPdf;
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cboCourse;
     private javax.swing.JComboBox<String> cboPeriod;
