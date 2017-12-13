@@ -7,6 +7,8 @@ package Interfaces;
 
 import Resources.Connection;
 import java.sql.ResultSet;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,11 +21,12 @@ public class StudentsDegree extends javax.swing.JInternalFrame {
      */
     Connection con ;
     String idGrade[];
+    DefaultTableModel model;
+    DefaultComboBoxModel model1;
     public StudentsDegree() {
         initComponents();
-        setSize(1237,629);
-        setLocation(0,0);
         con = new Connection();
+        loadCb();
     }
 
     /**
@@ -39,8 +42,8 @@ public class StudentsDegree extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnPdf = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
@@ -49,8 +52,13 @@ public class StudentsDegree extends javax.swing.JInternalFrame {
         setToolTipText("");
         getContentPane().setLayout(null);
 
+        cboGroups.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cboGroupsItemStateChanged(evt);
+            }
+        });
         getContentPane().add(cboGroups);
-        cboGroups.setBounds(136, 60, 105, 20);
+        cboGroups.setBounds(180, 70, 140, 20);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,33 +74,80 @@ public class StudentsDegree extends javax.swing.JInternalFrame {
         jScrollPane1.setBounds(35, 121, 322, 120);
 
         btnPdf.setText("GENERAR PDF");
+        btnPdf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPdfActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnPdf);
-        btnPdf.setBounds(141, 259, 101, 23);
+        btnPdf.setBounds(141, 259, 150, 23);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setText("Grados");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(90, 70, 50, 15);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPdfActionPerformed
+        Reports re = new Reports();
+        int pos = cboGroups.getSelectedIndex();
+        re.createReports("src/Interfaces/GroupsReport.jrxml", "Reporte_de_estudiantes_por_grupo", idGrade[pos]);
+    }//GEN-LAST:event_btnPdfActionPerformed
+
+    private void cboGroupsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboGroupsItemStateChanged
+        int id = cboGroups.getSelectedIndex();
+        loadTable(idGrade[id]);
+    }//GEN-LAST:event_cboGroupsItemStateChanged
 public void loadCb(){
+    cboGroups.removeAllItems();
     try {
         ResultSet resul = con.consultDB("SELECT COUNT(*) cuenta FROM grupo");
         if(resul.next()){
-            idGrade = new String[resul.getInt("cuenta")];
+            idGrade = new String[resul.getInt("cuenta")+1];
         }
     } catch (Exception e) {
     }
-    int i = 0;
+    int i = 1;
+    model1 = new DefaultComboBoxModel();
+    cboGroups.setModel(model1);
+    model1.addElement("Seleccione grado");
     try {
-        ResultSet rs = con.consultDB("SELECT * FROM grupo");
+        ResultSet rs = con.consultDB("SELECT idGrupo, Nombre FROM grupo");
         while(rs.next()){
             idGrade[i] = rs.getString("idGrupo");
-            cboGroups.addItem(rs.getString("Nombre"));
+            i++;
+            model1.addElement(rs.getString("Nombre"));
         }
     } catch (Exception e) {
     }
-}       
+}
+void loadTable(String id){
+   String titu[] ={"NUIP", "Nombre"};
+   String reg[] = new String[2];
+    try {
+        ResultSet rs = con.consultDB("SELECT usu.NUIP, CONCAT(usu.PrimerNombre, ' ', usu.PrimerApellido) Nombre FROM usuario usu\n" +
+"INNER JOIN estudiante est\n" +
+"ON usu.NUIP = est.Codigo\n" +
+"INNER JOIN grupo g \n" +
+"ON est.Grupo_Id = g.idGrupo\n" +
+"WHERE g.activo = 1 AND est.Activo = 1 AND g.idGrupo = "+id);
+        model = new DefaultTableModel(null, titu);
+        while(rs.next()){
+            reg[0] = rs.getString("usu.NUIP");
+            reg[1] = rs.getString("Nombre");
+            model.addRow(reg);
+        }
+        jTable1.setModel(model);
+        
+    } catch (Exception e) {
+    }
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPdf;
     private javax.swing.JComboBox<String> cboGroups;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

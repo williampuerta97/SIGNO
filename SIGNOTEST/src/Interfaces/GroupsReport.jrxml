@@ -3,35 +3,69 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString>
-		<![CDATA[SELECT g.Nombre, g.Jornada, CONCAT(usu.PrimerNombre, ' ', usu.PrimerApellido) Director_Grupo FROM usuario usu
-INNER JOIN docente d 
-ON usu.NUIP = d.Codigo
+		<![CDATA[SELECT usu.NUIP, CONCAT(usu.PrimerNombre, ' ', usu.PrimerApellido) Nombre FROM usuario usu
+INNER JOIN estudiante est
+ON usu.NUIP = est.Codigo
 INNER JOIN grupo g 
-ON d.Codigo = g.Director
-WHERE g.activo = 1 AND d.Activo = 1]]>
+ON est.Grupo_Id = g.idGrupo
+WHERE g.activo = 1 AND est.Activo = 1 AND g.idGrupo = $P{id}]]>
 	</queryString>
+	<field name="NUIP" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<field name="Nombre" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="Jornada" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="Director_Grupo" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="108" y="23" width="335" height="31" uuid="666c82a0-8df2-4a7d-9d2f-dc31f0f82cbe"/>
+				<textElement>
+					<font fontName="Tahoma" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTUDIANTES POR GRADO]]></text>
+			</staticText>
+		</band>
 	</title>
 	<pageHeader>
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="91" y="22" width="100" height="20" uuid="4fe07c27-8426-490c-946b-06b6d5070a3f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NUIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="22" width="100" height="20" uuid="a0e3e663-4d12-48e3-8c7a-54f6c1ebb50a"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="91" y="57" width="100" height="20" uuid="a8f744f6-99f8-46e3-b576-98a177dc85de"/>
+				<textFieldExpression><![CDATA[$F{NUIP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="343" y="57" width="100" height="20" uuid="2408c08a-991a-4a4d-bcab-796d261d8ac7"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>

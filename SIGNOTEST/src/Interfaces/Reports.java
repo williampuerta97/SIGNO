@@ -310,26 +310,50 @@ public class Reports extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonRepGradoActionPerformed
 
     private void jButtonDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocenteActionPerformed
-        createReports("src/Interfaces/TeachersReport.jrxml", "InformeDocentes");
+        createReports2("src/Interfaces/TeachersReport.jrxml", "InformeDocentes");
     }//GEN-LAST:event_jButtonDocenteActionPerformed
-public void createReports(String direc, String titulo){
+public void createReports(String direc, String titulo, String param){
     Connection con = null;
          
         try {
             con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/signo_db","root","");
         } catch (Exception e) {
         } 
-        try { 
-            JasperReport report = JasperCompileManager.compileReport(direc);
-            JasperPrint prin = JasperFillManager.fillReport(report, new HashMap(), con); 
-            JasperExportManager.exportReportToPdfFile(prin, titulo+".pdf"); 
+        try{
+                Map parametro = new HashMap(); 
+                parametro.put("id", param);
 
-            JasperViewer jviewer= new JasperViewer(prin,false); 
-            jviewer.setTitle(titulo); 
-            jviewer.setVisible(true);
-        } catch (JRException ex) {
-            Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
+                JasperReport report = JasperCompileManager.compileReport (direc);
+                JasperPrint print = JasperFillManager.fillReport(report, parametro, con ); 
+                JasperExportManager.exportReportToPdfFile(print,titulo+".pdf"); 
+
+                JasperViewer jviewer= new JasperViewer(print,false); 
+                jviewer.setTitle(titulo); 
+                jviewer.setVisible(true);
+            } catch (JRException ex) {
+                Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
             }
+}
+public void createReports2(String direc, String titulo){
+    Connection con = null;
+         
+        try {
+            con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/signo_db","root","");
+        } catch (Exception e) {
+        } 
+       
+                try { 
+                JasperReport report = JasperCompileManager.compileReport (direc);
+                JasperPrint print = JasperFillManager.fillReport(report, new HashMap(), con ); 
+                JasperExportManager.exportReportToPdfFile(print,titulo+".pdf"); 
+
+                JasperViewer jviewer= new JasperViewer(print,false); 
+                jviewer.setTitle(titulo); 
+                jviewer.setVisible(true);
+            } catch (JRException ex) {
+                Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalificGrupal;
