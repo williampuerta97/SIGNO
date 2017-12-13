@@ -25,6 +25,8 @@ public class Activity extends javax.swing.JInternalFrame {
 
     public Activity() {
         initComponents();
+        setSize(1237,629);
+        setLocation(0,0);
         cone = new Connection();
         consult();
         cargarComboGrupo();
@@ -33,47 +35,11 @@ public class Activity extends javax.swing.JInternalFrame {
         comboLogros();
         cargarId();
         porcent();
-        //desactivar();
+
     }
 
-    /* public void desactivar(){
-       
-       if(i < jPanel1.getComponents().length) {
-            jPanel2.getComponent(i).setEnabled(false);
-        } else {
-           jPanel2.setEnabled(true);
-       }
-           
-                
-    }*/
     public void consult() {
 
-        /*
-      @autor: Bases de datos  
-      @version: 1.0
-      @metodo: Su función es consultar registros a la base de datos
-        
-         */
-//        String titulos[] = {"ID_GRUPO", "DIRECTOR", "JORNADA", "NOMBRE", "ACTIVO"};
-//        model = new DefaultTableModel(null, titulos);
-//        String fila[] = new String[5];
-//        
-//        try {
-//            ResultSet rs = cone.consultDB("SELECT idGrupo, Director, Jornada, Nombre, Activo FROM grupo");
-//            
-//            while (rs.next()) {
-//                fila[0] = rs.getString("idGrupo");
-//                fila[1] = rs.getString("Director");
-//                fila[2] = rs.getString("Jornada");
-//                fila[3] = rs.getString("Nombre");
-//                fila[4] = rs.getString("Activo");
-//                
-//                model.addRow(fila);
-//            }
-//            jTable1.setModel(model);
-//        } catch (Exception e) {
-//            System.out.println("Error" + e);
-//        }
         String titulos[] = {"ID_ACTIVIDAD", "NOMBRE", "DESCRIPCION", "ESTADO", "ENTREGA", "GRUPO", "LOGRO", "PORCENTAJE"};
         model = new DefaultTableModel(null, titulos);
         String fila[] = new String[8];
@@ -567,10 +533,6 @@ public class Activity extends javax.swing.JInternalFrame {
         nom = TextNom.getText();
         des = TextDesc.getText();
 
-        /*nom = TextNom.getText();
-        desc = TextDesc.getText();
-        porce = (double)SpinnerPor.getValue();*/
-                        
         ResultSet rs = cone.consultDB("SELECT * FROM logro WHERE Nombre = '"+logro+"'");
         try {
              if (rs.next()) {

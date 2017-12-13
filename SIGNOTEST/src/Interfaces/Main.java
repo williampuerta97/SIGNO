@@ -411,10 +411,14 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonMetroGAcademActionPerformed
 
     private void rSButtonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonRegistroActionPerformed
+        try {
             RegisterUser regsuser = new RegisterUser();
             regsuser.setVisible(true);
-            regsuser.setLocation(300, 50);
             jDesktopPaneFondo.add(regsuser);
+            regsuser.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_rSButtonRegistroActionPerformed
 
     private void rSButtonEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonEventoActionPerformed
@@ -459,7 +463,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonCountryActionPerformed
 
     private void rSButtonActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonActivityActionPerformed
-        // TODO add your handling code here:
+        try {
+            // CONEXION A LA INTERFAZ ACTIVIDADES:
+            GesActivitys gactiv = new GesActivitys();
+            this.setLocationRelativeTo(null);
+            gactiv.setVisible(true);
+            jDesktopPaneFondo.add(gactiv);
+            gactiv.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_rSButtonActivityActionPerformed
 
 //   public static void main(String args[]) {
