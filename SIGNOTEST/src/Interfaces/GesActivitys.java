@@ -22,6 +22,7 @@ public class GesActivitys extends javax.swing.JInternalFrame {
         jLabelTitulo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         jDesktopPaneFondo.setBackground(new java.awt.Color(0, 0, 255));
         jDesktopPaneFondo.setForeground(new java.awt.Color(255, 255, 255));
@@ -48,7 +49,7 @@ public class GesActivitys extends javax.swing.JInternalFrame {
             }
         });
         jDesktopPaneFondo.add(jButton1);
-        jButton1.setBounds(100, 110, 220, 210);
+        jButton1.setBounds(160, 110, 220, 210);
 
         jButtonSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
@@ -65,6 +66,23 @@ public class GesActivitys extends javax.swing.JInternalFrame {
         });
         jDesktopPaneFondo.add(jButtonSalir);
         jButtonSalir.setBounds(1150, 590, 90, 31);
+
+        jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/calificac.png"))); // NOI18N
+        jButton2.setText("NOTAS ACTIVIDAD");
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jDesktopPaneFondo.add(jButton2);
+        jButton2.setBounds(850, 120, 190, 210);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,9 +115,22 @@ public class GesActivitys extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            // CONEXION CON LA INTERFAS NOTA ACTIVITY:
+            ActivityGrades activgr = new ActivityGrades();
+            activgr.setVisible(true);
+            jDesktopPaneFondo.add(activgr);
+            activgr.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(GesActivitys.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JDesktopPane jDesktopPaneFondo;
     private javax.swing.JLabel jLabelTitulo;
