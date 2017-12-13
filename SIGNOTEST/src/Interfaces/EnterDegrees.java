@@ -31,6 +31,8 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
      */
     public EnterDegrees() {
         initComponents();
+        setSize(1237,629);
+        setLocation(0,0);
         con = new Connection();
         loadTable("", 1);
         emptyFields();
@@ -56,8 +58,8 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         txtNuip = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        lbSearch = new javax.swing.JLabel();
         lbNameDirector = new javax.swing.JLabel();
+        lbSearch = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         rbMorning = new javax.swing.JRadioButton();
@@ -123,14 +125,14 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
             }
         });
 
+        lbNameDirector.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+
         lbSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscador-de-lupa.png"))); // NOI18N
         lbSearch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lbSearchMousePressed(evt);
             }
         });
-
-        lbNameDirector.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -142,34 +144,41 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addGap(10, 10, 10)
+                .addComponent(lbNameDirector)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbNameDirector)
-                    .addComponent(txtNuip, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbSearch)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNuip, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addComponent(lbSearch)
+                        .addGap(43, 43, 43))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(8, 8, 8)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtNuip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lbSearch))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(lbNameDirector))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lbNameDirector)
+                                .addComponent(jLabel1))
+                            .addComponent(txtNuip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addGap(42, 42, 42))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbSearch)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 330, 150));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -190,56 +199,66 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3)
-                        .addGap(15, 15, 15)
-                        .addComponent(rbMorning)
-                        .addGap(17, 17, 17)
-                        .addComponent(rbAfternoon))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(txtGroupName, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(10, Short.MAX_VALUE))
+                        .addComponent(txtGroupName, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbMorning)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbAfternoon)))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rbMorning)
-                        .addComponent(jLabel3))
-                    .addComponent(rbAfternoon))
-                .addGap(21, 21, 21)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtGroupName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
+                    .addComponent(rbMorning)
+                    .addComponent(rbAfternoon))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtGroupName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 40, -1, 95));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 320, 130));
 
-        btnRegister.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        btnRegister.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/registro.png"))); // NOI18N
         btnRegister.setText("REGISTRAR");
+        btnRegister.setBorder(null);
+        btnRegister.setBorderPainted(false);
+        btnRegister.setContentAreaFilled(false);
+        btnRegister.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegister.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 167, -1, -1));
+        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 100, 100, 100));
 
-        btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        btnUpdate.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar.png"))); // NOI18N
         btnUpdate.setText("ACTUALIZAR");
+        btnUpdate.setBorder(null);
+        btnUpdate.setBorderPainted(false);
+        btnUpdate.setContentAreaFilled(false);
+        btnUpdate.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnUpdate.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 167, -1, -1));
+        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 120, 90, 80));
 
         tbData.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbData.setModel(new javax.swing.table.DefaultTableModel(
@@ -261,18 +280,20 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(tbData);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 403, 112));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 700, 160));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel5.setText("Buscar:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 350, -1, 20));
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/buscador-de-lupa.png"))); // NOI18N
+        jLabel5.setText("CONSULTAR");
+        jLabel5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 540, -1, 30));
 
         txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtSearchKeyReleased(evt);
             }
         });
-        getContentPane().add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 160, -1));
+        getContentPane().add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 550, 180, 20));
 
         btnActive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/math-add-icon.png"))); // NOI18N
         btnActive.addActionListener(new java.awt.event.ActionListener() {
@@ -280,7 +301,7 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
                 btnActiveActionPerformed(evt);
             }
         });
-        getContentPane().add(btnActive, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+        getContentPane().add(btnActive, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 380, 60, -1));
 
         btnInactive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/math-minus-icon.png"))); // NOI18N
         btnInactive.addActionListener(new java.awt.event.ActionListener() {
@@ -288,7 +309,7 @@ public class EnterDegrees extends javax.swing.JInternalFrame {
                 btnInactiveActionPerformed(evt);
             }
         });
-        getContentPane().add(btnInactive, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, -1, -1));
+        getContentPane().add(btnInactive, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, 60, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

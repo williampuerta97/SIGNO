@@ -71,7 +71,6 @@ public class Main extends javax.swing.JFrame {
         rSButtonMetroGAdmin = new Resources.RSButtonMetro();
         jPanelAdmin = new javax.swing.JPanel();
         rSButtonReportes = new Resources.RSButtonMetro();
-        rSButtonInactivos = new Resources.RSButtonMetro();
         rSButtonCountry = new Resources.RSButtonMetro();
         rSButtonEvento = new Resources.RSButtonMetro();
         rSButtonRegistro = new Resources.RSButtonMetro();
@@ -153,20 +152,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAdmin.add(rSButtonReportes);
-        rSButtonReportes.setBounds(0, 100, 180, 40);
-
-        rSButtonInactivos.setForeground(new java.awt.Color(0, 0, 0));
-        rSButtonInactivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/inactivo.png"))); // NOI18N
-        rSButtonInactivos.setText("   INACTIVOS");
-        rSButtonInactivos.setColorHover(new java.awt.Color(204, 204, 204));
-        rSButtonInactivos.setColorNormal(new java.awt.Color(255, 255, 255));
-        rSButtonInactivos.setColorPressed(new java.awt.Color(255, 255, 255));
-        rSButtonInactivos.setColorTextNormal(new java.awt.Color(0, 0, 0));
-        rSButtonInactivos.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        rSButtonInactivos.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        rSButtonInactivos.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanelAdmin.add(rSButtonInactivos);
-        rSButtonInactivos.setBounds(0, 150, 180, 40);
+        rSButtonReportes.setBounds(0, 130, 180, 40);
 
         rSButtonCountry.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonCountry.setForeground(new java.awt.Color(0, 0, 0));
@@ -185,7 +171,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAdmin.add(rSButtonCountry);
-        rSButtonCountry.setBounds(0, 0, 180, 40);
+        rSButtonCountry.setBounds(0, 10, 180, 40);
 
         rSButtonEvento.setForeground(new java.awt.Color(0, 0, 0));
         rSButtonEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eventos.png"))); // NOI18N
@@ -203,7 +189,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAdmin.add(rSButtonEvento);
-        rSButtonEvento.setBounds(0, 200, 180, 40);
+        rSButtonEvento.setBounds(0, 190, 180, 40);
 
         rSButtonRegistro.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonRegistro.setForeground(new java.awt.Color(0, 0, 0));
@@ -222,7 +208,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanelAdmin.add(rSButtonRegistro);
-        rSButtonRegistro.setBounds(0, 50, 180, 40);
+        rSButtonRegistro.setBounds(0, 70, 180, 40);
 
         jPanelDespMenu.add(jPanelAdmin);
         jPanelAdmin.setBounds(0, 50, 180, 250);
@@ -524,7 +510,6 @@ public class Main extends javax.swing.JFrame {
     private Resources.RSButtonMetro rSButtonAsignatura;
     private Resources.RSButtonMetro rSButtonCountry;
     private Resources.RSButtonMetro rSButtonEvento;
-    private Resources.RSButtonMetro rSButtonInactivos;
     private Resources.RSButtonMetro rSButtonMenu;
     private Resources.RSButtonMetro rSButtonMetroGAcadem;
     private Resources.RSButtonMetro rSButtonMetroGAdmin;

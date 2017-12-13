@@ -52,7 +52,7 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
             }
         });
         jDesktopPaneFondo.add(btnSubject);
-        btnSubject.setBounds(140, 130, 180, 170);
+        btnSubject.setBounds(130, 130, 180, 170);
 
         btnDegree.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnDegree.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,7 +69,7 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
             }
         });
         jDesktopPaneFondo.add(btnDegree);
-        btnDegree.setBounds(670, 130, 170, 180);
+        btnDegree.setBounds(680, 130, 170, 180);
 
         jButtonSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,8 +131,6 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         // CONECTAR CON LA INTERFAZ ASIGNATURAS:
         EnterSubjects entSub = new EnterSubjects();
         entSub.setVisible(true);
-        entSub.setSize(610, 467);
-        entSub.setLocation(300, 50);
         jDesktopPaneFondo.add(entSub);
         try {
             entSub.setSelected(true);
@@ -144,8 +142,6 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
     private void btnDegreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDegreeActionPerformed
         EnterDegrees enterDeg = new EnterDegrees();
         enterDeg.setVisible(true);
-        enterDeg.setSize(610, 467);
-        enterDeg.setLocation(300, 50);
         jDesktopPaneFondo.add(enterDeg);
         try {
             enterDeg.setSelected(true);
@@ -163,7 +159,6 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         // CONEXION CON INTERFAZ DE LOGROS:
         Achievements achie = new Achievements();
         achie.setVisible(true);
-        achie.setLocation(300, 50);
         jDesktopPaneFondo.add(achie);
         try {
             achie.setSelected(true);
@@ -176,7 +171,6 @@ public class SubjectGrade extends javax.swing.JInternalFrame {
         // CONEXION CON INTERFAZ DE MATERIAS:
         Subjects subj = new Subjects();
         subj.setVisible(true);
-        subj.setLocation(300, 50);
         jDesktopPaneFondo.add(subj);
         try {
             subj.setSelected(true);
