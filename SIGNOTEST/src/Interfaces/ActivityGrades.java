@@ -59,49 +59,31 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbData = new javax.swing.JTable();
+        btnRegister = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbData = new javax.swing.JTable();
         cboGroup = new javax.swing.JComboBox();
         cboAchievements = new javax.swing.JComboBox();
         cboActivity = new javax.swing.JComboBox();
-        btnRegister = new javax.swing.JButton();
         cboSubjects = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
         lbTeachers = new javax.swing.JLabel();
 
+        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Notas por actividad");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel1.setText("Docente");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 30, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel2.setText("Grupo");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 83, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel3.setText("Materia");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 136, -1, -1));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 243, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel5.setText("Logro");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 189, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel6.setText("Actividades");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 246, -1, -1));
 
         tbData.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbData.setModel(new javax.swing.table.DefaultTableModel(
@@ -117,7 +99,48 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tbData);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 293, 397, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 397, 110));
+
+        btnRegister.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/registro.png"))); // NOI18N
+        btnRegister.setText("REGISTRAR");
+        btnRegister.setBorder(null);
+        btnRegister.setBorderPainted(false);
+        btnRegister.setContentAreaFilled(false);
+        btnRegister.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegister.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, 110, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153)));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel1.setText("Docente");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel2.setText("Grupo");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel3.setText("Materia");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel5.setText("Logro");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel6.setText("Actividades");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         cboGroup.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -129,7 +152,7 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
                 cboGroupActionPerformed(evt);
             }
         });
-        getContentPane().add(cboGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 172, -1));
+        jPanel1.add(cboGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 172, -1));
 
         cboAchievements.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         cboAchievements.addItemListener(new java.awt.event.ItemListener() {
@@ -137,7 +160,7 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
                 cboAchievementsItemStateChanged(evt);
             }
         });
-        getContentPane().add(cboAchievements, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 183, 172, -1));
+        jPanel1.add(cboAchievements, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 172, -1));
 
         cboActivity.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         cboActivity.addItemListener(new java.awt.event.ItemListener() {
@@ -145,28 +168,19 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
                 cboActivityItemStateChanged(evt);
             }
         });
-        getContentPane().add(cboActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 172, -1));
-
-        btnRegister.setText("REGISTRAR");
-        btnRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegisterActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 436, -1, -1));
+        jPanel1.add(cboActivity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 172, -1));
 
         cboSubjects.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cboSubjectsItemStateChanged(evt);
             }
         });
-        getContentPane().add(cboSubjects, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 132, 172, -1));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(cboSubjects, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 172, -1));
 
         lbTeachers.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        getContentPane().add(lbTeachers, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 172, 16));
+        jPanel1.add(lbTeachers, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 172, 16));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 460, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -714,6 +728,7 @@ String assignRank(double grade){
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTeachers;
     private javax.swing.JTable tbData;

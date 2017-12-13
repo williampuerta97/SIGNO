@@ -1,5 +1,10 @@
 /* MODULO CORRES PONDIENTE A LAS CALIFICACIONES */
 package Interfaces;
+
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /* @author 1354951  */
 
 public class Grades extends javax.swing.JInternalFrame {
@@ -133,17 +138,25 @@ public class Grades extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonDefinitivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDefinitivaActionPerformed
-        Observations obs = new Observations();
-        obs.setBounds(300, 100, 550, 400);
-        obs.setVisible(true);
-        jDesktopPaneFondo.add(obs);
+        try {
+            Observations obs = new Observations();
+            obs.setVisible(true);
+            jDesktopPaneFondo.add(obs);
+            obs.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Grades.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonDefinitivaActionPerformed
 
     private void jButtonNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNotasActionPerformed
-        ActivityGrades actGra = new ActivityGrades();
-        actGra.setBounds(300, 100, 450, 550);
-        actGra.setVisible(true);
-        jDesktopPaneFondo.add(actGra);
+        try {
+            ActivityGrades actGra = new ActivityGrades();
+            actGra.setVisible(true);
+            jDesktopPaneFondo.add(actGra);
+            actGra.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Grades.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonNotasActionPerformed
 
 
