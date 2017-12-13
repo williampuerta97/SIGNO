@@ -5,7 +5,6 @@ package Interfaces;
  * and open the template in the editor.
  */
 
-
 import Resources.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,10 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author WINDOWS SE7EN
- */
+/* @author 1354951 */
 public class periodo extends javax.swing.JInternalFrame {
     
     Connection cone;
