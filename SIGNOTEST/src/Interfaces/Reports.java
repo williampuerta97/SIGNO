@@ -293,7 +293,10 @@ public class Reports extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonIndicadoresActionPerformed
 
     private void jButtonRepGradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRepGradoActionPerformed
-        createReports("src/Interfaces/GroupsReport.jrxml", "InformeGrados");
+        StudentsDegree st = new StudentsDegree();
+        st.setVisible(true);
+        st.setLocation(200, 200);
+        jDesktopPaneFondo.add(st);
     }//GEN-LAST:event_jButtonRepGradoActionPerformed
 public void createReports(String direc, String titulo){
     Connection con = null;
