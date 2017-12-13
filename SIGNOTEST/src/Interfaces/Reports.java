@@ -119,6 +119,11 @@ public class Reports extends javax.swing.JInternalFrame {
         jButtonDocente.setContentAreaFilled(false);
         jButtonDocente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonDocente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDocenteActionPerformed(evt);
+            }
+        });
 
         jButtonSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
@@ -298,6 +303,10 @@ public class Reports extends javax.swing.JInternalFrame {
         st.setLocation(200, 200);
         jDesktopPaneFondo.add(st);
     }//GEN-LAST:event_jButtonRepGradoActionPerformed
+
+    private void jButtonDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocenteActionPerformed
+        createReports("src/Interfaces/TeachersReport.jrxml", "InformeDocentes");
+    }//GEN-LAST:event_jButtonDocenteActionPerformed
 public void createReports(String direc, String titulo){
     Connection con = null;
          
