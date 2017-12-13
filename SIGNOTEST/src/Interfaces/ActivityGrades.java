@@ -71,7 +71,6 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
         btnRegister = new javax.swing.JButton();
         cboSubjects = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         lbTeachers = new javax.swing.JLabel();
 
         setClosable(true);
@@ -163,9 +162,6 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jButton1.setText("PDF");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 436, -1, -1));
 
         lbTeachers.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         getContentPane().add(lbTeachers, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 172, 16));
@@ -709,7 +705,6 @@ String assignRank(double grade){
     private javax.swing.JComboBox cboActivity;
     private javax.swing.JComboBox cboGroup;
     private javax.swing.JComboBox<String> cboSubjects;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
