@@ -25,6 +25,8 @@ public class StudentsDegree extends javax.swing.JInternalFrame {
     DefaultComboBoxModel model1;
     public StudentsDegree() {
         initComponents();
+        setSize(1237,629);
+        setLocation(0,0);
         con = new Connection();
         loadCb();
     }
@@ -44,6 +46,7 @@ public class StudentsDegree extends javax.swing.JInternalFrame {
         btnPdf = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);

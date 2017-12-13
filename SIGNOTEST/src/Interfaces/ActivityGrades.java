@@ -99,7 +99,7 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tbData);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 397, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 570, 140));
 
         btnRegister.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/registro.png"))); // NOI18N
@@ -114,7 +114,7 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, 110, -1));
+        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 490, 110, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -180,7 +180,7 @@ public class ActivityGrades extends javax.swing.JInternalFrame {
         lbTeachers.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel1.add(lbTeachers, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 172, 16));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 460, 300));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 460, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
