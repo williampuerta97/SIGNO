@@ -21,6 +21,8 @@ public class StudentsDegree extends javax.swing.JInternalFrame {
     String idGrade[];
     public StudentsDegree() {
         initComponents();
+        setSize(1237,629);
+        setLocation(0,0);
         con = new Connection();
     }
 

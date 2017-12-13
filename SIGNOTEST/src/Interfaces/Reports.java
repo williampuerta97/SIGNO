@@ -2,6 +2,7 @@
 package Interfaces;
 
 
+import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.HashMap;
@@ -298,10 +299,14 @@ public class Reports extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButtonIndicadoresActionPerformed
 
     private void jButtonRepGradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRepGradoActionPerformed
-        StudentsDegree st = new StudentsDegree();
-        st.setVisible(true);
-        st.setLocation(200, 200);
-        jDesktopPaneFondo.add(st);
+        try {
+            StudentsDegree st = new StudentsDegree();
+            st.setVisible(true);
+            jDesktopPaneFondo.add(st);
+            st.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonRepGradoActionPerformed
 
     private void jButtonDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocenteActionPerformed
