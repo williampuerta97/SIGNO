@@ -40,6 +40,7 @@ public class StudentsDegree extends javax.swing.JInternalFrame {
         jTable1 = new javax.swing.JTable();
         btnPdf = new javax.swing.JButton();
 
+        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
