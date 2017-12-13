@@ -247,6 +247,7 @@ public class Activity extends javax.swing.JInternalFrame {
         });
         jPopupMenu1.add(jMenuItem1);
 
+        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);

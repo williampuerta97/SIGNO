@@ -21,6 +21,7 @@ public class GesActivitys extends javax.swing.JInternalFrame {
         jDesktopPaneFondo = new javax.swing.JDesktopPane();
         jLabelTitulo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButtonSalir = new javax.swing.JButton();
 
         jDesktopPaneFondo.setBackground(new java.awt.Color(0, 0, 255));
         jDesktopPaneFondo.setForeground(new java.awt.Color(255, 255, 255));
@@ -41,8 +42,29 @@ public class GesActivitys extends javax.swing.JInternalFrame {
         jButton1.setContentAreaFilled(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jDesktopPaneFondo.add(jButton1);
-        jButton1.setBounds(100, 140, 220, 210);
+        jButton1.setBounds(100, 110, 220, 210);
+
+        jButtonSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/salir.png"))); // NOI18N
+        jButtonSalir.setText("SALIR");
+        jButtonSalir.setBorder(null);
+        jButtonSalir.setBorderPainted(false);
+        jButtonSalir.setContentAreaFilled(false);
+        jButtonSalir.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
+        jDesktopPaneFondo.add(jButtonSalir);
+        jButtonSalir.setBounds(1150, 590, 90, 31);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,9 +80,27 @@ public class GesActivitys extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        // SALIR AL PRINCIPAL:
+        this.dispose();
+    }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            // CONEXION CON LA INTERFAS ACTIVITY:
+            Activity activ = new Activity();
+            activ.setVisible(true);
+            jDesktopPaneFondo.add(activ);
+            activ.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(GesActivitys.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonSalir;
     private javax.swing.JDesktopPane jDesktopPaneFondo;
     private javax.swing.JLabel jLabelTitulo;
     // End of variables declaration//GEN-END:variables
